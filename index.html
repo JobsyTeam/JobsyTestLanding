@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobsy - Ваш ИИ-помощник в поиске работы</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0088cc; /* Blue from button */
+            --primary-hover: #006699;
+            --text-dark: #1a1a1a;
+            --text-gray: #555555;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-radius: 12px;
+            --max-width: 1100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--text-dark);
+            border: 1px solid #ddd;
+        }
+        
+        .btn-white:hover {
+            background-color: #f0f0f0;
+        }
+
+        .text-center { text-align: center; }
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mb-3 { margin-bottom: 3rem; }
+
+        /* Header */
+        header {
+            padding: 1rem 0;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Features Grid (Top) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: left;
+        }
+
+        .feature-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .feature-card i {
+            color: var(--text-gray);
+        }
+
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* Visual Section 1 */
+        .visual-section {
+            margin: 3rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .visual-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            /* max-height: 400px; */ /* Removed max-height to show full image */
+        }
+
+        .visual-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Why Jobsy */
+        .why-section {
+            padding: 4rem 0;
+            background-color: #f8f9fa; /* Light background from image */
+        }
+
+        .why-section h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+        
+        .why-container {
+            max-width: 900px; /* Constrain width for better readability */
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .why-row {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        /* Even rows: Image Left, Text Right */
+        .why-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Text Styling */
+        .why-text {
+            flex: 1;
+        }
+
+        .why-row:nth-child(odd) .why-text {
+            text-align: left;
+        }
+
+        .why-row:nth-child(even) .why-text {
+            text-align: right;
+        }
+
+        .why-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #555; /* Dark gray for title */
+            font-weight: 700;
+        }
+
+        .why-text p {
+            font-size: 0.95rem;
+            color: #777; /* Lighter gray for text */
+            line-height: 1.6;
+        }
+
+        /* Image Styling */
+        .why-image {
+            flex: 0 0 40%; /* Image takes 40% width */
+            max-width: 300px;
+        }
+        
+        .why-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .why-row, .why-row:nth-child(even) {
+                flex-direction: column-reverse; /* Text always below image on mobile, or above? Usually image top. Let's do Image Top */
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .why-row:nth-child(odd) .why-text,
+            .why-row:nth-child(even) .why-text {
+                text-align: center;
+            }
+
+            .why-image {
+                max-width: 100%;
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        /* Visual Section 2 (Blue Banner) */
+        .banner-section {
+            background-color: #0088cc;
+            color: white;
+            border-radius: 20px;
+            padding: 0;
+            margin: 4rem 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            min-height: 300px;
+        }
+        
+        .banner-content {
+            padding: 3rem;
+            z-index: 2;
+            max-width: 50%;
+        }
+        
+        .banner-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 100%; /* Changed to cover full width/height properly */
+            object-fit: cover;
+            /* mask-image: linear-gradient(to right, transparent, black 20%);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%); */
+        }
+
+        /* Target Audience */
+        .target-section {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .target-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .target-item {
+            background: white;
+            border: 1px solid #eee;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .target-item i {
+            color: var(--text-gray);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: var(--bg-light);
+            margin-top: 2rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-left: 28px; /* Align with text start */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0e17;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        footer h2 {
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .why-grid { grid-template-columns: 1fr; }
+            .banner-section { flex-direction: column; text-align: center; }
+            .banner-content { max-width: 100%; }
+            .banner-image { position: relative; width: 100%; height: 200px; mask-image: none; -webkit-mask-image: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">
+                <img src="favicon.png" alt="Jobsy" style="height: 32px; width: auto; vertical-align: middle;"> Jobsy
+            </a>
+            <div class="nav-links">
+                <a href="/app" class="btn-white" style="padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 0.8rem;">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div style="display: inline-block; background: #f0f0f0; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 1rem; color: #666;">AI-Powered Job Search</div>
+            <h1>Расскажите, какую работу вы ищете test</h1>
+            <p>Дальше этим займется ИИ. Jobsy оформляет CV, пишет письма и отправляет их работодателям. Вы ждете ответа.</p>
+            <a href="/app" class="btn">Создать Jobsy-профиль бесплатно -></a>
+        </section>
+
+        <section class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="far fa-comment-alt"></i> Без правил и шаблонов</h3>
+                    <p>Вы пишете в чате так, как привыкли. Система подстраивается под ваши ответы.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-robot"></i> ИИ делает всё сам</h3>
+                    <p>Jobsy на основе диалога оформляет CV и пишет письма работодателям.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-chart-simple"></i> Без вашего участия</h3>
+                    <p>Jobsy сам связывается с компаниями и отправляет заявки от вашего имени.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-globe"></i> Вы просто ждёте</h3>
+                    <p>Когда работодатели отвечают, вы получаете уведомление и решаете, что делать дальше.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="visual-section">
+                <img src="promo1.png" alt="Professional Opportunities">
+                <!-- Overlay removed as it might be part of the image now, but keeping just in case or if image is clean -->
+                <!-- <div class="visual-overlay">
+                    <h3>Professional Opportunities</h3>
+                    <p>For construction, logistics, and maintenance workers</p>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="container">
+                <h2 class="text-center"><i class="fas fa-mobile-screen"></i> Почему Jobsy работает иначе</h2>
+                
+                <div class="why-container">
+                    <!-- Row 1: Text Left, Image Right -->
+                    <div class="why-row">
+                        <div class="why-text">
+                            <h3>Вакансии привлекают сотни откликов</h3>
+                            <p>На популярные вакансии работодатели получают десятки и сотни заявок. В большинстве случаев внимание уделяется только первым из них.</p>
+                        </div>
+                        <div class="why-image">
+                            <img src="i1.png" alt="Вакансии">
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Image Left, Text Right -->
+                    <div class="why-row">
+                        <div class="why-text">
+                            <h3>Работа напрямую с компаниями</h3>
+                            <p>Jobsy напрямую связывается с компаниями, учитывая профиль кандидата, и выходит за рамки опубликованных вакансий и форм сотрудничества.</p>
+                        </div>
+                        <div class="why-image">
+                            <img src="i2.png" alt="Работа напрямую">
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Text Left, Image Right -->
+                    <div class="why-row">
+                        <div class="why-text">
+                            <h3>Письма формируются индивидуально</h3>
+                            <p>Письма создаются на основе вашего профиля и диалога, а не по шаблону, и адаптируются под каждую компанию.</p>
+                        </div>
+                        <div class="why-image">
+                            <img src="i3.png" alt="Письма">
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Image Left, Text Right -->
+                    <div class="why-row">
+                        <div class="why-text">
+                            <h3>Умеренный ритм отправки</h3>
+                            <p>Письма отправляются постепенно и в разной формулировке, как в обычной личной переписке.</p>
+                        </div>
+                        <div class="why-image">
+                            <img src="i4.png" alt="Ритм отправки">
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Text Left, Image Right -->
+                    <div class="why-row">
+                        <div class="why-text">
+                            <h3>Ответы приходят напрямую вам</h3>
+                            <p>Если компании заинтересованы, они пишут вам напрямую, без лишних шагов и посредников.</p>
+                        </div>
+                        <div class="why-image">
+                            <img src="i5.png" alt="Ответы">
+                        </div>
+                    </div>
+
+                    <!-- Row 6: Image Left, Text Right -->
+                    <div class="why-row">
+                        <div class="why-text">
+                            <h3>Поиск продолжается без вашего участия</h3>
+                            <p>После запуска Jobsy продолжает искать подходящие компании и возможности автоматически, без необходимости что-то делать каждый день.</p>
+                        </div>
+                        <div class="why-image">
+                            <img src="i6.png" alt="Автопоиск">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="banner-section">
+                <!-- Content removed as it is likely in the image promo2.png -->
+                <!-- <div class="banner-content">
+                    <h2>Jobsy</h2>
+                    <p>Позволь искусственному интеллекту продвигать твое CV</p>
+                </div> -->
+                <img src="promo2.png" class="banner-image" style="position: relative; width: 100%; height: auto; mask-image: none; -webkit-mask-image: none;" alt="AI Promotion">
+            </div>
+        </section>
+
+        <section class="target-section container">
+            <h2>Кому подойдёт Jobsy</h2>
+            <div class="target-list">
+                <div class="target-item">
+                    <i class="fas fa-rocket"></i>
+                    <span>Тем, кто не хочет ручного поиска и отправки заявок.</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span>Тем, кому нужна помощь с CV и формулировками.</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Тем, кто не хочет постоянно думать о поиске работы.</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Тем, кто предпочитает прямой контакт с компаниями.</span>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="/app" class="btn">Какая компания вам подходит? -></a>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container faq-container">
+                <h2 class="text-center mb-2">Часто задаваемые вопросы</h2>
+                <p class="text-center mb-2" style="font-size: 0.9rem; color: #888;">Всё, что нужно знать о Jobsy</p>
+
+                <div class="faq-item">
+                    <h3><i class="far fa-question-circle"></i> Какой формат работы ищет Jobsy, только найм?</h3>
+                    <p>Jobsy не ограничивается только классическим наймом. При прямом контакте компании могут рассматривать разные форматы сотрудничества, всё зависит от ситуации и договорённостей.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="far fa-question-circle"></i> Это может быть работа как самозанятый?</h3>
+                    <p>Иногда компании рассматривают сотрудничество с самозанятыми. Вы сами решаете, подходит ли вам такой формат.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="far fa-question-circle"></i> Jobsy решает, как именно меня будут оформлять?</h3>
+                    <p>Нет. Jobsy помогает выйти на прямой контакт с компаниями. Формат сотрудничества всегда обсуждается напрямую между вами и работодателем.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Ready to Let AI Work for You?</h2>
+            <p>Join thousands of job seekers in Finland and across the EU.</p>
+            <a href="/app" class="btn btn-white">Start Free Today -></a>
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: #555;">No credit card required • Start with free profile • Cancel anytime</p>
+        </div>
+    </footer>
+
+</body>
+</html>
