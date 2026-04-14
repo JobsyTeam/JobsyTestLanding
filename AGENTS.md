@@ -14,6 +14,10 @@ Static HTML landing page for Jobsy (AI-powered job search assistant). No build s
 
 Edit `index.html` directly. No build, no bundler. Open the file in a browser to preview.
 
+## Production URL
+
+https://jobsy-test-landing.vercel.app
+
 ## Git Workflow
 
 After any changes:
