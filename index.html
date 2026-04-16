@@ -130,7 +130,19 @@
             font-size: 1.1rem;
             color: var(--text-gray);
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .hero-sub {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
         }
 
         .features-grid {
@@ -186,11 +198,18 @@
 
         .why-section h2 {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 1rem;
             font-size: 1.8rem;
             color: #2c3e50;
         }
         
+        .why-section .subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
         .why-container {
             max-width: 900px;
             margin: 0 auto;
@@ -248,100 +267,146 @@
             display: block;
         }
 
-        .banner-section {
-            background-color: #0088cc;
-            color: white;
-            border-radius: 20px;
-            padding: 0;
-            margin: 4rem 0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            min-height: 300px;
-        }
-        
-        .banner-content {
-            padding: 3rem;
-            z-index: 2;
-            max-width: 50%;
-        }
-        
-        .banner-image {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+        .start-section {
+            padding: 4rem 0;
         }
 
-        .target-section {
-            padding: 3rem 0;
+        .start-section h2 {
             text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: #2c3e50;
         }
 
-        .target-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 600px;
-            margin: 2rem auto;
+        .start-section .subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
         }
 
-        .target-item {
+        .start-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 3rem;
+        }
+
+        .start-card {
             background: white;
             border: 1px solid #eee;
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-align: left;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-
-        .target-item i {
-            color: var(--text-gray);
-        }
-
-        .faq-section {
-            padding: 4rem 0;
-            background-color: var(--bg-light);
-            margin-top: 2rem;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
-        .faq-item h3 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+        .start-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .faq-item p {
-            font-size: 0.9rem;
+        .start-card p {
             color: var(--text-gray);
-            margin-left: 28px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .discover-section {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .discover-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .discover-section p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .discover-list {
+            list-style: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .discover-list li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+        }
+
+        .free-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .steps-section {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .steps-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .step-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .jobsy-active-section {
             padding: 4rem 0;
-            background-color: var(--bg-light);
         }
 
         .jobsy-active-section h2 {
@@ -365,10 +430,9 @@
         }
 
         .active-card {
-            background: white;
+            background: var(--bg-light);
             padding: 2rem;
             border-radius: var(--border-radius);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .active-card h3 {
@@ -383,6 +447,36 @@
             color: var(--text-gray);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        .privacy-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .privacy-list li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .early-section {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .early-section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+
+        .early-section p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         .pricing-section {
@@ -420,6 +514,25 @@
             opacity: 0.8;
         }
 
+        .finland-section {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .finland-section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+
+        .finland-section p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
         .privacy-section {
             padding: 4rem 0;
             text-align: center;
@@ -438,71 +551,21 @@
             line-height: 1.7;
         }
 
-        .steps-section {
+        .cta-section {
             padding: 4rem 0;
-        }
-
-        .steps-section h2 {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.8rem;
-            color: #2c3e50;
+            background-color: #f8f9fa;
         }
 
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 0 auto 1rem;
-        }
-
-        .step-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-        }
-
-        .step-card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .early-section {
-            padding: 4rem 0;
-            background-color: var(--bg-light);
-            text-align: center;
-        }
-
-        .early-section h2 {
+        .cta-section h2 {
             margin-bottom: 1rem;
             font-size: 1.8rem;
             color: #2c3e50;
         }
 
-        .early-section p {
+        .cta-section p {
             color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
+            margin-bottom: 2rem;
         }
 
         footer {
@@ -512,52 +575,48 @@
             text-align: center;
         }
 
-        footer h2 {
-            margin-bottom: 1rem;
-        }
-
-        footer p {
-            color: #888;
+        footer .footer-brand {
             margin-bottom: 2rem;
         }
 
-        .finland-section {
-            padding: 4rem 0;
-            text-align: center;
-            border-bottom: 1px solid #eee;
+        footer .footer-tagline {
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
 
-        .finland-section h2 {
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            color: #2c3e50;
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .finland-section p {
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
+        footer .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
-        .list-unstyled {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            margin-top: 1rem;
+        footer .footer-links a:hover {
+            color: white;
         }
 
-        .list-unstyled li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
+        footer p.disclaimer {
+            color: #555;
+            font-size: 0.8rem;
+            margin-top: 2rem;
         }
 
-        .list-unstyled li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
+        .banner-section {
+            margin: 4rem 0;
+        }
+
+        .banner-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
         }
 
         @media (max-width: 768px) {
@@ -578,10 +637,11 @@
                 flex: none;
                 width: 100%;
             }
-            
-            .banner-section { flex-direction: column; text-align: center; }
-            .banner-content { max-width: 100%; }
-            .banner-image { position: relative; width: 100%; height: 200px; mask-image: none; -webkit-mask-image: none; }
+
+            footer .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -602,25 +662,11 @@
         <section class="hero container">
             <h1>Find a job faster with AI</h1>
             <p>Jobsy helps you discover companies that match your experience and automate the job application process.</p>
-            <p style="font-size: 0.95rem; color: var(--text-gray); margin-bottom: 1.5rem;">Upload your CV. Jobsy finds companies that match your profile.</p>
-            <a href="/app" class="btn">Start free — no CV required →</a>
-        </section>
-
-        <section class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3><i class="fas fa-file-alt"></i> Free CV creation</h3>
-                    <p>Create a CV with AI or upload your existing one and start exploring opportunities in minutes.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-bullseye"></i> AI company matching</h3>
-                    <p>Jobsy analyzes your experience and finds companies where your skills may be a strong match.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-rocket"></i> Start in seconds</h3>
-                    <p>No complicated setup. Upload your CV or create one with AI and start immediately.</p>
-                </div>
-            </div>
+            <p class="hero-sub">Upload your CV. Jobsy finds companies that match your profile.</p>
+            <p class="hero-tagline">See which companies your experience could match — in seconds.</p>
+            <p class="hero-sub" style="margin-bottom: 1.5rem;">Create a CV with AI or upload your existing one and start exploring opportunities in minutes.</p>
+            <a href="/app" class="btn">Start free →</a>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #888;">Free CV creation • AI company matching • Get started in seconds</p>
         </section>
 
         <section class="container">
@@ -632,13 +678,13 @@
         <section class="why-section">
             <div class="container">
                 <h2>Helping job seekers discover new opportunities</h2>
-                <p class="text-center mb-2" style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Jobsy is designed to make job searching simpler and more efficient by combining AI-powered tools with automation.</p>
+                <p class="subtitle">Jobsy is designed to make job searching simpler and more efficient by combining AI-powered tools with automation.</p>
                 
                 <div class="why-container">
                     <div class="why-row">
                         <div class="why-text">
                             <h3>AI-powered CV creation</h3>
-                            <p>Create your CV with AI or upload your existing one. Just answer a few questions and your resume will be ready in minutes.</p>
+                            <p>If you don't have a CV yet, Jobsy can generate one for you using AI. Just answer a few questions and your resume will be ready in minutes.</p>
                         </div>
                         <div class="why-image">
                             <img src="i1.png" alt="CV Creation">
@@ -648,7 +694,7 @@
                     <div class="why-row">
                         <div class="why-text">
                             <h3>Smart company matching</h3>
-                            <p>After analyzing your CV, Jobsy finds companies where your skills may be a strong match. This helps you understand where your experience fits best.</p>
+                            <p>After analyzing your CV, Jobsy finds companies where your skills and experience could be a strong match.</p>
                         </div>
                         <div class="why-image">
                             <img src="i2.png" alt="Company Matching">
@@ -658,7 +704,7 @@
                     <div class="why-row">
                         <div class="why-text">
                             <h3>Automated job applications</h3>
-                            <p>Jobsy can automatically send applications while respecting safe sending limits, allowing you to reach far more companies than traditional job searching.</p>
+                            <p>Jobsy can automatically send 1000–1200 job applications per month while respecting safe sending limits.</p>
                         </div>
                         <div class="why-image">
                             <img src="i3.png" alt="Automation">
@@ -668,23 +714,25 @@
             </div>
         </section>
 
-        <section class="steps-section container">
-            <h2>How Jobsy works</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Upload or create your CV</h3>
-                    <p>Upload your existing CV or create one with AI in minutes.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Discover matching companies</h3>
-                    <p>Jobsy analyzes your experience and shows companies where your profile could be a strong match.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Activate Jobsy Active</h3>
-                    <p>Let Jobsy translate your CV, generate cover letters and automatically send job applications for you.</p>
+        <section class="steps-section">
+            <div class="container">
+                <h2>How Jobsy works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Upload or create your CV</h3>
+                        <p>Upload your existing CV or create one with AI in minutes.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Discover matching companies</h3>
+                        <p>Jobsy analyzes your experience and finds companies where your profile could be a strong match.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Activate Jobsy Active</h3>
+                        <p>Let Jobsy translate your CV, generate cover letters and automatically send job applications for you.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -697,19 +745,21 @@
                 <div class="active-grid">
                     <div class="active-card">
                         <h3><i class="fas fa-language"></i> CV translation for employers</h3>
-                        <p>Jobsy automatically translates your CV into the employer's language. This makes it easier to apply to companies in different countries without rewriting your resume.</p>
+                        <p>Jobsy automatically translates your CV into the employer's language, making it easier to apply to companies in different countries without rewriting your resume.</p>
                     </div>
                     <div class="active-card">
                         <h3><i class="fas fa-pen-fancy"></i> AI-generated cover letters</h3>
                         <p>Jobsy creates a unique cover letter for every company. Each message keeps the same meaning but is slightly different to avoid spam filters and increase the chances of a response.</p>
                     </div>
                     <div class="active-card">
-                        <h3><i class="fas fa-envelope"></i> Applications from your own email</h3>
-                        <p>Jobsy connects to your email using an app password and sends applications through your mailbox. Replies come directly to you.</p>
-                    </div>
-                    <div class="active-card">
-                        <h3><i class="fas fa-shield-halved"></i> Privacy guaranteed</h3>
-                        <p>Jobsy cannot access your conversations. Your communication remains private. The system is fully GDPR-friendly.</p>
+                        <h3><i class="fas fa-envelope"></i> Applications sent from your own email</h3>
+                        <p>Jobsy connects to your email using an app password and sends applications through your mailbox.</p>
+                        <ul class="privacy-list">
+                            <li>Replies go directly to you.</li>
+                            <li>Jobsy cannot access your conversations.</li>
+                            <li>Your communication remains private.</li>
+                            <li>The system is fully GDPR-friendly.</li>
+                        </ul>
                     </div>
                     <div class="active-card">
                         <h3><i class="fas fa-paper-plane"></i> Automatic job applications</h3>
@@ -721,14 +771,14 @@
 
         <section class="container">
             <div class="banner-section">
-                <img src="promo2.png" class="banner-image" style="position: relative; width: 100%; height: auto; mask-image: none; -webkit-mask-image: none;" alt="AI Promotion">
+                <img src="promo2.png" alt="AI Promotion">
             </div>
         </section>
 
         <section class="early-section">
             <div class="container">
                 <h2>Built together with early users</h2>
-                <p>Jobsy is currently in early access and evolving quickly. We are actively improving the product and regularly adding new features. Early users help shape Jobsy by sharing feedback and ideas that make the platform better for job seekers.</p>
+                <p>Jobsy is currently in early access and evolving quickly. We are actively improving the product and regularly adding new features. Early users help shape Jobsy by sharing feedback and ideas that help make the platform better for job seekers.</p>
             </div>
         </section>
 
@@ -741,23 +791,41 @@
             </div>
         </section>
 
-        <section class="finland-section container">
-            <h2>Starting with Finland</h2>
-            <p>Jobsy currently supports job applications in Finland. Our long-term goal is to expand across Europe, helping candidates apply to companies in multiple countries and languages.</p>
+        <section class="finland-section">
+            <div class="container">
+                <h2>Starting with Finland</h2>
+                <p>Jobsy currently supports job applications in Finland. Our long-term goal is to expand across Europe, helping candidates apply to companies in multiple countries and languages.</p>
+            </div>
         </section>
 
-        <section class="privacy-section container">
-            <h2>Your privacy comes first</h2>
-            <p>Jobsy is designed to respect your privacy. Applications are sent through your own email account, and replies go directly to your inbox. Jobsy cannot read your conversations, and the system is designed to be fully GDPR compliant.</p>
+        <section class="privacy-section">
+            <div class="container">
+                <h2>Your privacy comes first</h2>
+                <p>Jobsy is designed to respect your privacy. Applications are sent through your own email account, and replies go directly to your inbox. Jobsy cannot read your conversations, and the system is designed to be fully GDPR compliant.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Start your job search today</h2>
+                <p>Create your CV or upload an existing one and discover companies that match your experience.</p>
+                <a href="/app" class="btn">Start free →</a>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <h2>Ready to Let AI Work for You?</h2>
-            <p>Join thousands of job seekers in Finland and across the EU.</p>
-            <a href="/app" class="btn btn-white">Start Free Today →</a>
-            <p style="margin-top: 2rem; font-size: 0.8rem; color: #555;">No credit card required • Start with free profile • Cancel anytime</p>
+            <div class="footer-brand">
+                <h2>Jobsy</h2>
+                <p class="footer-tagline">AI-powered job search assistant</p>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p class="disclaimer">No credit card required • Start with free profile • Cancel anytime</p>
         </div>
     </footer>
 
