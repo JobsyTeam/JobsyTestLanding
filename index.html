@@ -619,6 +619,15 @@
             display: block;
         }
 
+        .lang-select {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background: white;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .why-row, .why-row:nth-child(even) {
@@ -653,6 +662,15 @@
                 <img src="favicon.png" alt="Jobsy" style="height: 32px; width: auto; vertical-align: middle;"> Jobsy
             </a>
             <div class="nav-links">
+                <select id="lang-select" class="lang-select" onchange="setLang(this.value)">
+                    <option value="en">English</option>
+                    <option value="fi">Suomi</option>
+                    <option value="sv">Svenska</option>
+                    <option value="no">Norsk</option>
+                    <option value="et">Eesti</option>
+                    <option value="uk">Українська</option>
+                    <option value="ru">Русский</option>
+                </select>
                 <a href="/app" class="btn-white" style="padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 0.8rem;">Sign In</a>
             </div>
         </div>
@@ -828,6 +846,467 @@
             <p class="disclaimer">No credit card required • Start with free profile • Cancel anytime</p>
         </div>
     </footer>
+    <script>
+    const translations = {
+        en: {
+            hero_h1: "Find a job faster with AI",
+            hero_p: "Jobsy helps you discover companies that match your experience and automate the job application process.",
+            hero_sub: "Upload your CV. Jobsy finds companies that match your profile.",
+            hero_tagline: "See which companies your experience could match — in seconds.",
+            hero_sub2: "Create a CV with AI or upload your existing one and start exploring opportunities in minutes.",
+            btn_start: "Start free →",
+            hero_footer: "Free CV creation • AI company matching • Get started in seconds",
+            why_h2: "Helping job seekers discover new opportunities",
+            why_subtitle: "Jobsy is designed to make job searching simpler and more efficient by combining AI-powered tools with automation.",
+            why_1_title: "AI-powered CV creation",
+            why_1: "If you don't have a CV yet, Jobsy can generate one for you using AI. Just answer a few questions and your resume will be ready in minutes.",
+            why_2_title: "Smart company matching",
+            why_2: "After analyzing your CV, Jobsy finds companies where your skills and experience could be a strong match.",
+            why_3_title: "Automated job applications",
+            why_3: "Jobsy can automatically send 1000–1200 job applications per month while respecting safe sending limits.",
+            steps_h2: "How Jobsy works",
+            step_1_title: "Upload or create your CV",
+            step_1: "Upload your existing CV or create one with AI in minutes.",
+            step_2_title: "Discover matching companies",
+            step_2: "Jobsy analyzes your experience and finds companies where your profile could be a strong match.",
+            step_3_title: "Activate Jobsy Active",
+            step_3: "Let Jobsy translate your CV, generate cover letters and automatically send job applications for you.",
+            active_h2: "Jobsy Active",
+            active_subtitle: "Jobsy Active automates the most time-consuming parts of job searching. Instead of manually sending applications every day, Jobsy can handle the process for you.",
+            active_1_title: "CV translation for employers",
+            active_1: "Jobsy automatically translates your CV into the employer's language, making it easier to apply to companies in different countries without rewriting your resume.",
+            active_2_title: "AI-generated cover letters",
+            active_2: "Jobsy creates a unique cover letter for every company. Each message keeps the same meaning but is slightly different to avoid spam filters and increase the chances of a response.",
+            active_3_title: "Applications sent from your own email",
+            active_3: "Jobsy connects to your email using an app password and sends applications through your mailbox.",
+            active_3_li1: "Replies go directly to you.",
+            active_3_li2: "Jobsy cannot access your conversations.",
+            active_3_li3: "Your communication remains private.",
+            active_3_li4: "The system is fully GDPR-friendly.",
+            active_4_title: "Automatic job applications",
+            active_4: "Jobsy can automatically send 1000–1200 job applications per month while respecting safe sending limits. This allows you to reach far more companies than traditional job searching.",
+            early_h2: "Built together with early users",
+            early_p: "Jobsy is currently in early access and evolving quickly. We are actively improving the product and regularly adding new features. Early users help shape Jobsy by sharing feedback and ideas that help make the platform better for job seekers.",
+            pricing_h2: "Early access pricing",
+            pricing_amount: "€3.90",
+            pricing_amount_span: "/ month",
+            pricing_p1: "During early access, Jobsy Active costs €3.90 per month. This price helps cover the infrastructure required to run the service.",
+            pricing_p2: "Users who join during early access and help improve Jobsy with feedback will keep this price permanently, even as the platform grows and new features are added.",
+            fin_h2: "Starting with Finland",
+            fin_p: "Jobsy currently supports job applications in Finland. Our long-term goal is to expand across Europe, helping candidates apply to companies in multiple countries and languages.",
+            priv_h2: "Your privacy comes first",
+            priv_p: "Jobsy is designed to respect your privacy. Applications are sent through your own email account, and replies go directly to your inbox. Jobsy cannot read your conversations, and the system is designed to be fully GDPR compliant.",
+            cta_h2: "Start your job search today",
+            cta_p: "Create your CV or upload an existing one and discover companies that match your experience.",
+            footer_brand: "Jobsy",
+            footer_tagline: "AI-powered job search assistant",
+            signin: "Sign In"
+        },
+        fi: {
+            hero_h1: "Löydä työ nopeammin tekoälyn avulla",
+            hero_p: "Jobsy auttaa sinua löytämään yritykset, jotka sopivat kokemukseesi, ja automatisoi työnhakuprosessin.",
+            hero_sub: "Lataa CV. Jobsy löytää profiiliisi sopivat yritykset.",
+            hero_tagline: "Näe yritykset, joihin kokemuksesi voisi sopia - sekunneissa.",
+            hero_sub2: "Luo CV tekoälyllä tai lataa olemassa oleva ja aloita mahdollisuuksien tutkiminen minuuteissa.",
+            btn_start: "Aloita ilmaiseksi →",
+            hero_footer: "Ilmainen CV:n luonti • Yritysten tekoälyhaku • Aloita sekunneissa",
+            why_h2: "Autamme työnhakijoita löytämään uusia mahdollisuuksia",
+            why_subtitle: "Jobsy on suunniteltu tekemään työnhausta yksinkertaisempaa ja tehokkaampaa yhdistämällä tekoälypohjaiset työkalut automaatioon.",
+            why_1_title: "Tekoälyn avulla luotu CV",
+            why_1: "Jos sinulla ei vielä ole CV:tä, Jobsy voi luoda sellaisen tekoälyllä. Vastaa muutamaan kysymykseen, niin ansioluettelosi on valmis minuuteissa.",
+            why_2_title: "Älykkäät yritysottelut",
+            why_2: "Analysoimalla CV:si Jobsy löytää yritykset, joissa taitosi ja kokemuksesi voisivat vastata hyvin.",
+            why_3_title: "Automatisoitujen työhakemusten lähettäminen",
+            why_3: "Jobsy voi automaattisesti lähettää 1000–1200 työhakemusta kuukaudessa noudattaen turvallisia lähetysrajoja.",
+            steps_h2: "Miten Jobsy toimii",
+            step_1_title: "Lataa tai luo CV",
+            step_1: "Lataa olemassa oleva CV tai luo sellainen tekoälyllä minuuteissa.",
+            step_2_title: "Löydä sopivat yritykset",
+            step_2: "Jobsy analysoi kokemuksesi ja löytää yritykset, joihin profiilisi voisi sopia hyvin.",
+            step_3_title: "Aktivoi Jobsy Active",
+            step_3: "Anna Jobsyn kääntää CV:si, luoda työhakemuskirjeitä ja lähettää työhakemuksia automaattisesti puolestasi.",
+            active_h2: "Jobsy Active",
+            active_subtitle: "Jobsy Active automatisoi työnhaun aikaa vievimmät osat. Sen sijaan, että lähettäisit hakemuksia manuaalisesti joka päivä, Jobsy voi hoitaa prosessin puolestasi.",
+            active_1_title: "CV:n kääntäminen työnantajille",
+            active_1: "Jobsy kääntää CV:si automaattisesti työnantajan kielelle, mikä helpottaa hakemista eri maihin ilman ansioluettelon uudelleenkirjoittamista.",
+            active_2_title: "Tekoälyn luomat työhakemuskirjeet",
+            active_2: "Jobsy luo jokaiselle yritykselle ainutlaatuisen työhakemuskirjeen. Jokainen viesti säilyttää saman merkityksen mutta on hieman erilainen välttääkseen roskapostisuodattimet ja lisätäkseen vastausmahdollisuuksia.",
+            active_3_title: "Hakemukset omasta sähköpostistasi",
+            active_3: "Jobsy yhdistää sähköpostiisi sovellussalasanalla ja lähettää hakemukset postilaatikkosi kautta.",
+            active_3_li1: "Vastaukset tulevat suoraan sinulle.",
+            active_3_li2: "Jobsy ei pääse keskusteluihisi käsiksi.",
+            active_3_li3: "Viestintäsi pysyy yksityisenä.",
+            active_3_li4: "Järjestelmä on täysin GDPR-yhteensopiva.",
+            active_4_title: "Automaattiset työhakemukset",
+            active_4: "Jobsy voi automaattisesti lähettää 1000–1200 työhakemusta kuukaudessa noudattaen turvallisia lähetysrajoja. Tämä mahdollistaa perinteistä työnhakua huomattavasti useampien yritysten tavoittamisen.",
+            early_h2: "Rakennetaan yhdessä ensimmäisten käyttäjien kanssa",
+            early_p: "Jobsy on tällä hetkellä varhaisessa käyttöönottovaiheessa ja kehittyy nopeasti. Parannamme aktiivisesti tuotetta ja lisäämme säännöllisesti uusia ominaisuuksia. Varhaiset käyttäjät auttavat muokkaamaan Jobsytä jakamalla palautetta ja ideoita, jotka tekevät alustasta paremman työnhakijoille.",
+            pricing_h2: "Varhaisen käytön hinnoittelu",
+            pricing_amount: "3,90 €",
+            pricing_amount_span: "/ kk",
+            pricing_p1: "Varhaisen käytön aikana Jobsy Active maksaa 3,90 € kuukaudessa. Tämä hinta auttaa kattamaan palvelun vaatiman infrastruktuurin.",
+            pricing_p2: "Käyttäjät, jotka liittyvät varhaisen käytön aikana ja auttavat parantamaan Jobsytä palautteella, pitävät tämän hinnan pysyvästi, vaikka alusta kasvaa ja uusia ominaisuuksia lisätään.",
+            fin_h2: "Aloittamisesta Suomesta",
+            fin_p: "Jobsy tukee tällä hetkellä työhakemuksia Suomessa. Pitkäaikaisena tavoitteenamme on laajentua ympäri Eurooppaa auttaen ehdokkaita hakemaan yrityksiin useissa maissa ja kielillä.",
+            priv_h2: "Yksityisyytesi on etusijalla",
+            priv_p: "Jobsy on suunniteltu kunnioittamaan yksityisyyttäsi. Hakemukset lähetetään omasta sähköpostitilistäsi, ja vastaukset tulevat suoraan postilaatikkoosi. Jobsy ei voi lukea keskusteluja, ja järjestelmä on suunniteltu täysin GDPR-yhteensopivaksi.",
+            cta_h2: "Aloita työnhaku tänään",
+            cta_p: "Luo CV tai lataa olemassa oleva ja löydä kokemukseesi sopivat yritykset.",
+            footer_brand: "Jobsy",
+            footer_tagline: "Tekoälyavusteinen työnhakuavustaja",
+            signin: "Kirjaudu"
+        },
+        sv: {
+            hero_h1: "Hitta ett jobb snabbare med AI",
+            hero_p: "Jobsy hjälper dig att upptäcka företag som matchar din erfarenhet och automatiserar jobbansökningsprocessen.",
+            hero_sub: "Ladda upp ditt CV. Jobsy hittar företag som matchar din profil.",
+            hero_tagline: "Se vilka företag din erfarenhet kan matcha - på några sekunder.",
+            hero_sub2: "Skapa ett CV med AI eller ladda upp ditt befintliga och börja utforska möjligheter på några minuter.",
+            btn_start: "Starta gratis →",
+            hero_footer: "Gratis CV-skapande • AI-företagsmatchning • Kom ig��ng p�� några sekunder",
+            why_h2: "Hjälper arbetssökande att upptäcka nya möjligheter",
+            why_subtitle: "Jobsy är utformat för att göra jobbsökningen enklare och effektivare genom att kombinera AI-verktyg med automation.",
+            why_1_title: "AI-genererat CV",
+            why_1: "Om du inte har ett CV ännu kan Jobsy generera ett åt dig med AI. Svara på några frågor så är ditt CV klart på några minuter.",
+            why_2_title: "Smart företagsmatchning",
+            why_2: "Efter att ha analyserat ditt CV hittar Jobsy företag där dina färdigheter och erfarenheter kan vara en stark matchning.",
+            why_3_title: "Automatiserade jobbansökningar",
+            why_3: "Jobsy kan automatiskt skicka 1000-1200 jobbansökningar per månad med säkra sändningsgränser.",
+            steps_h2: "Hur Jobsy fungerar",
+            step_1_title: "Ladda upp eller skapa ditt CV",
+            step_1: "Ladda upp ditt befintliga CV eller skapa ett med AI på några minuter.",
+            step_2_title: "Upptäck matchande företag",
+            step_2: "Jobsy analyserar din erfarenhet och hittar företag där din profil kan vara en stark matchning.",
+            step_3_title: "Aktivera Jobsy Active",
+            step_3: "Låt Jobsy översätta ditt CV, generera medföljande brev och automatiskt skicka jobbansökningar åt dig.",
+            active_h2: "Jobsy Active",
+            active_subtitle: "Jobsy Active automatiserar de mest tidskrävande delarna av jobbsökningen. Istället för att manuellt skicka ansökningar varje dag kan Jobsy hantera processen åt dig.",
+            active_1_title: "CV-översättning för arbetsgivare",
+            active_1: "Jobsy översätter automatiskt ditt CV till arbetsgivarens språk, vilket gör det lättare att söka till företag i olika länder utan att skriva om CV:t.",
+            active_2_title: "AI-genererade följebrev",
+            active_2: "Jobsy skapar ett unikt följebrev för varje företag. Varje meddelande behåller samma betydelse men är något annorlunda för att undvika spamfilter och öka chanserna till svar.",
+            active_3_title: "Ansökningar skickas från din egen e-post",
+            active_3: "Jobsy ansluter till din e-post med ett applösenord och skickar ansökningar genom din brevlåda.",
+            active_3_li1: "Svar går direkt till dig.",
+            active_3_li2: "Jobsy kan inte komma åt dina konversationer.",
+            active_3_li3: "Din kommunikation förblir privat.",
+            active_3_li4: "Systemet är fullt GDPR-vänligt.",
+            active_4_title: "Automatiska jobbansökningar",
+            active_4: "Jobsy kan automatiskt skicka 1000-1200 jobbansökningar per månad med säkra sändningsgränser. Detta låter dig nå betydligt fler företag än traditionell jobbsökning.",
+            early_h2: "Byggs tillsammans med tidiga användare",
+            early_p: "Jobsy är för närvarande i tidig åtkomst och utvecklas snabbt. Vi förbättrar aktivt produkten och lägger regelbundet till nya funktioner. Tidiga användare hjälper att forma Jobsy genom att dela feedback och idéer som gör plattformen bättre för arbetssökande.",
+            pricing_h2: "Prissättning för tidig åtkomst",
+            pricing_amount: "3,90 €",
+            pricing_amount_span: "/ månad",
+            pricing_p1: "Under tidig åtkomst kostar Jobsy Active 3,90 € per månad. Detta pris hjälper till att täcka den infrastruktur som krävs för att driva tjänsten.",
+            pricing_p2: "Användare som går med under tidig åtkomst och hjälper att förbättra Jobsy med feedback behåller detta pris permanent, även när plattformen växer och nya funktioner läggs till.",
+            fin_h2: "Börjar med Finland",
+            fin_p: "Jobsy stöder för närvarande jobbansökningar i Finland. Vårt långsiktiga mål är att expandera över Europa och hjälpa kandidater att söka till företag i flera länder och språk.",
+            priv_h2: "Din integritet kommer först",
+            priv_p: "Jobsy är utformat för att respektera din integritet. Ansökningar skickas via ditt eget e-postkonto och svar går direkt till din inkorg. Jobsy kan inte läsa dina konversationer och systemet är utformat för att vara fullt GDPR-kompatibelt.",
+            cta_h2: "Starta din jobbsökning idag",
+            cta_p: "Skapa ditt CV eller ladda upp ett befintligt och upptäck företag som matchar din erfarenhet.",
+            footer_brand: "Jobsy",
+            footer_tagline: "AI-driven arbetssökningsassistent",
+            signin: "Logga in"
+        },
+        no: {
+            hero_h1: "Finn en jobb raskere med AI",
+            hero_p: "Jobsy hjelper deg med å oppdage bedrifter som matcher erfaringen din og automatiserer jobbsøkningsprosessen.",
+            hero_sub: "Last opp CV-en din. Jobsy finner bedrifter som matcher profilen din.",
+            hero_tagline: "Se hvilke bedrifter erfaringen din kan matche - på sekunder.",
+            hero_sub2: "Lag en CV med AI eller last opp din eksisterende og begynn å utforske muligheter på minutter.",
+            btn_start: "Start gratis →",
+            hero_footer: "Gratis CV-laging • AI-bedriftsmatching • Kom i gang på sekunder",
+            why_h2: "Hjelper jobbsøkere med å oppdage nye muligheter",
+            why_subtitle: "Jobsy er designet for å gjøre jobbsøking enklere og mer effektiv ved å kombinere AI-drevne verktøy med automatisering.",
+            why_1_title: "AI-drevet CV-laging",
+            why_1: "Hvis du ikke har en CV ennå, kan Jobsy generere en for deg med AI. Bare svar på noen få spørsmål, så er CV-en din klar på minutter.",
+            why_2_title: "Smart bedriftsmatching",
+            why_2: "Etter å ha analysert CV-en din, finner Jobsy bedrifter der ferdighetene og erfaringen din kan være et sterkt match.",
+            why_3_title: "Automatiserte jobbsøknader",
+            why_3: "Jobsy kan automatisk sende 1000-1200 jobbsøknader per måned mens du respektere trygge sendingsgrenser.",
+            steps_h2: "Hvordan Jobsy fungerer",
+            step_1_title: "Last opp eller lag din CV",
+            step_1: "Last opp din eksisterende CV eller lag en med AI på minutter.",
+            step_2_title: "Oppdag matchende bedrifter",
+            step_2: "Jobsy analyserer erfaringen din og finner bedrifter der profilen din kan være et sterkt match.",
+            step_3_title: "Aktiver Jobsy Active",
+            step_3: "La Jobsy oversette CV-en din, generere søknadsbrev og automatisk sende jobbsøknader for deg.",
+            active_h2: "Jobsy Active",
+            active_subtitle: "Jobsy Active automatiserer de mest tidkrevende delene av jobbsøking. I stedet for å manuelt sende søknader hver dag, kan Jobsy håndtere prosessen for deg.",
+            active_1_title: "CV-oversetting for arbeidsgivere",
+            active_1: "Jobsy oversetter automatisk CV-en din til arbeidsgivers språk, noe som gjør det enklere å søke til bedrifter i forskjellige land uten å skrive om CV-en.",
+            active_2_title: "AI-genererte søknadsbrev",
+            active_2: "Jobsy lager et unikt søknadsbrev for hver bedrift. Hver melding holder samme betydning men er litt annerledes for å unngå spamfiltre og øke sjansene for svar.",
+            active_3_title: "Søknader sendt fra din egen e-post",
+            active_3: "Jobsy kobler til e-posten din ved hjelp av et app-passord og sender søknader gjennom din postkasse.",
+            active_3_li1: "Svar går direkte til deg.",
+            active_3_li2: "Jobsy kan ikke få tilgang til samtalene dine.",
+            active_3_li3: "Kommunikasjonen din forblir privat.",
+            active_3_li4: "Systemet er fullt GDPR-vennlig.",
+            active_4_title: "Automatiserte jobbsøknader",
+            active_4: "Jobsy kan automatisk sende 1000-1200 jobbsøknader per måned mens du respekterer trygge sendingsgrenser. Dette lar deg nå langt flere bedrifter enn tradisjonell jobbsøking.",
+            early_h2: "Bygget sammen med tidlige brukere",
+            early_p: "Jobsy er for øyeblikket i tidlig tilgang og utvikler seg raskt. Vi forbedrer aktivt produktet og legger regelmessig til nye funksjoner. Tidlige brukere hjelper med å forme Jobsy ved å dele feedback og idéer som gjør plattformen bedre for jobbsøkere.",
+            pricing_h2: "Prising for tidlig tilgang",
+            pricing_amount: "3,90 €",
+            pricing_amount_span: "/ måned",
+            pricing_p1: "Under tidlig tilgang koster Jobsy Active 3,90 € per måned. Denne prisen bidrar til å dekke infrastrukturen som kreves for å drifte tjenesten.",
+            pricing_p2: "Brukere som blir med under tidlig tilgang og hjelper til med å forbedre Jobsy med feedback vil beholde denne prisen permanent, selv når plattformen vokser og nye funksjoner legges til.",
+            fin_h2: "Starter med Finland",
+            fin_p: "Jobsy støtter for øyeblikket jobbsøknader i Finland. Vårt langsiktige mål er å utvide over hele Europa, og hjelpe kandidater til å søke til bedrifter i flere land og språk.",
+            priv_h2: "Din personvern kommer først",
+            priv_p: "Jobsy er designet for å respektere personvernet ditt. Søknader sendes via din egen e-postkonto, og svar går direkte til innboksen din. Jobsy kan ikke lese samtalene dine, og systemet er designet for å være fullt GDPR-kompatibelt.",
+            cta_h2: "Start jobbsøkingen din i dag",
+            cta_p: "Lag din CV eller last opp en eksisterende og oppdag bedrifter som matcher erfaringen din.",
+            footer_brand: "Jobsy",
+            footer_tagline: "AI-drevet jobbsøkningsassistent",
+            signin: "Logg inn"
+        },
+        et: {
+            hero_h1: "Leia tööd kiiremini AI abil",
+            hero_p: "Jobsy aitab teil leida ettevõtteid, mis sobivad teie kogemusega, ja automatiseerib tööotsimise protsessi.",
+            hero_sub: "Laadige üles oma CV. Jobsy leiab teie profiiliga sobivad ettevõtted.",
+            hero_tagline: "Vaadake, millistesse ettevõtetesse teie kogemus võiks sobida – sekunditega.",
+            hero_sub2: "Looge CV AI abil või laadige üles olemasolev ja alustage võimaluste uurimist minutitega.",
+            btn_start: "Aluta tasuta →",
+            hero_footer: "Tasuta CV loomine • AI ettevõtte sobitamine • Alusta sekunditega",
+            why_h2: "Aitame tööotsijatel avastada uusi võimalusi",
+            why_subtitle: "Jobsy on mõeldud tööotsimise lihtsamaks ja tõhusamaks muutmiseks, ühendades AI-põhised tööriistad automatiseerimisega.",
+            why_1_title: "AI-põhine CV loomine",
+            why_1: "Kui teil veel CV-d pole, saab Jobsy luua selle teile AI abil. Vastake paarile küsimusele ja teie CV on valmis minutitega.",
+            why_2_title: "Nutikas ettevõtete sobitamine",
+            why_2: "Analüüsinud teie CV-d, leiab Jobsy ettevõtted, kus teie oskused ja kogemused võiksid tugevalt sobida.",
+            why_3_title: "Automatiseeritud töötaotlused",
+            why_3: "Jobsy saab automaatselt saata 1000-1200 töötaotlust kuus, järgides ohutuid saatmispiiranguid.",
+            steps_h2: "Kuidas Jobsy töötab",
+            step_1_title: "Laadige üles või looge oma CV",
+            step_1: "Laadige üles olemasolev CV või looge AI abil minutitega.",
+            step_2_title: "Avastage sobivad ettevõtted",
+            step_2: "Jobsy analüüseb teie kogemusi ja leiab ettevõtted, kuhu teie profiil võiks tugevalt sobida.",
+            step_3_title: "Aktiveerige Jobsy Active",
+            step_3: "Laske Jobstyl tõlkida teie CV, koostada kaaskirju ja automaatselt saata töötaotlusi teie eest.",
+            active_h2: "Jobsy Active",
+            active_subtitle: "Jobsy Active automatiseerib tööotsimise kõige aeganõudvamad osad. Selle asemel, et saata taotlusi käsitsi iga päev, saab Jobsy selle protsessi teie eest ära teha.",
+            active_1_title: "Tööandjatele CV tõlkimine",
+            active_1: "Jobsy tõlib teie CV automaatselt tööandja keelde, muutes lihtsamaks ettevõtetesse erinevates riikides kandideerimise ilma oma CV-d ümber kirjutamata.",
+            active_2_title: "AI loodud kaaskirjad",
+            active_2: "Jobsy loob igale ettevõttele ainulaadse kaaskirja. Iga sõnum säilitab sama tähenduse, kuid on veidi erinev, et vältida rämpsufiltre ja suurendada vastuse saamise võimalusi.",
+            active_3_title: "Taotlused saadetakse teie enda e-kirjast",
+            active_3: "Jobsy ühendub teie e-kirjaga rakenduseparooli abil ja saadab taotlused läbi teie postkasti.",
+            active_3_li1: "Vastused lähevad otse teile.",
+            active_3_li2: "Jobsy ei pääse teie vestlustele juurde.",
+            active_3_li3: "Teie suhtlus jääb privaatseks.",
+            active_3_li4: " Süsteem on täielikult GDPR-ühilduv.",
+            active_4_title: "Automatiseeritud töötaotlused",
+            active_4: "Jobsy saab automaatselt saata 1000-1200 töötaotlust kuus, järgides ohutuid saatmispiiranguid. See võimaldab teil jõua oluliselt rohkematesse ettevõtetesse kui traditsiooniline tööotsimine.",
+            early_h2: "Ehitatakse koos varaste kasutajatega",
+            early_p: "Jobsy on hetkel varajases juurdepääsus ja areneb kiiresti. Parandame aktiivselt toodet ja lisame regulaarselt uusi funktsioone. Varajased kasutajad aitavad Jobsyt kujundada, jagades tagasisidet ja ideid, mis muudavad platvormi tööotsijatele paremaks.",
+            pricing_h2: "Varajase juurdepääsu hinnakujundus",
+            pricing_amount: "3,90 €",
+            pricing_amount_span: "/ kuu",
+            pricing_p1: "Varajase juurdepääsu ajal maksab Jobsy Active 3,90 € kuus. See hind aitab katta teenuse pakkumiseks vajalikku infrastruktuuri.",
+            pricing_p2: "Kasutajad, kes liituvad varajase juurdepääsu ajal ja aitavad Jobsyt tagasisidega parandada, hoiavad selle hinna alati, isegi kui platvorm kasvab ja lisatakse uusi funktsioone.",
+            fin_h2: "Alustamisest Soomest",
+            fin_p: "Jobsy toetab hetkel töötaotlusi Soomes. Meie pikaajaline eesmärk on laieneda üle Euroopa, aidates kandidaatidel kandideerida ettevõtetesse erinevates riikides ja keeltes.",
+            priv_h2: "Teie privaatsus on esikohal",
+            priv_p: "Jobsy on loodud austama teie privaatsust. Taotlused saadetakse läbi teie enda e-posti konto ja vastused lähevad otse teie postkasti. Jobsy ei saa lugeda teie vestlusi ja süsteem on loodud olema täielikult GDPR-ühilduv.",
+            cta_h2: "Alustage oma tööotsimist täna",
+            cta_p: "Looge oma CV või laadige üles olemasolev ja avastage teie kogemusele sobivad ettevõtted.",
+            footer_brand: "Jobsy",
+            footer_tagline: "AI-põhine tööotsimise abiline",
+            signin: "Logi sisse"
+        },
+        uk: {
+            hero_h1: "Знайдіть роботу швидше з AI",
+            hero_p: "Jobsy допомагає вам знаходити компанії, що відповідають вашому досвіду, ��а автоматизує процес пошуку роботи.",
+            hero_sub: "Завантажте своє резюме. Jobsy знаходить компанії, що підходять вашому профілю.",
+            hero_tagline: "Подивіться, на які компанії може підійти ваш досвід — за секунди.",
+            hero_sub2: "Створіть резюме за допомогою AI або завантажте існуюче й почніть досліджувати можливості за кілька хвилин.",
+            btn_start: "Почати безкоштовно →",
+            hero_footer: "Безкоштовне створення резюме • AI-пошук компаній • Початок за секунди",
+            why_h2: "Допомагаємо шукачам роботи відкривати нові можливості",
+            why_subtitle: "Jobsy створено, щоб зробити пошук роботи простішим і ефективнішим завдяки поєднанню AI-інструментів з автоматизацією.",
+            why_1_title: "Створення резюме за допомогою AI",
+            why_1: "Якщо у вас ще немає резюме, Jobsy може створити його за допомогою AI. Відповість на кілька питань, і ваше резюме буде готове за кілька хвилин.",
+            why_2_title: "Розумний підбір компаній",
+            why_2: "Проаналізувавши ваше резюме, Jobsy знаходить компанії, де ваші навички та досвід можуть бути найкращим збігом.",
+            why_3_title: "Автоматизовані відправки заявок",
+            why_3: "Jobsy може автоматично відправляти 1000-1200 заявок на місяць, дотримуючись безпечних лімітів відправки.",
+            steps_h2: "Як працює Jobsy",
+            step_1_title: "Завантажте або створіть резюме",
+            step_1: "Завантажте існуюче резюме або створіть нове за допомогою AI за кілька хвилин.",
+            step_2_title: "Знаходьте відповідні компанії",
+            step_2: "Jobsy аналізує ваш досвід і знаходить компанії, де ваш профіль може бути найкращим збігом.",
+            step_3_title: "Активуйте Jobsy Active",
+            step_3: "Дозвольте Jobsy перекласти ваше резюме, створити супровідні листи та автоматично відправляти заявки на роботу за вас.",
+            active_h2: "Jobsy Active",
+            active_subtitle: "Jobsy Active автоматизує найбільш трудомісткі частини пошуку роботи. Замість того, щоб вручну відправляти заявки кожного дня, Jobsy може обробляти процес замість вас.",
+            active_1_title: "Переклад резюме для роботодавців",
+            active_1: "Jobsy автоматично перекладає ваше резюме мовою роботодавця, що полегшує подання заявок у компанії в інших країнах без переписування резюме.",
+            active_2_title: "AI-створені супровідні листи",
+            active_2: "Jobsy створює унікальн��й супровідний лист для кожної компанії. Кожне повідомлення зберігає той самий зміст, але трохи відрізняється, щоб уникнути спам-фільтрів і збільшити шанси на відповідь.",
+            active_3_title: "Заявки відправляються з вашої пошти",
+            active_3: "Jobsy підключається до вашої пошти за допомогою пароля додатку та відправляє заявки через вашу поштову скриньку.",
+            active_3_li1: "Відповіді приходять безпосередньо вам.",
+            active_3_li2: "Jobsy не має доступу до ваших листувань.",
+            active_3_li3: "Ваше листування залишається приватним.",
+            active_3_li4: "Система повністю відповідає GDPR.",
+            active_4_title: "Автоматичні заявки на роботу",
+            active_4: "Jobsy може автоматично відправляти 1000-1200 заявок на місяць, дотримуючись безпечних лімітів відправки. Це дозволяє вам зв'язатися з набагато більшою кількістю компаній, ніж традиційний пошук роботи.",
+            early_h2: "Створюється разом з ранніми користувачами",
+            early_p: "Jobsy наразі перебуває на етапі раннього доступу та швидко розвивається. Ми активно вдосконалюємо продукт і регулярно додаємо нові функції. Ранні користувачі допомагають формувати Jobsy, ділячись відгуками та ідеями, які роблять платформу кращою для шукачів роботи.",
+            pricing_h2: "Ціноутворення раннього доступу",
+            pricing_amount: "3,90 €",
+            pricing_amount_span: "/ місяць",
+            pricing_p1: "На етапі раннього доступу Jobsy Active коштує 3,90 € на місяць. Ця ціна допомагає покрити інфраструктуру, необхідну для роботи сервісу.",
+            pricing_p2: "Користувачі, які приєднуються на етапі раннього доступу та допомагають покращувати Jobsy відгуками, збережуть цю ціну назавжди, навіть коли платформа зростатиме й додаватимуться нові функції.",
+            fin_h2: "Початок з Фінляндії",
+            fin_p: "Jobsy наразі підтримує заявки на роботу у Фінляндії. Нашим довгостроковим є бажання розширитися по всій Європі, допомагаючи кандидатам подавати заявки до компаній у різних країнах та мовами.",
+            priv_h2: "Ваша конфіденційність на першому місці",
+            priv_p: "Jobsy створено з повагою до вашої конфіденційності. Заявки відправляються з вашого власного поштового акаунту, а відповіді надходять безпосередньо у вашу скриньку. Jobsy не може читати ваші листування, і система повністю відповідає GDPR.",
+            cta_h2: "Почніть ��ош��к роботи сьогодні",
+            cta_p: "Створіть резюме або завантажте існуюче й відкрийте компанії, що відповідають вашому досвіду.",
+            footer_brand: "Jobsy",
+            footer_tagline: "AI-асистент з пошуку роботи",
+            signin: "Увійти"
+        },
+        ru: {
+            hero_h1: "Найди работу быстрее с AI",
+            hero_p: "Jobsy помогает находить компании, соответствующие вашему опыту, и автоматизирует процесс поиска работы.",
+            hero_sub: "Загрузите своё резюме. Jobsy находит компании, подходящие вашему профилю.",
+            hero_tagline: "Посмотрите, на какие компании может подойти ваш опыт — за секунды.",
+            hero_sub2: "Создайте резюме с помощью AI или загрузите существующее и начните исследовать возможности за минуты.",
+            btn_start: "Начать бесплатно →",
+            hero_footer: "Бесплатное создание резюме • AI-подбор компаний • Начало за секунды",
+            why_h2: "Помогаем соискателям находить новые возможности",
+            why_subtitle: "Jobsy создан, чтобы сделать поиск работы проще и эффективнее благодаря сочетанию AI-инструментов с автоматизацией.",
+            why_1_title: "Создание резюме с помощью AI",
+            why_1: "Если у вас ещё нет резюме, Jobsy может создать его с помощью AI. Ответьте на несколько вопросов, и ваше резюме будет готово за минуты.",
+            why_2_title: "Умный подбор компаний",
+            why_2: "Проанализировав ваше резюме, Jobsy находит компании, где ваши навыки и опыт могут быть лучшим совпадением.",
+            why_3_title: "Автоматизированные отправки заявок",
+            why_3: "Jobsy может автоматически отправлять 1000-1200 заявок в месяц, соблюдая безопасные лимиты отправки.",
+            steps_h2: "Как работает Jobsy",
+            step_1_title: "Загрузите или создайте резюме",
+            step_1: "Загрузите существующее резюме или создайте новое с помощью AI за минуты.",
+            step_2_title: "Находите подходящие компании",
+            step_2: "Jobsy анализирует ваш опыт и находит компании, где ваш профиль может быть лучшим совпадением.",
+            step_3_title: "Активируйте Jobsy Active",
+            step_3: "Позвольте Jobsy перевести ваше резюме, создать сопроводительные письма и автоматически отправлять заявки на работу за вас.",
+            active_h2: "Jobsy Active",
+            active_subtitle: "Jobsy Auto автоматизирует наиболее трудоёмкие части поиска работы. Вместо того, чтобы вручную отправлять заявки каждый день, Jobsy может обрабатывать процесс вместо вас.",
+            active_1_title: "Перевод резюме для работодателей",
+            active_1: "Jobsy автоматически переводит ваше резюме на язык работодателя, что упрощает подачу заявок в компании в других странах без переписывания резюме.",
+            active_2_title: "AI-созданные сопроводительные письма",
+            active_2: "Jobsy создаёт уникальное сопроводительное письмо для каждой компании. Каждое сообщение сохраняет тот же смысл, но немного отличается, чтобы избежать спам-фильтров и увеличить шансы на ответ.",
+            active_3_title: "Заявки отправляются с вашей почты",
+            active_3: "Jobsy подключается к вашей почте с помощью пароля приложения и отправляет заявки через ваш почтовый ящик.",
+            active_3_li1: "Ответы приходят непосредственно вам.",
+            active_3_li2: "Jobsy не имеет доступа к вашим перепискам.",
+            active_3_li3: "Ваша переписка остаётся приватной.",
+            active_3_li4: "Система полностью соответствует GDPR.",
+            active_4_title: "Автоматические заявки на работу",
+            active_4: "Jobsy может автоматически отправлять 1000-1200 заявок в месяц, соблюдая безопасные лимиты отправки. Это позволяет связаться с гораздо большим количеством компаний, чем традиционный поиск работы.",
+            early_h2: "Создаётся вместе с ранними пользователями",
+            early_p: "Jobsy сейчас на этапе раннего доступа и быстро развивается. Мы активно ул��чшаем продукт и регулярно добавляем новые функции. Ранние пользователи помогают формировать Jobsy, делясь отзывами и идеями, которые делают платформу лучше для соискателей.",
+            pricing_h2: "Ценообразование раннего доступа",
+            pricing_amount: "3,90 €",
+            pricing_amount_span: "/ месяц",
+            pricing_p1: "На этапе раннего доступа Jobsy Active стоит 3,90 € в месяц. Эта цена помогает покрыть инфраструктуру, необходимую для работы сервиса.",
+            pricing_p2: "Пользователи, которые присоединяются на этапе раннего доступа и помогают улучшать Jobsy отзывами, сохранят эту цену навсегда, even as платформа растёт и добавляются новые функции.",
+            fin_h2: "Начало с Финляндии",
+            fin_p: "Jobsy сейчас поддерживает заявки на работу в Финляндии. Нашей долгосрочной целью является расширение по всей Европе, помогая кандидатам подавать заявки в компании в разных странах и языках.",
+            priv_h2: "Ваша конфиденциальность на первом месте",
+            priv_p: "Jobsy создан с уважением к вашей конфиденциальности. Заявки отправляются с вашего почтового аккаунта, а ответы приходят непосредственно в ваш ящик. Jobsy не может читать ваши переписки, и система полностью соответствует GDPR.",
+            cta_h2: "Начните поиск работы сегодня",
+            cta_p: "Создайте резюме или загрузите существующее и откройте компании, соответствующие вашему опыту.",
+            footer_brand: "Jobsy",
+            footer_tagline: "AI-ассистент по поиску работы",
+            signin: "Войти"
+        }
+    };
 
+    function setLang(lang) {
+        const t = translations[lang];
+        document.querySelector('.hero h1').textContent = t.hero_h1;
+        document.querySelectorAll('.hero p')[0].textContent = t.hero_p;
+        document.querySelectorAll('.hero p')[1].textContent = t.hero_sub;
+        document.querySelector('.hero-tagline').textContent = t.hero_tagline;
+        document.querySelectorAll('.hero p')[2].textContent = t.hero_sub2;
+        document.querySelector('.hero .btn').textContent = t.btn_start;
+        document.querySelectorAll('.hero p')[3].textContent = t.hero_footer;
+        
+        document.querySelector('.why-section h2').textContent = t.why_h2;
+        document.querySelector('.why-section .subtitle').textContent = t.why_subtitle;
+        
+        const whyRows = document.querySelectorAll('.why-row');
+        whyRows[0].querySelector('h3').textContent = t.why_1_title;
+        whyRows[0].querySelector('p').textContent = t.why_1;
+        whyRows[1].querySelector('h3').textContent = t.why_2_title;
+        whyRows[1].querySelector('p').textContent = t.why_2;
+        whyRows[2].querySelector('h3').textContent = t.why_3_title;
+        whyRows[2].querySelector('p').textContent = t.why_3;
+        
+        document.querySelector('.steps-section h2').textContent = t.steps_h2;
+        const stepCards = document.querySelectorAll('.step-card');
+        stepCards[0].querySelector('h3').textContent = t.step_1_title;
+        stepCards[0].querySelector('p').textContent = t.step_1;
+        stepCards[1].querySelector('h3').textContent = t.step_2_title;
+        stepCards[1].querySelector('p').textContent = t.step_2;
+        stepCards[2].querySelector('h3').textContent = t.step_3_title;
+        stepCards[2].querySelector('p').textContent = t.step_3;
+        
+        document.querySelector('.jobsy-active-section h2').textContent = t.active_h2;
+        document.querySelector('.jobsy-active-section .subtitle').textContent = t.active_subtitle;
+        
+        const activeCards = document.querySelectorAll('.active-card');
+        activeCards[0].querySelector('h3').textContent = t.active_1_title;
+        activeCards[0].querySelector('p').textContent = t.active_1;
+        activeCards[1].querySelector('h3').textContent = t.active_2_title;
+        activeCards[1].querySelector('p').textContent = t.active_2;
+        activeCards[2].querySelector('h3').textContent = t.active_3_title;
+        activeCards[2].querySelector('p').textContent = t.active_3;
+        activeCards[2].querySelectorAll('li')[0].textContent = t.active_3_li1;
+        activeCards[2].querySelectorAll('li')[1].textContent = t.active_3_li2;
+        activeCards[2].querySelectorAll('li')[2].textContent = t.active_3_li3;
+        activeCards[2].querySelectorAll('li')[3].textContent = t.active_3_li4;
+        activeCards[3].querySelector('h3').textContent = t.active_4_title;
+        activeCards[3].querySelector('p').textContent = t.active_4;
+        
+        document.querySelector('.early-section h2').textContent = t.early_h2;
+        document.querySelector('.early-section p').textContent = t.early_p;
+        
+        document.querySelector('.pricing-box h2').textContent = t.pricing_h2;
+        document.querySelector('.pricing-amount').innerHTML = t.pricing_amount + ' <span>' + t.pricing_amount_span + '</span>';
+        const pricingPs = document.querySelectorAll('.pricing-box p');
+        pricingPs[1].textContent = t.pricing_p1;
+        pricingPs[2].textContent = t.pricing_p2;
+        
+        document.querySelector('.finland-section h2').textContent = t.fin_h2;
+        document.querySelector('.finland-section p').textContent = t.fin_p;
+        
+        document.querySelector('.privacy-section h2').textContent = t.priv_h2;
+        document.querySelector('.privacy-section p').textContent = t.priv_p;
+        
+        document.querySelector('.cta-section h2').textContent = t.cta_h2;
+        document.querySelector('.cta-section p').textContent = t.cta_p;
+        
+        document.querySelector('.footer-brand h2').textContent = t.footer_brand;
+        document.querySelector('.footer-tagline').textContent = t.footer_tagline;
+        document.querySelector('.btn-white').textContent = t.signin;
+        
+        document.documentElement.lang = lang;
+        localStorage.setItem('jobsy_lang', lang);
+    }
+
+    window.onload = function() {
+        const savedLang = localStorage.getItem('jobsy_lang');
+        if (savedLang) {
+            document.getElementById('lang-select').value = savedLang;
+            setLang(savedLang);
+        }
+    };
+    </script>
 </body>
-</html>
