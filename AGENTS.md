@@ -29,4 +29,3 @@ After any changes:
 - Page content is in Russian (HTML `lang="ru"`)
 - UI elements (buttons, footer) mix Russian and English
 - Links point to `/app` (separate application, not in this repo)
-
