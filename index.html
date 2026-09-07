@@ -24,7 +24,7 @@
             --harbor: #12364a;
             --route: #1c6f79;
             --signal: #f0c96a;
-            --signal-deep: #c69225;
+            --signal-deep: #b88320;
             --paper: #fffaf0;
             --paper-strong: #f4ead4;
             --mist: #e9f1ec;
@@ -72,9 +72,9 @@
         }
 
         .site-header {
-            background: rgba(255, 250, 240, 0.86);
-            border-bottom: 1px solid rgba(217, 225, 220, 0.9);
             backdrop-filter: blur(18px);
+            background: rgba(255, 250, 240, 0.88);
+            border-bottom: 1px solid rgba(217, 225, 220, 0.9);
             position: sticky;
             top: 0;
             z-index: 50;
@@ -102,16 +102,11 @@
             width: auto;
         }
 
+        .nav-links,
         .nav-actions {
             align-items: center;
             display: flex;
-            gap: 12px;
-        }
-
-        .nav-links {
-            align-items: center;
-            display: flex;
-            gap: 18px;
+            gap: 14px;
         }
 
         .nav-links a {
@@ -157,30 +152,52 @@
 
         .button.secondary {
             background: transparent;
-            border-color: rgba(255, 255, 255, 0.28);
+            border-color: rgba(255, 255, 255, 0.3);
             color: var(--white);
         }
 
         .button.secondary:hover {
             background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.38);
+            border-color: rgba(255, 255, 255, 0.42);
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -0.07em;
+            line-height: 0.95;
+        }
+
+        h1 {
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(5rem, 13vw, 10.8rem);
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: clamp(2.6rem, 6vw, 6rem);
+            font-weight: 900;
+        }
+
+        section {
+            padding: 86px 0;
         }
 
         .hero {
             background:
-                radial-gradient(circle at 12% 22%, rgba(240, 201, 106, 0.2), transparent 26%),
-                radial-gradient(circle at 88% 18%, rgba(28, 111, 121, 0.38), transparent 30%),
+                radial-gradient(circle at 14% 20%, rgba(240, 201, 106, 0.2), transparent 27%),
+                radial-gradient(circle at 88% 18%, rgba(28, 111, 121, 0.38), transparent 31%),
                 linear-gradient(130deg, var(--night) 0%, var(--harbor) 58%, #0f4f58 100%);
             color: var(--white);
             overflow: hidden;
-            padding: 72px 0 86px;
+            padding: 74px 0 94px;
         }
 
         .hero-grid {
             align-items: center;
             display: grid;
             gap: 56px;
-            grid-template-columns: 0.95fr 1.05fr;
+            grid-template-columns: 0.86fr 1.14fr;
         }
 
         .notice {
@@ -206,27 +223,13 @@
             width: 9px;
         }
 
-        h1,
-        h2,
-        h3 {
-            letter-spacing: -0.07em;
-            line-height: 0.95;
-        }
-
-        h1 {
-            font-family: "IBM Plex Serif", Georgia, serif;
-            font-size: clamp(5rem, 13vw, 10.6rem);
-            font-weight: 600;
-            margin-bottom: 24px;
-            max-width: 720px;
-        }
-
         .hero-lead {
             color: #e6f4f1;
             font-size: clamp(1.5rem, 3vw, 2.45rem);
             font-weight: 800;
             letter-spacing: -0.055em;
             line-height: 1.05;
+            margin-top: 24px;
             max-width: 760px;
         }
 
@@ -234,7 +237,7 @@
             color: #bdd1d3;
             font-size: 1.08rem;
             margin-top: 22px;
-            max-width: 640px;
+            max-width: 580px;
         }
 
         .hero-actions {
@@ -256,24 +259,16 @@
             font-size: 1.28rem;
         }
 
-        .search-room {
+        .search-panel {
             background: rgba(255, 250, 240, 0.96);
             border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 36px;
             box-shadow: var(--shadow);
             color: var(--ink);
             overflow: hidden;
-            position: relative;
         }
 
-        .search-room::before {
-            background: linear-gradient(90deg, var(--signal), #76c6b7, var(--route));
-            content: "";
-            display: block;
-            height: 7px;
-        }
-
-        .room-top {
+        .panel-top {
             align-items: center;
             border-bottom: 1px solid var(--line);
             display: flex;
@@ -281,12 +276,12 @@
             padding: 18px 22px;
         }
 
-        .room-title {
+        .panel-title {
             font-weight: 900;
             letter-spacing: -0.04em;
         }
 
-        .room-status {
+        .status-pill {
             align-items: center;
             background: #e4f7ef;
             border: 1px solid #bfe8d9;
@@ -299,132 +294,61 @@
             padding: 7px 10px;
         }
 
-        .room-body {
-            display: grid;
-            gap: 18px;
+        .search-map {
+            background:
+                linear-gradient(rgba(28, 111, 121, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(28, 111, 121, 0.08) 1px, transparent 1px),
+                var(--paper);
+            background-size: 34px 34px;
             padding: 22px;
         }
 
-        .profile-card {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 24px;
-            padding: 20px;
-        }
-
-        .profile-card span,
-        .route-card span,
-        .metric span {
-            color: var(--muted);
-            display: block;
-            font-size: 0.88rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .profile-card strong,
-        .route-card strong {
-            display: block;
-            font-size: 1.35rem;
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            line-height: 1.08;
-        }
-
-        .route-line {
-            display: grid;
-            gap: 12px;
-            grid-template-columns: 1fr auto 1fr;
-        }
-
-        .route-card {
-            background: var(--mist);
-            border: 1px solid var(--line);
-            border-radius: 24px;
-            padding: 18px;
-        }
-
-        .route-join {
-            align-items: center;
-            color: var(--signal-deep);
-            display: flex;
-            font-weight: 900;
-            justify-content: center;
-        }
-
-        .scan-board {
+        .map-main {
             background: var(--night);
             border-radius: 28px;
             color: var(--white);
-            padding: 20px;
-            position: relative;
-        }
-
-        .scan-board::before {
-            background:
-                linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-            background-size: 34px 34px;
-            border-radius: inherit;
-            content: "";
-            inset: 0;
-            position: absolute;
-        }
-
-        .scan-board > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .scan-heading {
-            color: #d8e9e8;
-            font-size: 0.9rem;
-            font-weight: 900;
-            margin-bottom: 14px;
-        }
-
-        .scan-row {
-            align-items: center;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 18px;
             display: grid;
-            gap: 12px;
-            grid-template-columns: 12px 1fr auto;
-            padding: 14px;
+            gap: 18px;
+            grid-template-columns: 1fr 1fr;
+            min-height: 360px;
+            padding: 24px;
         }
 
-        .scan-row + .scan-row {
-            margin-top: 10px;
+        .map-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 22px;
+            padding: 18px;
         }
 
-        .scan-pin {
+        .map-card.featured {
             background: var(--signal);
-            border-radius: 999px;
-            height: 12px;
-            width: 12px;
+            color: var(--night);
+            grid-row: span 2;
         }
 
-        .scan-row b {
+        .map-card span {
+            color: inherit;
             display: block;
-            font-size: 0.98rem;
-            letter-spacing: -0.02em;
-        }
-
-        .scan-row small {
-            color: #b6cbcc;
-            display: block;
-            margin-top: 2px;
-        }
-
-        .scan-row em {
-            color: var(--signal);
-            font-style: normal;
+            font-size: 0.84rem;
             font-weight: 900;
+            margin-bottom: 8px;
+            opacity: 0.76;
         }
 
-        section {
-            padding: 86px 0;
+        .map-card strong {
+            display: block;
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: -0.055em;
+            line-height: 1.05;
+        }
+
+        .map-card.featured strong {
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 600;
+            max-width: 260px;
         }
 
         .section-head {
@@ -445,383 +369,253 @@
             margin-bottom: 12px;
         }
 
-        h2 {
-            font-size: clamp(2.4rem, 5.4vw, 5.4rem);
-            font-weight: 900;
-        }
-
         .section-head p {
             color: var(--muted);
             font-size: 1.1rem;
             margin-top: 18px;
         }
 
-        .difference {
+        .target {
             background: linear-gradient(180deg, var(--paper) 0%, #f8fbf7 100%);
         }
 
-        .difference-grid {
+        .target-grid {
+            align-items: stretch;
             display: grid;
             gap: 18px;
-            grid-template-columns: 0.88fr 1.12fr;
+            grid-template-columns: 0.86fr 1.14fr;
         }
 
-        .difference-card {
+        .target-copy,
+        .target-example {
             border-radius: 34px;
-            min-height: 300px;
             padding: 34px;
         }
 
-        .difference-card.passive {
-            background: var(--paper-strong);
-            border: 1px solid #eadfc6;
-        }
-
-        .difference-card.active {
-            background: var(--night);
-            border: 1px solid var(--night);
-            color: var(--white);
-        }
-
-        .difference-card h3 {
-            font-size: clamp(2rem, 4vw, 4.1rem);
-            font-weight: 900;
-            margin-bottom: 18px;
-        }
-
-        .difference-card p {
-            color: var(--muted);
-            font-size: 1.08rem;
-        }
-
-        .difference-card.active p {
-            color: #c2d4d5;
-        }
-
-        .input-grid {
-            display: grid;
-            gap: 18px;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .input-card {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 28px;
-            box-shadow: 0 18px 50px rgba(7, 26, 44, 0.07);
-            min-height: 260px;
-            padding: 26px;
-        }
-
-        .input-card .token {
-            align-items: center;
-            background: var(--signal);
-            border-radius: 16px;
-            color: var(--night);
-            display: inline-flex;
-            font-weight: 900;
-            height: 44px;
-            justify-content: center;
-            margin-bottom: 24px;
-            width: 44px;
-        }
-
-        .input-card h3,
-        .engine-card h3,
-        .example-panel h3,
-        .price-panel h3 {
-            font-size: 1.45rem;
-            font-weight: 900;
-            letter-spacing: -0.06em;
-            margin-bottom: 12px;
-        }
-
-        .input-card p,
-        .engine-card p,
-        .example-panel p,
-        .price-panel p {
-            color: var(--muted);
-        }
-
-        .query-note {
-            background: var(--mist);
-            border: 1px solid var(--line);
-            border-radius: 32px;
-            display: grid;
-            gap: 18px;
-            grid-template-columns: 0.75fr 1.25fr;
-            margin-top: 18px;
-            padding: 26px;
-        }
-
-        .query-note strong {
-            display: block;
-            font-size: clamp(1.55rem, 3vw, 2.7rem);
-            font-weight: 900;
-            letter-spacing: -0.07em;
-            line-height: 1;
-        }
-
-        .query-note p {
-            color: var(--muted);
-            font-size: 1.06rem;
-        }
-
-        .engine {
+        .target-copy {
             background: var(--night);
             color: var(--white);
         }
 
-        .engine .section-mark {
+        .target-copy .section-mark {
             color: var(--signal);
         }
 
-        .engine .section-head p {
+        .target-copy p {
             color: #c2d4d5;
+            font-size: 1.12rem;
+            margin-top: 20px;
         }
 
-        .engine-grid {
+        .target-example {
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .target-row {
             display: grid;
             gap: 16px;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 0.46fr 1fr;
+            padding: 20px 0;
         }
 
-        .engine-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.13);
-            border-radius: 28px;
-            min-height: 290px;
-            padding: 24px;
+        .target-row + .target-row {
+            border-top: 1px solid var(--line);
         }
 
-        .engine-card .token {
-            color: var(--signal);
-            display: block;
-            font-family: "IBM Plex Serif", Georgia, serif;
-            font-size: 3rem;
-            font-weight: 600;
-            letter-spacing: -0.08em;
-            margin-bottom: 20px;
-        }
-
-        .engine-card p {
-            color: #c2d4d5;
-        }
-
-        .ongoing-panel {
-            align-items: stretch;
-            display: grid;
-            gap: 18px;
-            grid-template-columns: 1fr 0.9fr;
-        }
-
-        .ongoing-copy {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 34px;
-            box-shadow: var(--shadow);
-            padding: 38px;
-        }
-
-        .ongoing-copy h2 {
-            font-size: clamp(2.2rem, 4.8vw, 4.6rem);
-        }
-
-        .ongoing-copy p {
-            color: var(--muted);
-            font-size: 1.1rem;
-            margin-top: 18px;
-        }
-
-        .loop-visual {
-            background: var(--harbor);
-            border-radius: 34px;
-            color: var(--white);
-            overflow: hidden;
-            padding: 28px;
-            position: relative;
-        }
-
-        .loop-visual::before {
-            background: radial-gradient(circle at 45% 50%, rgba(240, 201, 106, 0.18), transparent 34%);
-            content: "";
-            inset: 0;
-            position: absolute;
-        }
-
-        .loop-visual > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .loop-ring {
-            align-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            height: 330px;
-            justify-content: center;
-            margin: 24px auto;
-            max-width: 330px;
-            position: relative;
-        }
-
-        .loop-ring::before,
-        .loop-ring::after {
-            border: 1px solid rgba(255, 255, 255, 0.13);
-            border-radius: 50%;
-            content: "";
-            position: absolute;
-        }
-
-        .loop-ring::before {
-            inset: 46px;
-        }
-
-        .loop-ring::after {
-            inset: 92px;
-        }
-
-        .loop-core {
-            background: var(--signal);
-            border-radius: 28px;
-            color: var(--night);
-            font-weight: 900;
-            max-width: 170px;
-            padding: 22px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .loop-note {
-            background: rgba(255, 255, 255, 0.09);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 22px;
-            color: #d5e5e5;
-            padding: 18px;
-        }
-
-        .example {
-            background: linear-gradient(180deg, var(--paper) 0%, #f6f1e4 100%);
-        }
-
-        .example-grid {
-            align-items: stretch;
-            display: grid;
-            gap: 18px;
-            grid-template-columns: 0.85fr 1.15fr;
-        }
-
-        .example-card,
-        .example-panel {
-            border-radius: 34px;
-            padding: 30px;
-        }
-
-        .example-card {
-            background: var(--night);
-            color: var(--white);
-        }
-
-        .example-card h2 {
-            font-size: clamp(2.6rem, 6vw, 5.8rem);
-        }
-
-        .example-card p {
-            color: #c2d4d5;
-            font-size: 1.08rem;
-            margin-top: 18px;
-        }
-
-        .example-panel {
-            background: var(--white);
-            border: 1px solid var(--line);
-            box-shadow: var(--shadow);
-        }
-
-        .example-row {
-            border-bottom: 1px solid var(--line);
-            display: grid;
-            gap: 18px;
-            grid-template-columns: 0.45fr 1fr;
-            padding: 18px 0;
-        }
-
-        .example-row:first-child {
+        .target-row:first-child {
             padding-top: 0;
         }
 
-        .example-row:last-child {
-            border-bottom: 0;
+        .target-row:last-child {
             padding-bottom: 0;
         }
 
-        .example-row span {
+        .target-row span {
             color: var(--route);
             font-weight: 900;
         }
 
-        .example-row strong {
+        .target-row strong {
             display: block;
-            font-size: 1.15rem;
-            letter-spacing: -0.04em;
+            font-size: clamp(1.35rem, 2.5vw, 2.05rem);
+            font-weight: 900;
+            letter-spacing: -0.055em;
+            line-height: 1.08;
         }
 
-        .worksplit-grid {
+        .plus-row {
+            align-items: center;
+            color: var(--signal-deep);
+            display: flex;
+            font-size: 2rem;
+            font-weight: 900;
+            justify-content: center;
+            padding: 8px 0;
+        }
+
+        .process {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .process .section-mark {
+            color: var(--signal);
+        }
+
+        .process .section-head p {
+            color: #c2d4d5;
+        }
+
+        .process-rail {
+            display: grid;
+            gap: 0;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            min-height: 280px;
+            padding: 26px;
+            position: relative;
+        }
+
+        .process-step:first-child {
+            border-radius: 30px 0 0 30px;
+        }
+
+        .process-step:last-child {
+            border-radius: 0 30px 30px 0;
+        }
+
+        .process-step:not(:last-child)::after {
+            background: var(--signal);
+            border-radius: 999px;
+            color: var(--night);
+            content: "";
+            height: 12px;
+            position: absolute;
+            right: -6px;
+            top: 42px;
+            width: 12px;
+            z-index: 2;
+        }
+
+        .process-step span {
+            color: var(--signal);
+            display: block;
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.08em;
+            margin-bottom: 56px;
+        }
+
+        .process-step h3 {
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: -0.055em;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: #c2d4d5;
+        }
+
+        .proof-grid {
             display: grid;
             gap: 18px;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 0.95fr 1.05fr;
         }
 
-        .worksplit-card {
-            border: 1px solid var(--line);
+        .scale-card,
+        .trust-card {
             border-radius: 34px;
-            padding: 32px;
+            padding: 34px;
         }
 
-        .worksplit-card.user {
-            background: var(--paper-strong);
-        }
-
-        .worksplit-card.jobsy {
+        .scale-card {
             background: var(--white);
+            border: 1px solid var(--line);
             box-shadow: var(--shadow);
         }
 
-        .worksplit-card h3 {
-            font-size: clamp(2rem, 4vw, 3.8rem);
-            font-weight: 900;
-            margin-bottom: 22px;
+        .scale-number {
+            display: block;
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(4.8rem, 10vw, 8.4rem);
+            font-weight: 600;
+            letter-spacing: -0.09em;
+            line-height: 0.9;
+            margin-bottom: 14px;
         }
 
-        .worksplit-card ul {
+        .scale-card p,
+        .trust-card p {
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .country-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 26px;
+        }
+
+        .country-list span {
+            background: var(--mist);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink);
+            font-weight: 900;
+            padding: 10px 13px;
+        }
+
+        .trust-card {
+            background: var(--paper-strong);
+            border: 1px solid #eadfc6;
             display: grid;
             gap: 14px;
-            list-style: none;
         }
 
-        .worksplit-card li {
+        .trust-line {
             align-items: flex-start;
-            color: var(--muted);
+            background: rgba(255, 255, 255, 0.52);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 22px;
             display: grid;
             gap: 12px;
-            grid-template-columns: 22px 1fr;
+            grid-template-columns: 38px 1fr;
+            padding: 18px;
         }
 
-        .worksplit-card li::before {
+        .trust-icon {
+            align-items: center;
             background: var(--signal);
-            border-radius: 999px;
-            content: "";
-            height: 10px;
-            margin-top: 8px;
-            width: 10px;
+            border-radius: 15px;
+            color: var(--night);
+            display: inline-flex;
+            font-weight: 900;
+            height: 38px;
+            justify-content: center;
+            width: 38px;
         }
 
-        .price-section {
+        .trust-line strong {
+            display: block;
+            font-size: 1.12rem;
+            letter-spacing: -0.04em;
+            margin-bottom: 3px;
+        }
+
+        .final-cta {
             padding-bottom: 96px;
         }
 
-        .price-panel {
+        .cta-panel {
             align-items: center;
             background:
                 radial-gradient(circle at 90% 18%, rgba(240, 201, 106, 0.2), transparent 30%),
@@ -830,22 +624,17 @@
             box-shadow: var(--shadow);
             color: var(--white);
             display: grid;
-            gap: 32px;
+            gap: 28px;
             grid-template-columns: 1fr auto;
-            overflow: hidden;
             padding: 42px;
         }
 
-        .price-panel h2 {
-            font-size: clamp(2.6rem, 6vw, 5.8rem);
-            max-width: 760px;
+        .cta-panel .section-mark {
+            color: var(--signal);
         }
 
-        .price-panel p {
-            color: #c2d4d5;
-            font-size: 1.1rem;
-            margin-top: 18px;
-            max-width: 690px;
+        .cta-panel h2 {
+            max-width: 680px;
         }
 
         .price-box {
@@ -916,18 +705,35 @@
 
         @media (max-width: 980px) {
             .hero-grid,
-            .difference-grid,
-            .query-note,
-            .ongoing-panel,
-            .example-grid,
-            .worksplit-grid,
-            .price-panel {
+            .target-grid,
+            .proof-grid,
+            .cta-panel {
                 grid-template-columns: 1fr;
             }
 
-            .input-grid,
-            .engine-grid {
+            .process-rail {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step:first-child,
+            .process-step:last-child {
+                border-radius: 0;
+            }
+
+            .process-step:nth-child(1) {
+                border-radius: 30px 0 0 0;
+            }
+
+            .process-step:nth-child(2) {
+                border-radius: 0 30px 0 0;
+            }
+
+            .process-step:nth-child(3) {
+                border-radius: 0 0 0 30px;
+            }
+
+            .process-step:nth-child(4) {
+                border-radius: 0 0 30px 0;
             }
 
             .price-box {
@@ -949,16 +755,16 @@
                 display: none;
             }
 
-            .button {
-                width: 100%;
-            }
-
             .nav-actions .button {
                 display: none;
             }
 
+            .button {
+                width: 100%;
+            }
+
             .hero {
-                padding: 54px 0 62px;
+                padding: 54px 0 64px;
             }
 
             h1 {
@@ -966,57 +772,51 @@
             }
 
             section {
-                padding: 62px 0;
+                padding: 60px 0;
             }
 
-            .search-room,
-            .difference-card,
-            .query-note,
-            .ongoing-copy,
-            .loop-visual,
-            .example-card,
-            .example-panel,
-            .worksplit-card,
-            .price-panel {
+            .search-panel,
+            .map-main,
+            .target-copy,
+            .target-example,
+            .scale-card,
+            .trust-card,
+            .cta-panel {
                 border-radius: 26px;
             }
 
-            .room-top,
-            .room-body,
-            .difference-card,
-            .input-card,
-            .query-note,
-            .ongoing-copy,
-            .loop-visual,
-            .example-card,
-            .example-panel,
-            .worksplit-card,
-            .price-panel {
+            .panel-top,
+            .search-map,
+            .map-main,
+            .target-copy,
+            .target-example,
+            .scale-card,
+            .trust-card,
+            .cta-panel {
                 padding: 22px;
             }
 
-            .route-line,
-            .input-grid,
-            .engine-grid,
-            .example-row {
+            .map-main,
+            .target-row,
+            .process-rail {
                 grid-template-columns: 1fr;
             }
 
-            .route-join {
-                justify-content: flex-start;
+            .process-step,
+            .process-step:nth-child(1),
+            .process-step:nth-child(2),
+            .process-step:nth-child(3),
+            .process-step:nth-child(4) {
+                border-radius: 24px;
+                min-height: 0;
             }
 
-            .scan-row {
-                grid-template-columns: 12px 1fr;
+            .process-step:not(:last-child)::after {
+                display: none;
             }
 
-            .scan-row em {
-                grid-column: 2;
-            }
-
-            .loop-ring {
-                height: 260px;
-                max-width: 260px;
+            .process-step span {
+                margin-bottom: 28px;
             }
 
             .footer-inner {
@@ -1034,9 +834,9 @@
                 <span>Jobsy</span>
             </a>
             <nav class="nav-links" aria-label="Primary navigation">
-                <a href="#understands" data-i18n="navUnderstands">What Jobsy needs</a>
-                <a href="#does" data-i18n="navDoes">What Jobsy does</a>
-                <a href="#price" data-i18n="navPrice">Price</a>
+                <a href="#target" data-i18n="navTarget">What to search for</a>
+                <a href="#process" data-i18n="navProcess">How it works</a>
+                <a href="#trust" data-i18n="navTrust">Trust</a>
             </nav>
             <div class="nav-actions">
                 <select id="language" class="lang-select" aria-label="Language">
@@ -1052,161 +852,102 @@
         <section class="hero">
             <div class="shell hero-grid">
                 <div>
-                    <div class="notice"><span class="live-dot"></span><span data-i18n="heroNotice">Jobsy keeps looking after you start</span></div>
+                    <div class="notice"><span class="live-dot"></span><span data-i18n="heroNotice">Jobsy Active</span></div>
                     <h1 data-i18n="heroTitle">Find Work</h1>
                     <p class="hero-lead" data-i18n="heroLead">Tell Jobsy what job you want. Jobsy will keep looking until you find it.</p>
                     <p class="hero-copy" data-i18n="heroCopy">You do not need another place to search for jobs. You need someone searching for you.</p>
                     <div class="hero-actions">
-                        <a class="button" href="/app" data-i18n="primaryCta">Start my Jobsy search</a>
-                        <a class="button secondary" href="#understands" data-i18n="secondaryCta">See how it works</a>
+                        <a class="button" href="/app" data-i18n="primaryCta">Start search</a>
+                        <a class="button secondary" href="#target" data-i18n="secondaryCta">See the search input</a>
                         <span class="price-inline"><strong>€5.50</strong> <span data-i18n="priceInline">per month</span></span>
                     </div>
                 </div>
 
-                <div class="search-room" aria-label="Jobsy active search preview" data-i18n-aria-label="roomAria">
-                    <div class="room-top">
-                        <div class="room-title" data-i18n="roomTitle">Active search</div>
-                        <div class="room-status"><span class="live-dot"></span><span data-i18n="roomStatus">Running</span></div>
+                <div class="search-panel" aria-label="Jobsy active search preview" data-i18n-aria-label="heroPanelAria">
+                    <div class="panel-top">
+                        <div class="panel-title" data-i18n="heroPanelTitle">Jobsy Active</div>
+                        <div class="status-pill"><span class="live-dot"></span><span data-i18n="heroPanelStatus">search running</span></div>
                     </div>
-                    <div class="room-body">
-                        <div class="profile-card">
-                            <span data-i18n="roomProfileLabel">Your profile is not just a CV</span>
-                            <strong data-i18n="roomProfileText">Experience + roles you can do + what you want now</strong>
-                        </div>
-                        <div class="route-line">
-                            <div class="route-card"><span data-i18n="experienceLabel">Experience</span><strong data-i18n="experienceExample">Cook, warehouse worker</strong></div>
-                            <div class="route-join" aria-hidden="true">+</div>
-                            <div class="route-card"><span data-i18n="lookingLabel">Looking for now</span><strong data-i18n="lookingExample">Warehouse or logistics work in Sweden</strong></div>
-                        </div>
-                        <div class="scan-board">
-                            <div class="scan-heading" data-i18n="scanHeading">Jobsy is checking the market</div>
-                            <div class="scan-row"><span class="scan-pin"></span><div><b data-i18n="scan1Title">Employers that fit the target</b><small data-i18n="scan1Text">Not every job ad, only useful directions</small></div><em data-i18n="scanStatus1">active</em></div>
-                            <div class="scan-row"><span class="scan-pin"></span><div><b data-i18n="scan2Title">Recruitment and staffing agencies</b><small data-i18n="scan2Text">Companies that may hire for several roles</small></div><em data-i18n="scanStatus2">active</em></div>
-                            <div class="scan-row"><span class="scan-pin"></span><div><b data-i18n="scan3Title">Personal outreach</b><small data-i18n="scan3Text">Prepared for the recipient and language</small></div><em data-i18n="scanStatus3">next</em></div>
+                    <div class="search-map">
+                        <div class="map-main">
+                            <div class="map-card featured"><span data-i18n="mapMainLabel">Current search</span><strong data-i18n="mapMainText">Warehouse work in Sweden</strong></div>
+                            <div class="map-card"><span data-i18n="mapEmployersLabel">Employers</span><strong data-i18n="mapEmployersText">Relevant companies</strong></div>
+                            <div class="map-card"><span data-i18n="mapAgenciesLabel">Agencies</span><strong data-i18n="mapAgenciesText">Recruitment and staffing</strong></div>
+                            <div class="map-card"><span data-i18n="mapOutreachLabel">Outreach</span><strong data-i18n="mapOutreachText">Personal messages</strong></div>
+                            <div class="map-card"><span data-i18n="mapReplyLabel">Replies</span><strong data-i18n="mapReplyText">Back to your email</strong></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="difference">
-            <div class="shell difference-grid">
-                <article class="difference-card passive">
-                    <h3 data-i18n="oldWayTitle">A normal search stops when you stop.</h3>
-                    <p data-i18n="oldWayText">You close the search page, the work stops. Tomorrow you come back and start scrolling again.</p>
-                </article>
-                <article class="difference-card active">
-                    <h3 data-i18n="jobsyWayTitle">Jobsy is a search you start.</h3>
-                    <p data-i18n="jobsyWayText">Once Jobsy understands what kind of work you want, it keeps looking for suitable employers and agencies while you focus on replies.</p>
-                </article>
+        <section id="target" class="target">
+            <div class="shell target-grid">
+                <div class="target-copy">
+                    <div class="section-mark" data-i18n="targetMark">Tell Jobsy what to look for</div>
+                    <h2 data-i18n="targetTitle">Your CV is the past. Jobsy needs to know what you want now.</h2>
+                    <p data-i18n="targetText">A person can have several professions, mixed experience, or a new direction. Jobsy searches from experience plus intent.</p>
+                </div>
+                <div class="target-example" aria-label="Search input example" data-i18n-aria-label="targetExampleAria">
+                    <div class="target-row"><span data-i18n="experienceLabel">Experience</span><strong data-i18n="experienceExample">Cook, warehouse worker</strong></div>
+                    <div class="plus-row" aria-hidden="true">+</div>
+                    <div class="target-row"><span data-i18n="lookingLabel">Looking for now</span><strong data-i18n="lookingExample">Warehouse or logistics work in Sweden</strong></div>
+                </div>
             </div>
         </section>
 
-        <section id="understands">
+        <section id="process" class="process">
+            <div class="shell">
+                <div class="section-head center">
+                    <div class="section-mark" data-i18n="processMark">Jobsy starts working</div>
+                    <h2 data-i18n="processTitle">One active search, four jobs.</h2>
+                </div>
+                <div class="process-rail" aria-label="Jobsy search process" data-i18n-aria-label="processAria">
+                    <article class="process-step"><span>01</span><h3 data-i18n="process1Title">Understands your goal</h3><p data-i18n="process1Text">Experience and intent become a clear search target.</p></article>
+                    <article class="process-step"><span>02</span><h3 data-i18n="process2Title">Finds relevant recipients</h3><p data-i18n="process2Text">Employers, recruitment agencies and staffing agencies.</p></article>
+                    <article class="process-step"><span>03</span><h3 data-i18n="process3Title">Prepares outreach</h3><p data-i18n="process3Text">Personalized for the recipient and their language.</p></article>
+                    <article class="process-step"><span>04</span><h3 data-i18n="process4Title">Keeps searching</h3><p data-i18n="process4Text">The search stays active after it starts.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section id="trust">
             <div class="shell">
                 <div class="section-head">
-                    <div class="section-mark" data-i18n="understandsMark">Before the search starts</div>
-                    <h2 data-i18n="understandsTitle">Jobsy needs your direction, not only your document.</h2>
-                    <p data-i18n="understandsText">A CV tells part of the story. Jobsy also needs to know what you can do and what you actually want now.</p>
+                    <div class="section-mark" data-i18n="trustMark">Proof and trust</div>
+                    <h2 data-i18n="trustTitle">A wider search, connected to your own email.</h2>
                 </div>
-                <div class="input-grid">
-                    <article class="input-card"><span class="token">1</span><h3 data-i18n="input1Title">Who you are</h3><p data-i18n="input1Text">Your background, location, languages and the practical situation around your search.</p></article>
-                    <article class="input-card"><span class="token">2</span><h3 data-i18n="input2Title">What you have done</h3><p data-i18n="input2Text">Your experience, skills, past roles and the kind of work you can credibly do.</p></article>
-                    <article class="input-card"><span class="token">3</span><h3 data-i18n="input3Title">What you could do</h3><p data-i18n="input3Text">Several possible professions or role families, if your experience can point in more than one direction.</p></article>
-                    <article class="input-card"><span class="token">4</span><h3 data-i18n="input4Title">What you want now</h3><p data-i18n="input4Text">The role, country, schedule or next step you want Jobsy to search for first.</p></article>
-                </div>
-                <div class="query-note">
-                    <strong data-i18n="queryTitle">Your CV is not the search query.</strong>
-                    <p data-i18n="queryText">Someone may have worked as a cook and a warehouse worker, but now want logistics work in Sweden. That is the target Jobsy should search for.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="does" class="engine">
-            <div class="shell">
-                <div class="section-head center">
-                    <div class="section-mark" data-i18n="doesMark">What Jobsy does</div>
-                    <h2 data-i18n="doesTitle">It turns your target into an active job search.</h2>
-                    <p data-i18n="doesText">This is not upload, send, finished. You start the search once, and Jobsy keeps working on it.</p>
-                </div>
-                <div class="engine-grid">
-                    <article class="engine-card"><span class="token">01</span><h3 data-i18n="does1Title">Understands the target</h3><p data-i18n="does1Text">Jobsy combines your experience with the kind of work you want now.</p></article>
-                    <article class="engine-card"><span class="token">02</span><h3 data-i18n="does2Title">Finds relevant recipients</h3><p data-i18n="does2Text">It looks for employers, recruitment agencies and staffing agencies that make sense for your profile.</p></article>
-                    <article class="engine-card"><span class="token">03</span><h3 data-i18n="does3Title">Prepares outreach</h3><p data-i18n="does3Text">Jobsy helps shape the message for the company, role and recipient language.</p></article>
-                    <article class="engine-card"><span class="token">04</span><h3 data-i18n="does4Title">Keeps looking</h3><p data-i18n="does4Text">The search continues as new suitable opportunities and recipients can be found.</p></article>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="shell ongoing-panel">
-                <div class="ongoing-copy">
-                    <div class="section-mark" data-i18n="ongoingMark">Ongoing by design</div>
-                    <h2 data-i18n="ongoingTitle">The important part is what happens after day one.</h2>
-                    <p data-i18n="ongoingText1">A one-time list goes stale. A real search keeps moving.</p>
-                    <p data-i18n="ongoingText2">Jobsy keeps working on the search so you are not forced back into the same manual routine every evening.</p>
-                </div>
-                <div class="loop-visual" aria-hidden="true">
-                    <div class="loop-ring"><div class="loop-core" data-i18n="loopCore">Search keeps running</div></div>
-                    <div class="loop-note" data-i18n="loopNote">New recipients, better context, prepared outreach, more chances for replies.</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="example">
-            <div class="shell example-grid">
-                <div class="example-card">
-                    <div class="section-mark" data-i18n="exampleMark">A simple example</div>
-                    <h2 data-i18n="exampleTitle">Experience and intent are different things.</h2>
-                    <p data-i18n="exampleText">Jobsy should know both, because people are not only their last job title.</p>
-                </div>
-                <div class="example-panel">
-                    <div class="example-row"><span data-i18n="exampleRow1Label">Experience</span><strong data-i18n="exampleRow1Text">Cook, warehouse worker, basic English</strong></div>
-                    <div class="example-row"><span data-i18n="exampleRow2Label">Looking for now</span><strong data-i18n="exampleRow2Text">Warehouse or logistics work in Sweden</strong></div>
-                    <div class="example-row"><span data-i18n="exampleRow3Label">Jobsy searches for</span><strong data-i18n="exampleRow3Text">Employers and staffing agencies hiring for warehouse, packing, logistics and shift work</strong></div>
-                    <div class="example-row"><span data-i18n="exampleRow4Label">Outreach angle</span><strong data-i18n="exampleRow4Text">Reliable shift worker with food-service pace and warehouse experience</strong></div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="shell">
-                <div class="section-head center">
-                    <div class="section-mark" data-i18n="splitMark">Less manual searching</div>
-                    <h2 data-i18n="splitTitle">You set the direction. Jobsy works the search.</h2>
-                </div>
-                <div class="worksplit-grid">
-                    <article class="worksplit-card user">
-                        <h3 data-i18n="youTitle">You</h3>
-                        <ul>
-                            <li data-i18n="you1">Tell Jobsy who you are and what work you want.</li>
-                            <li data-i18n="you2">Review replies and decide which conversations matter.</li>
-                            <li data-i18n="you3">Prepare for interviews instead of spending hours scrolling.</li>
-                        </ul>
+                <div class="proof-grid">
+                    <article class="scale-card">
+                        <span class="scale-number">2.6M+</span>
+                        <p data-i18n="scaleText">Employers and recruitment or staffing agency records support the search.</p>
+                        <div class="country-list" aria-label="Active countries" data-i18n-aria-label="countriesAria">
+                            <span data-i18n="countryFinland">Finland</span>
+                            <span data-i18n="countrySweden">Sweden</span>
+                            <span data-i18n="countryNorway">Norway</span>
+                            <span data-i18n="countrySpain">Spain</span>
+                            <span data-i18n="countryItaly">Italy</span>
+                            <span data-i18n="countryGermany">Germany</span>
+                        </div>
                     </article>
-                    <article class="worksplit-card jobsy">
-                        <h3 data-i18n="jobsyTitle">Jobsy</h3>
-                        <ul>
-                            <li data-i18n="jobsy1">Searches for suitable employers and recruitment or staffing agencies.</li>
-                            <li data-i18n="jobsy2">Helps prepare appropriate outreach for each recipient.</li>
-                            <li data-i18n="jobsy3">Keeps looking for new opportunities until you find work.</li>
-                        </ul>
+                    <article class="trust-card">
+                        <div class="trust-line"><span class="trust-icon">@</span><div><strong data-i18n="emailTitle">Your connected email</strong><p data-i18n="emailText">Jobsy works through the email account you connect.</p></div></div>
+                        <div class="trust-line"><span class="trust-icon">in</span><div><strong data-i18n="replyTitle">Replies come to you</strong><p data-i18n="replyText">Employer replies return directly to your inbox.</p></div></div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="price" class="price-section">
-            <div class="shell price-panel">
+        <section id="price" class="final-cta">
+            <div class="shell cta-panel">
                 <div>
-                    <div class="section-mark" data-i18n="priceMark">Start the search</div>
-                    <h2 data-i18n="priceTitle">Tell Jobsy what job you want.</h2>
-                    <p data-i18n="priceText">Start with your experience and what you want now. Jobsy begins the search and keeps looking while you move toward replies and interviews.</p>
+                    <div class="section-mark" data-i18n="finalMark">Jobsy Active</div>
+                    <h2 data-i18n="finalTitle">Start the search.</h2>
                 </div>
                 <div class="price-box">
                     <strong>€5.50</strong>
-                    <span data-i18n="priceMonth">per month</span>
-                    <a class="button" href="/app" data-i18n="priceCta">Start my search</a>
+                    <span data-i18n="finalPrice">per month</span>
+                    <a class="button" href="/app" data-i18n="finalCta">Start search</a>
                 </div>
             </div>
         </section>
@@ -1216,7 +957,7 @@
 
     <footer>
         <div class="shell footer-inner">
-            <p data-i18n="footerText">Jobsy - someone searching for you.</p>
+            <p data-i18n="footerText">Jobsy - Find Work.</p>
             <div class="footer-links">
                 <a href="/privacy" data-i18n="footerPrivacy">Privacy Policy</a>
                 <a href="/terms" data-i18n="footerTerms">Terms of Service</a>
@@ -1228,193 +969,135 @@
     <script>
         const translations = {
             en: {
-                navUnderstands: "What Jobsy needs",
-                navDoes: "What Jobsy does",
-                navPrice: "Price",
+                navTarget: "What to search for",
+                navProcess: "How it works",
+                navTrust: "Trust",
                 navCta: "Start search",
-                heroNotice: "Jobsy keeps looking after you start",
+                heroNotice: "Jobsy Active",
                 heroTitle: "Find Work",
                 heroLead: "Tell Jobsy what job you want. Jobsy will keep looking until you find it.",
                 heroCopy: "You do not need another place to search for jobs. You need someone searching for you.",
-                primaryCta: "Start my Jobsy search",
-                secondaryCta: "See how it works",
+                primaryCta: "Start search",
+                secondaryCta: "See the search input",
                 priceInline: "per month",
-                roomAria: "Jobsy active search preview",
-                roomTitle: "Active search",
-                roomStatus: "Running",
-                roomProfileLabel: "Your profile is not just a CV",
-                roomProfileText: "Experience + roles you can do + what you want now",
+                heroPanelAria: "Jobsy active search preview",
+                heroPanelTitle: "Jobsy Active",
+                heroPanelStatus: "search running",
+                mapMainLabel: "Current search",
+                mapMainText: "Warehouse work in Sweden",
+                mapEmployersLabel: "Employers",
+                mapEmployersText: "Relevant companies",
+                mapAgenciesLabel: "Agencies",
+                mapAgenciesText: "Recruitment and staffing",
+                mapOutreachLabel: "Outreach",
+                mapOutreachText: "Personal messages",
+                mapReplyLabel: "Replies",
+                mapReplyText: "Back to your email",
+                targetMark: "Tell Jobsy what to look for",
+                targetTitle: "Your CV is the past. Jobsy needs to know what you want now.",
+                targetText: "A person can have several professions, mixed experience, or a new direction. Jobsy searches from experience plus intent.",
+                targetExampleAria: "Search input example",
                 experienceLabel: "Experience",
                 experienceExample: "Cook, warehouse worker",
                 lookingLabel: "Looking for now",
                 lookingExample: "Warehouse or logistics work in Sweden",
-                scanHeading: "Jobsy is checking the market",
-                scan1Title: "Employers that fit the target",
-                scan1Text: "Not every job ad, only useful directions",
-                scan2Title: "Recruitment and staffing agencies",
-                scan2Text: "Companies that may hire for several roles",
-                scan3Title: "Personal outreach",
-                scan3Text: "Prepared for the recipient and language",
-                scanStatus1: "active",
-                scanStatus2: "active",
-                scanStatus3: "next",
-                oldWayTitle: "A normal search stops when you stop.",
-                oldWayText: "You close the search page, the work stops. Tomorrow you come back and start scrolling again.",
-                jobsyWayTitle: "Jobsy is a search you start.",
-                jobsyWayText: "Once Jobsy understands what kind of work you want, it keeps looking for suitable employers and agencies while you focus on replies.",
-                understandsMark: "Before the search starts",
-                understandsTitle: "Jobsy needs your direction, not only your document.",
-                understandsText: "A CV tells part of the story. Jobsy also needs to know what you can do and what you actually want now.",
-                input1Title: "Who you are",
-                input1Text: "Your background, location, languages and the practical situation around your search.",
-                input2Title: "What you have done",
-                input2Text: "Your experience, skills, past roles and the kind of work you can credibly do.",
-                input3Title: "What you could do",
-                input3Text: "Several possible professions or role families, if your experience can point in more than one direction.",
-                input4Title: "What you want now",
-                input4Text: "The role, country, schedule or next step you want Jobsy to search for first.",
-                queryTitle: "Your CV is not the search query.",
-                queryText: "Someone may have worked as a cook and a warehouse worker, but now want logistics work in Sweden. That is the target Jobsy should search for.",
-                doesMark: "What Jobsy does",
-                doesTitle: "It turns your target into an active job search.",
-                doesText: "This is not upload, send, finished. You start the search once, and Jobsy keeps working on it.",
-                does1Title: "Understands the target",
-                does1Text: "Jobsy combines your experience with the kind of work you want now.",
-                does2Title: "Finds relevant recipients",
-                does2Text: "It looks for employers, recruitment agencies and staffing agencies that make sense for your profile.",
-                does3Title: "Prepares outreach",
-                does3Text: "Jobsy helps shape the message for the company, role and recipient language.",
-                does4Title: "Keeps looking",
-                does4Text: "The search continues as new suitable opportunities and recipients can be found.",
-                ongoingMark: "Ongoing by design",
-                ongoingTitle: "The important part is what happens after day one.",
-                ongoingText1: "A one-time list goes stale. A real search keeps moving.",
-                ongoingText2: "Jobsy keeps working on the search so you are not forced back into the same manual routine every evening.",
-                loopCore: "Search keeps running",
-                loopNote: "New recipients, better context, prepared outreach, more chances for replies.",
-                exampleMark: "A simple example",
-                exampleTitle: "Experience and intent are different things.",
-                exampleText: "Jobsy should know both, because people are not only their last job title.",
-                exampleRow1Label: "Experience",
-                exampleRow1Text: "Cook, warehouse worker, basic English",
-                exampleRow2Label: "Looking for now",
-                exampleRow2Text: "Warehouse or logistics work in Sweden",
-                exampleRow3Label: "Jobsy searches for",
-                exampleRow3Text: "Employers and staffing agencies hiring for warehouse, packing, logistics and shift work",
-                exampleRow4Label: "Outreach angle",
-                exampleRow4Text: "Reliable shift worker with food-service pace and warehouse experience",
-                splitMark: "Less manual searching",
-                splitTitle: "You set the direction. Jobsy works the search.",
-                youTitle: "You",
-                you1: "Tell Jobsy who you are and what work you want.",
-                you2: "Review replies and decide which conversations matter.",
-                you3: "Prepare for interviews instead of spending hours scrolling.",
-                jobsyTitle: "Jobsy",
-                jobsy1: "Searches for suitable employers and recruitment or staffing agencies.",
-                jobsy2: "Helps prepare appropriate outreach for each recipient.",
-                jobsy3: "Keeps looking for new opportunities until you find work.",
-                priceMark: "Start the search",
-                priceTitle: "Tell Jobsy what job you want.",
-                priceText: "Start with your experience and what you want now. Jobsy begins the search and keeps looking while you move toward replies and interviews.",
-                priceMonth: "per month",
-                priceCta: "Start my search",
-                footerText: "Jobsy - someone searching for you.",
+                processMark: "Jobsy starts working",
+                processTitle: "One active search, four jobs.",
+                processAria: "Jobsy search process",
+                process1Title: "Understands your goal",
+                process1Text: "Experience and intent become a clear search target.",
+                process2Title: "Finds relevant recipients",
+                process2Text: "Employers, recruitment agencies and staffing agencies.",
+                process3Title: "Prepares outreach",
+                process3Text: "Personalized for the recipient and their language.",
+                process4Title: "Keeps searching",
+                process4Text: "The search stays active after it starts.",
+                trustMark: "Proof and trust",
+                trustTitle: "A wider search, connected to your own email.",
+                scaleText: "Employers and recruitment or staffing agency records support the search.",
+                countriesAria: "Active countries",
+                countryFinland: "Finland",
+                countrySweden: "Sweden",
+                countryNorway: "Norway",
+                countrySpain: "Spain",
+                countryItaly: "Italy",
+                countryGermany: "Germany",
+                emailTitle: "Your connected email",
+                emailText: "Jobsy works through the email account you connect.",
+                replyTitle: "Replies come to you",
+                replyText: "Employer replies return directly to your inbox.",
+                finalMark: "Jobsy Active",
+                finalTitle: "Start the search.",
+                finalPrice: "per month",
+                finalCta: "Start search",
+                footerText: "Jobsy - Find Work.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
                 footerContact: "Contact"
             },
             ru: {
-                navUnderstands: "Что нужно Jobsy",
-                navDoes: "Что делает Jobsy",
-                navPrice: "Цена",
+                navTarget: "Что искать",
+                navProcess: "Как работает",
+                navTrust: "Доверие",
                 navCta: "Начать поиск",
-                heroNotice: "Jobsy продолжает искать после старта",
+                heroNotice: "Jobsy Active",
                 heroTitle: "Найти работу",
                 heroLead: "Скажите Jobsy, какую работу вы хотите. Jobsy будет искать, пока вы ее не найдете.",
                 heroCopy: "Вам не нужен еще один сайт, где нужно самому искать вакансии. Вам нужен тот, кто ищет за вас.",
-                primaryCta: "Запустить мой поиск в Jobsy",
-                secondaryCta: "Как это работает",
+                primaryCta: "Начать поиск",
+                secondaryCta: "Что указать для поиска",
                 priceInline: "в месяц",
-                roomAria: "Превью активного поиска Jobsy",
-                roomTitle: "Активный поиск",
-                roomStatus: "В работе",
-                roomProfileLabel: "Ваш профиль - это не только CV",
-                roomProfileText: "Опыт + роли, которые вы можете делать + чего хотите сейчас",
+                heroPanelAria: "Превью активного поиска Jobsy",
+                heroPanelTitle: "Jobsy Active",
+                heroPanelStatus: "поиск идет",
+                mapMainLabel: "Текущий поиск",
+                mapMainText: "Работа на складе в Швеции",
+                mapEmployersLabel: "Работодатели",
+                mapEmployersText: "Подходящие компании",
+                mapAgenciesLabel: "Агентства",
+                mapAgenciesText: "Рекрутинговые и кадровые",
+                mapOutreachLabel: "Обращения",
+                mapOutreachText: "Персональные сообщения",
+                mapReplyLabel: "Ответы",
+                mapReplyText: "В вашу почту",
+                targetMark: "Скажите Jobsy, что искать",
+                targetTitle: "Ваше CV - это прошлое. Jobsy нужно знать, чего вы хотите сейчас.",
+                targetText: "У человека может быть несколько профессий, разный опыт или новое направление. Jobsy ищет по опыту и намерению вместе.",
+                targetExampleAria: "Пример поискового запроса",
                 experienceLabel: "Опыт",
                 experienceExample: "Повар, складской работник",
                 lookingLabel: "Сейчас ищу",
                 lookingExample: "Склад или логистика в Швеции",
-                scanHeading: "Jobsy проверяет рынок",
-                scan1Title: "Работодатели под вашу цель",
-                scan1Text: "Не все вакансии подряд, а полезные направления",
-                scan2Title: "Рекрутинговые и staffing-агентства",
-                scan2Text: "Компании, которые могут нанимать на разные роли",
-                scan3Title: "Персональное обращение",
-                scan3Text: "Под получателя и его язык",
-                scanStatus1: "ищет",
-                scanStatus2: "ищет",
-                scanStatus3: "дальше",
-                oldWayTitle: "Обычный поиск останавливается, когда останавливаетесь вы.",
-                oldWayText: "Вы закрыли страницу с вакансиями - работа закончилась. Завтра снова возвращаетесь и листаете заново.",
-                jobsyWayTitle: "Jobsy - это поиск, который вы запускаете.",
-                jobsyWayText: "Когда Jobsy понимает, какую работу вы хотите, он продолжает искать подходящих работодателей и агентства, пока вы занимаетесь ответами.",
-                understandsMark: "До начала поиска",
-                understandsTitle: "Jobsy нужно направление, а не только документ.",
-                understandsText: "CV рассказывает только часть истории. Jobsy также должен понять, что вы умеете и чего хотите сейчас.",
-                input1Title: "Кто вы",
-                input1Text: "Ваш опыт, страна, языки и практическая ситуация вокруг поиска.",
-                input2Title: "Что вы делали",
-                input2Text: "Ваши навыки, прошлые роли и работа, которую вы реально можете выполнять.",
-                input3Title: "Что вы можете делать",
-                input3Text: "Несколько профессий или направлений, если ваш опыт подходит не только под одну роль.",
-                input4Title: "Чего хотите сейчас",
-                input4Text: "Роль, страна, график или следующий шаг, с которого Jobsy должен начать поиск.",
-                queryTitle: "CV - это не поисковый запрос.",
-                queryText: "Человек мог работать поваром и на складе, но сейчас хотеть логистику в Швеции. Именно такую цель Jobsy должен искать.",
-                doesMark: "Что делает Jobsy",
-                doesTitle: "Он превращает вашу цель в активный поиск работы.",
-                doesText: "Это не загрузить CV, отправить кампанию и закончить. Вы запускаете поиск один раз, а Jobsy продолжает над ним работать.",
-                does1Title: "Понимает цель",
-                does1Text: "Jobsy соединяет ваш опыт с работой, которую вы хотите сейчас.",
-                does2Title: "Находит подходящих получателей",
-                does2Text: "Ищет работодателей, рекрутинговые и staffing-агентства, которым может подойти ваш профиль.",
-                does3Title: "Готовит обращение",
-                does3Text: "Помогает сформулировать сообщение под компанию, роль и язык получателя.",
-                does4Title: "Продолжает искать",
-                does4Text: "Поиск не заканчивается: могут появляться новые подходящие возможности и получатели.",
-                ongoingMark: "Постоянный поиск",
-                ongoingTitle: "Главное начинается не в первый день, а после него.",
-                ongoingText1: "Одноразовый список быстро устаревает. Настоящий поиск должен двигаться дальше.",
-                ongoingText2: "Jobsy продолжает работать над поиском, чтобы человеку не приходилось каждый вечер возвращаться к ручному просмотру вакансий.",
-                loopCore: "Поиск продолжается",
-                loopNote: "Новые получатели, лучше контекст, подготовленные обращения, больше шансов на ответы.",
-                exampleMark: "Простой пример",
-                exampleTitle: "Опыт и намерение - не одно и то же.",
-                exampleText: "Jobsy должен знать и то и другое, потому что человек - это не только последняя должность в CV.",
-                exampleRow1Label: "Опыт",
-                exampleRow1Text: "Повар, складской работник, базовый английский",
-                exampleRow2Label: "Сейчас ищу",
-                exampleRow2Text: "Склад или логистика в Швеции",
-                exampleRow3Label: "Jobsy ищет",
-                exampleRow3Text: "Работодателей и staffing-агентства для склада, упаковки, логистики и сменной работы",
-                exampleRow4Label: "Угол обращения",
-                exampleRow4Text: "Надежный сменный работник с темпом общепита и опытом склада",
-                splitMark: "Меньше ручного поиска",
-                splitTitle: "Вы задаете направление. Jobsy работает над поиском.",
-                youTitle: "Вы",
-                you1: "Рассказываете Jobsy, кто вы и какую работу хотите.",
-                you2: "Смотрите ответы и выбираете важные разговоры.",
-                you3: "Готовитесь к интервью вместо часов просмотра вакансий.",
-                jobsyTitle: "Jobsy",
-                jobsy1: "Ищет подходящих работодателей, рекрутинговые и staffing-агентства.",
-                jobsy2: "Помогает подготовить подходящее обращение для каждого получателя.",
-                jobsy3: "Продолжает искать новые возможности, пока вы не найдете работу.",
-                priceMark: "Запустить поиск",
-                priceTitle: "Скажите Jobsy, какую работу вы хотите.",
-                priceText: "Начните с вашего опыта и того, что хотите сейчас. Jobsy запускает поиск и продолжает искать, пока вы двигаетесь к ответам и интервью.",
-                priceMonth: "в месяц",
-                priceCta: "Запустить поиск",
-                footerText: "Jobsy - тот, кто ищет за вас.",
+                processMark: "Jobsy начинает работать",
+                processTitle: "Один активный поиск, четыре действия.",
+                processAria: "Процесс поиска Jobsy",
+                process1Title: "Понимает цель",
+                process1Text: "Опыт и намерение становятся понятной целью поиска.",
+                process2Title: "Находит получателей",
+                process2Text: "Работодатели, рекрутинговые и кадровые агентства.",
+                process3Title: "Готовит обращения",
+                process3Text: "Персонально под получателя и его язык.",
+                process4Title: "Продолжает искать",
+                process4Text: "Поиск остается активным после старта.",
+                trustMark: "Масштаб и доверие",
+                trustTitle: "Более широкий поиск через вашу собственную почту.",
+                scaleText: "Записи о работодателях, рекрутинговых и кадровых агентствах поддерживают поиск.",
+                countriesAria: "Активные страны",
+                countryFinland: "Финляндия",
+                countrySweden: "Швеция",
+                countryNorway: "Норвегия",
+                countrySpain: "Испания",
+                countryItaly: "Италия",
+                countryGermany: "Германия",
+                emailTitle: "Ваша подключенная почта",
+                emailText: "Jobsy работает через email-аккаунт, который вы подключаете.",
+                replyTitle: "Ответы приходят к вам",
+                replyText: "Ответы работодателей возвращаются прямо в вашу почту.",
+                finalMark: "Jobsy Active",
+                finalTitle: "Запустите поиск.",
+                finalPrice: "в месяц",
+                finalCta: "Начать поиск",
+                footerText: "Jobsy - Найти работу.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
                 footerContact: "Контакты"
