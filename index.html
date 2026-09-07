@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0877c9">
-    <title>Jobsy - Find Work</title>
-    <meta name="description" content="Tell Jobsy what job you want. Jobsy finds suitable employers and recruitment agencies, prepares personalized outreach, and keeps looking until you find work.">
+    <meta name="theme-color" content="#061826">
+    <title>Jobsy - Job Search Done for You</title>
+    <meta name="description" content="Upload your CV once. Jobsy finds suitable employers, prepares personal outreach, and keeps searching while you focus on replies and interviews.">
     <link rel="canonical" href="https://globaljobsy.com/">
-    <meta property="og:title" content="Jobsy - Find Work">
-    <meta property="og:description" content="You don't need another place to search for jobs. You need someone searching for you.">
+    <meta property="og:title" content="Jobsy - Job Search Done for You">
+    <meta property="og:description" content="Upload your CV once. Jobsy searches for suitable employers and prepares personal outreach for you.">
     <meta property="og:image" content="https://globaljobsy.com/promo1.png">
     <meta property="og:url" content="https://globaljobsy.com/">
     <meta property="og:type" content="website">
@@ -20,19 +20,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blue: #0877c9;
-            --blue-dark: #064b81;
-            --blue-soft: #e8f5ff;
-            --green: #12b76a;
-            --green-soft: #e9fbf2;
-            --ink: #0b1220;
-            --muted: #5f6b7a;
-            --line: #dde9f3;
-            --paper: #ffffff;
-            --mist: #f5f9fc;
-            --cream: #fbf5e9;
-            --shadow: 0 28px 80px rgba(11, 18, 32, 0.14);
-            --radius: 30px;
+            --blue: #0a5b78;
+            --blue-dark: #06364a;
+            --blue-soft: #d9eef3;
+            --green: #16a085;
+            --green-soft: #e4f7f2;
+            --amber: #ffb84d;
+            --amber-soft: #fff0cf;
+            --ink: #061826;
+            --muted: #60717b;
+            --line: #d7e2e8;
+            --paper: #fffdfa;
+            --mist: #eef6f4;
+            --cream: #f7f4ea;
+            --shadow: 0 28px 80px rgba(6, 24, 38, 0.16);
+            --radius: 26px;
             --max-width: 1180px;
         }
 
@@ -47,7 +49,7 @@
         }
 
         body {
-            background: var(--paper);
+            background: linear-gradient(180deg, #fffdfa 0%, #f7fbfa 100%);
             color: var(--ink);
             font-family: Inter, system-ui, sans-serif;
             line-height: 1.5;
@@ -58,6 +60,13 @@
             text-decoration: none;
         }
 
+        a:focus-visible,
+        button:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--amber);
+            outline-offset: 4px;
+        }
+
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -66,8 +75,8 @@
 
         header {
             backdrop-filter: blur(18px);
-            background: rgba(255, 255, 255, 0.86);
-            border-bottom: 1px solid rgba(221, 233, 243, 0.8);
+            background: rgba(255, 253, 250, 0.9);
+            border-bottom: 1px solid rgba(215, 226, 232, 0.8);
             position: sticky;
             top: 0;
             z-index: 20;
@@ -128,13 +137,13 @@
 
         .btn {
             align-items: center;
-            background: var(--blue);
-            border: 1px solid var(--blue);
+            background: var(--amber);
+            border: 1px solid var(--amber);
             border-radius: 999px;
-            color: #fff;
+            color: var(--ink);
             display: inline-flex;
             font-size: 1rem;
-            font-weight: 800;
+            font-weight: 900;
             gap: 10px;
             justify-content: center;
             min-height: 54px;
@@ -144,24 +153,25 @@
         }
 
         .btn:hover {
-            background: var(--blue-dark);
-            border-color: var(--blue-dark);
+            background: #ffc86a;
+            border-color: #ffc86a;
             transform: translateY(-1px);
         }
 
         .btn.secondary {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--line);
             color: var(--ink);
         }
 
         .hero {
             background:
-                radial-gradient(circle at 12% 18%, rgba(8, 119, 201, 0.18), transparent 26%),
-                radial-gradient(circle at 86% 24%, rgba(18, 183, 106, 0.13), transparent 30%),
-                linear-gradient(180deg, #fbfdff 0%, #ffffff 78%);
+                radial-gradient(circle at 18% 24%, rgba(22, 160, 133, 0.2), transparent 28%),
+                radial-gradient(circle at 86% 18%, rgba(255, 184, 77, 0.16), transparent 30%),
+                linear-gradient(135deg, #061826 0%, #092c3a 55%, #0a5b78 100%);
+            color: #fff;
             overflow: hidden;
-            padding: 78px 0 62px;
+            padding: 88px 0 72px;
         }
 
         .hero-grid {
@@ -173,43 +183,42 @@
 
         .eyebrow {
             align-items: center;
-            background: var(--green-soft);
-            border: 1px solid #c7f1db;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 999px;
-            color: #087b48;
+            color: #d8fff4;
             display: inline-flex;
             font-size: 0.82rem;
-            font-weight: 900;
+            font-weight: 800;
             gap: 8px;
             margin-bottom: 18px;
             padding: 8px 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: -0.01em;
         }
 
         .pulse-dot {
-            background: var(--green);
+            background: var(--amber);
             border-radius: 50%;
-            box-shadow: 0 0 0 8px rgba(18, 183, 106, 0.15);
+            box-shadow: 0 0 0 8px rgba(255, 184, 77, 0.18);
             height: 9px;
             width: 9px;
         }
 
         h1 {
-            font-size: clamp(4rem, 11vw, 8.6rem);
+            font-size: clamp(4rem, 10vw, 8.2rem);
             font-weight: 900;
-            letter-spacing: -0.1em;
-            line-height: 0.78;
+            letter-spacing: -0.095em;
+            line-height: 0.82;
             margin-bottom: 26px;
         }
 
         .hero h1 span {
-            color: var(--blue);
+            color: #fff;
             display: block;
         }
 
         .hero-promise {
-            color: var(--ink);
+            color: #d8eef3;
             font-size: clamp(1.35rem, 2.6vw, 2.3rem);
             font-weight: 800;
             letter-spacing: -0.05em;
@@ -218,7 +227,7 @@
         }
 
         .hero-copy {
-            color: var(--muted);
+            color: #bfd0d6;
             font-size: 1.12rem;
             margin-top: 20px;
             max-width: 640px;
@@ -233,13 +242,13 @@
         }
 
         .price-note {
-            color: var(--muted);
+            color: #d3e3e8;
             font-size: 0.96rem;
             font-weight: 700;
         }
 
         .price-note strong {
-            color: var(--ink);
+            color: #fff;
             font-size: 1.2rem;
         }
 
@@ -248,9 +257,9 @@
         }
 
         .search-panel {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(221, 233, 243, 0.95);
-            border-radius: 38px;
+            background: rgba(255, 253, 250, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            border-radius: 34px;
             box-shadow: var(--shadow);
             overflow: hidden;
             padding: 26px;
@@ -258,7 +267,7 @@
         }
 
         .search-panel::before {
-            background: linear-gradient(90deg, var(--blue), var(--green));
+            background: linear-gradient(90deg, var(--amber), var(--green));
             content: "";
             height: 6px;
             left: 0;
@@ -269,8 +278,11 @@
 
         .orbit {
             background:
-                radial-gradient(circle at center, #fff 0 30%, transparent 31%),
-                repeating-radial-gradient(circle at center, rgba(8, 119, 201, 0.12) 0 2px, transparent 2px 48px);
+                linear-gradient(rgba(10, 91, 120, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10, 91, 120, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, #ffffff 0 24%, transparent 25%),
+                var(--cream);
+            background-size: 42px 42px, 42px 42px, auto, auto;
             border-radius: 28px;
             min-height: 450px;
             padding: 28px;
@@ -279,7 +291,7 @@
 
         .center-card {
             background: var(--ink);
-            border-radius: 28px;
+            border-radius: 24px;
             box-shadow: 0 24px 50px rgba(11, 18, 32, 0.22);
             color: #fff;
             left: 50%;
@@ -291,12 +303,11 @@
         }
 
         .center-card small {
-            color: #9fd9ff;
+            color: var(--amber);
             display: block;
             font-weight: 800;
             margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: -0.01em;
         }
 
         .center-card strong {
@@ -309,8 +320,8 @@
         .orbit-card {
             background: #fff;
             border: 1px solid var(--line);
-            border-radius: 22px;
-            box-shadow: 0 18px 42px rgba(11, 18, 32, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 18px 42px rgba(6, 24, 38, 0.1);
             max-width: 220px;
             padding: 16px;
             position: absolute;
@@ -349,8 +360,8 @@
         }
 
         .sweep {
-            border: 2px solid rgba(8, 119, 201, 0.24);
-            border-left-color: var(--blue);
+            border: 2px solid rgba(10, 91, 120, 0.22);
+            border-left-color: var(--amber);
             border-radius: 50%;
             height: 280px;
             left: 50%;
@@ -361,7 +372,7 @@
         }
 
         .sweep::after {
-            background: var(--blue);
+            background: var(--amber);
             border: 5px solid #fff;
             border-radius: 50%;
             box-shadow: 0 10px 24px rgba(8, 119, 201, 0.34);
@@ -375,11 +386,11 @@
 
         .reply-pill {
             align-items: center;
-            background: var(--green-soft);
-            border: 1px solid #c7f1db;
+            background: var(--ink);
+            border: 1px solid rgba(6, 24, 38, 0.12);
             border-radius: 999px;
             bottom: 24px;
-            color: #087b48;
+            color: #fff;
             display: inline-flex;
             font-size: 0.9rem;
             font-weight: 900;
@@ -402,12 +413,11 @@
         }
 
         .section-kicker {
-            color: var(--blue);
+            color: var(--blue-dark);
             font-size: 0.82rem;
             font-weight: 900;
-            letter-spacing: 0.11em;
+            letter-spacing: -0.01em;
             margin-bottom: 12px;
-            text-transform: uppercase;
         }
 
         h2 {
@@ -424,7 +434,7 @@
         }
 
         .plain {
-            background: linear-gradient(180deg, #fff 0%, var(--mist) 100%);
+            background: linear-gradient(180deg, #fffdfa 0%, var(--mist) 100%);
         }
 
         .contrast-grid {
@@ -439,7 +449,7 @@
         }
 
         .contrast-card.muted {
-            background: #eef4f8;
+            background: #e8f0ef;
             color: var(--muted);
         }
 
@@ -461,7 +471,11 @@
         }
 
         .flow-wrap {
-            background: var(--ink);
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                var(--ink);
+            background-size: 44px 44px;
             border-radius: 40px;
             box-shadow: var(--shadow);
             color: #fff;
@@ -482,8 +496,14 @@
         }
 
         .flow-title p {
-            color: #b9c7d6;
+            color: #bfd0d6;
             max-width: 320px;
+        }
+
+        .loop-panel .section-kicker,
+        .answer-panel .section-kicker,
+        .waves-dashboard .section-kicker {
+            color: var(--amber);
         }
 
         .flow {
@@ -523,7 +543,7 @@
 
         .flow-arrow {
             align-items: center;
-            color: #9fd9ff;
+            color: var(--amber);
             display: flex;
             font-size: 2rem;
             font-weight: 900;
@@ -537,10 +557,10 @@
         }
 
         .step-card {
-            background: #fff;
+            background: #fffefa;
             border: 1px solid var(--line);
             border-radius: var(--radius);
-            box-shadow: 0 18px 46px rgba(11, 18, 32, 0.07);
+            box-shadow: 0 18px 46px rgba(6, 24, 38, 0.07);
             min-height: 360px;
             padding: 28px;
             position: relative;
@@ -548,9 +568,9 @@
 
         .step-number {
             align-items: center;
-            background: var(--blue-soft);
+            background: var(--amber-soft);
             border-radius: 18px;
-            color: var(--blue-dark);
+            color: var(--ink);
             display: inline-flex;
             font-weight: 900;
             height: 48px;
@@ -579,7 +599,7 @@
         }
 
         .step-card.highlight {
-            background: var(--blue);
+            background: var(--blue-dark);
             color: #fff;
             transform: translateY(-18px);
         }
@@ -601,8 +621,8 @@
         .loop-panel {
             align-items: center;
             background:
-                radial-gradient(circle at 12% 20%, rgba(18, 183, 106, 0.18), transparent 24%),
-                radial-gradient(circle at 84% 76%, rgba(8, 119, 201, 0.2), transparent 28%),
+                radial-gradient(circle at 12% 20%, rgba(255, 184, 77, 0.16), transparent 24%),
+                radial-gradient(circle at 84% 76%, rgba(22, 160, 133, 0.18), transparent 28%),
                 var(--ink);
             border-radius: 46px;
             color: #fff;
@@ -646,9 +666,9 @@
 
         .loop-icon {
             align-items: center;
-            background: rgba(159, 217, 255, 0.16);
+            background: rgba(255, 184, 77, 0.16);
             border-radius: 999px;
-            color: #9fd9ff;
+            color: var(--amber);
             display: inline-flex;
             flex: 0 0 38px;
             font-weight: 900;
@@ -676,14 +696,14 @@
         }
 
         .proof-card {
-            background: var(--mist);
+            background: #fffefa;
             border: 1px solid var(--line);
             border-radius: 28px;
             padding: 26px;
         }
 
         .proof-card b {
-            color: var(--blue);
+            color: var(--blue-dark);
             display: block;
             font-size: 1.7rem;
             font-weight: 900;
@@ -702,8 +722,8 @@
 
         .pricing-card {
             align-items: center;
-            background: var(--cream);
-            border: 1px solid #f0dfbd;
+            background: linear-gradient(135deg, var(--cream), #fff8e8);
+            border: 1px solid #eadfbd;
             border-radius: 42px;
             display: flex;
             gap: 28px;
@@ -723,7 +743,7 @@
         }
 
         .price-box {
-            background: #fff;
+            background: #fffdfa;
             border: 1px solid #ecd9af;
             border-radius: 30px;
             box-shadow: 0 18px 46px rgba(113, 84, 32, 0.1);
@@ -865,9 +885,8 @@
             color: #9fd9ff;
             font-size: 0.82rem;
             font-weight: 900;
-            letter-spacing: 0.08em;
+            letter-spacing: -0.01em;
             padding: 8px 12px;
-            text-transform: uppercase;
         }
 
         .answer-panel h3 {
@@ -901,9 +920,8 @@
             display: block;
             font-size: 0.75rem;
             font-weight: 900;
-            letter-spacing: 0.08em;
+            letter-spacing: -0.01em;
             margin-bottom: 10px;
-            text-transform: uppercase;
         }
 
         .source-card b {
@@ -1224,9 +1242,8 @@
             color: #9fd9ff;
             font-size: 0.8rem;
             font-weight: 900;
-            letter-spacing: 0.1em;
+            letter-spacing: -0.01em;
             margin-bottom: 18px;
-            text-transform: uppercase;
         }
 
         .dashboard-number {
@@ -1457,9 +1474,9 @@
             </a>
             <nav class="nav-links" aria-label="Primary navigation">
                 <a href="#how" data-i18n="navHow">How it works</a>
-                <a href="#pricing" data-i18n="navPrice">Price</a>
-                <a href="#community" data-i18n="navCommunity">We Are Jobsy</a>
-                <a href="#waves" data-i18n="navWaves">Waves</a>
+                <a href="#pricing" data-i18n="navPrice">Pricing</a>
+                <a href="#community" data-i18n="navCommunity">Support</a>
+                <a href="#waves" data-i18n="navWaves">Rewards</a>
                 <select id="lang-select" class="lang-select" aria-label="Language">
                     <option value="en">EN</option>
                     <option value="ru">RU</option>
@@ -1473,13 +1490,13 @@
         <section class="hero">
             <div class="container hero-grid">
                 <div>
-                    <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="heroBadge">Jobsy is searching</span></div>
-                    <h1><span data-i18n="heroTitleTop">Find</span> <span data-i18n="heroTitleBottom">Work</span></h1>
-                    <p class="hero-promise" data-i18n="heroPromise">Tell Jobsy what job you want. Jobsy will keep looking until you find it.</p>
-                    <p class="hero-copy" data-i18n="heroNeed">You don't need another place to search for jobs. You need someone searching for you.</p>
-                    <p class="hero-copy" data-i18n="heroText">Upload your CV and tell Jobsy what you're looking for. Jobsy finds suitable employers and recruitment agencies, prepares personalized outreach in their language, and keeps searching for new opportunities until you find work.</p>
+                    <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="heroBadge">Your job search is active</span></div>
+                    <h1><span data-i18n="heroTitleTop">Stop</span> <span data-i18n="heroTitleBottom">scrolling jobs</span></h1>
+                    <p class="hero-promise" data-i18n="heroPromise">Upload your CV once. Jobsy finds suitable employers, prepares personal outreach, and keeps searching for you.</p>
+                    <p class="hero-copy" data-i18n="heroNeed">Most job boards make you do the work. Jobsy works like a search assistant: it starts from your profile and brings the search to companies that may actually need you.</p>
+                    <p class="hero-copy" data-i18n="heroText">Choose the role, country and direction you want next. Jobsy matches your profile with employers and recruitment agencies, adapts outreach to their language, and keeps moving while you focus on replies and interviews.</p>
                     <div class="hero-actions">
-                        <a href="/app" class="btn" data-i18n="primaryCta">Start finding work</a>
+                        <a href="/app" class="btn" data-i18n="primaryCta">Start my search</a>
                         <span class="price-note"><strong>€5.50</strong> <span data-i18n="priceMonth">/ month</span></span>
                     </div>
                 </div>
@@ -1488,12 +1505,12 @@
                     <div class="search-panel">
                         <div class="orbit">
                             <div class="sweep" aria-hidden="true"></div>
-                            <div class="orbit-card cv"><b data-i18n="orbitCvTitle">Your CV</b><span data-i18n="orbitCvText">Experience, skills, languages</span></div>
-                            <div class="orbit-card goal"><b data-i18n="orbitGoalTitle">What you want</b><span data-i18n="orbitGoalText">Role, country, next step</span></div>
-                            <div class="center-card"><small data-i18n="orbitCenterLabel">Active search</small><strong data-i18n="orbitCenterTitle">Jobsy looks for you</strong></div>
-                            <div class="orbit-card employers"><b data-i18n="orbitEmployersTitle">Employers</b><span data-i18n="orbitEmployersText">Companies that fit your profile</span></div>
-                            <div class="orbit-card message"><b data-i18n="orbitOutreachTitle">Outreach</b><span data-i18n="orbitOutreachText">Personalized in their language</span></div>
-                            <div class="reply-pill"><span class="pulse-dot"></span><span data-i18n="orbitReplies">Replies come back to you</span></div>
+                            <div class="orbit-card cv"><b data-i18n="orbitCvTitle">CV signal</b><span data-i18n="orbitCvText">Experience, skills, languages</span></div>
+                            <div class="orbit-card goal"><b data-i18n="orbitGoalTitle">Your target</b><span data-i18n="orbitGoalText">Role, country, next move</span></div>
+                            <div class="center-card"><small data-i18n="orbitCenterLabel">Search room</small><strong data-i18n="orbitCenterTitle">Jobsy builds your route</strong></div>
+                            <div class="orbit-card employers"><b data-i18n="orbitEmployersTitle">Fit list</b><span data-i18n="orbitEmployersText">Employers and agencies worth contacting</span></div>
+                            <div class="orbit-card message"><b data-i18n="orbitOutreachTitle">Outreach</b><span data-i18n="orbitOutreachText">Personal, direct, language-aware</span></div>
+                            <div class="reply-pill"><span class="pulse-dot"></span><span data-i18n="orbitReplies">Replies land with you</span></div>
                         </div>
                     </div>
                 </div>
@@ -1503,12 +1520,12 @@
         <section class="plain">
             <div class="container contrast-grid">
                 <article class="contrast-card muted">
-                    <h3 data-i18n="contrastLeftTitle">Not another job board.</h3>
-                    <p data-i18n="contrastLeftText">You should not have to browse hundreds of job ads and guess which companies might need you.</p>
+                    <h3 data-i18n="contrastLeftTitle">Job boards wait for you.</h3>
+                    <p data-i18n="contrastLeftText">You scroll, filter, compare and still have to guess which company is worth your time.</p>
                 </article>
                 <article class="contrast-card focus">
-                    <h3 data-i18n="contrastRightTitle">Jobsy searches for you.</h3>
-                    <p data-i18n="contrastRightText">It starts with your CV, your goals, and the kind of work you actually want next.</p>
+                    <h3 data-i18n="contrastRightTitle">Jobsy starts the search.</h3>
+                    <p data-i18n="contrastRightText">It turns your CV and target into a working pipeline of employers, agencies and prepared messages.</p>
                 </article>
             </div>
         </section>
@@ -1517,19 +1534,19 @@
             <div class="container">
                 <div class="flow-wrap">
                     <div class="flow-title">
-                        <h2 data-i18n="flowTitle">From your CV to employer replies.</h2>
-                        <p data-i18n="flowText">A simple flow with movement. Jobsy keeps the search moving instead of leaving you with a static list.</p>
+                        <h2 data-i18n="flowTitle">From CV to real conversations.</h2>
+                        <p data-i18n="flowText">One route, not another dashboard to maintain.</p>
                     </div>
                     <div class="flow">
-                        <div class="flow-node"><b data-i18n="flow1Title">Your CV + What you want</b><span data-i18n="flow1Text">Experience and direction</span></div>
+                        <div class="flow-node"><b data-i18n="flow1Title">Your CV + target</b><span data-i18n="flow1Text">Experience and direction</span></div>
                         <div class="flow-arrow">↓</div>
-                        <div class="flow-node"><b data-i18n="flow2Title">Jobsy searches</b><span data-i18n="flow2Text">Active matching</span></div>
+                        <div class="flow-node"><b data-i18n="flow2Title">Jobsy maps the market</b><span data-i18n="flow2Text">Active matching</span></div>
                         <div class="flow-arrow">↓</div>
-                        <div class="flow-node"><b data-i18n="flow3Title">Employers & recruitment agencies</b><span data-i18n="flow3Text">Relevant recipients</span></div>
+                        <div class="flow-node"><b data-i18n="flow3Title">Employers and agencies</b><span data-i18n="flow3Text">Relevant recipients</span></div>
                         <div class="flow-arrow">↓</div>
-                        <div class="flow-node"><b data-i18n="flow4Title">Personalized outreach</b><span data-i18n="flow4Text">Written for their language</span></div>
+                        <div class="flow-node"><b data-i18n="flow4Title">Personal outreach</b><span data-i18n="flow4Text">Written for their language</span></div>
                         <div class="flow-arrow">↓</div>
-                        <div class="flow-node"><b data-i18n="flow5Title">Replies come back to you</b><span data-i18n="flow5Text">Your inbox</span></div>
+                        <div class="flow-node"><b data-i18n="flow5Title">Replies come back to you</b><span data-i18n="flow5Text">Interviews start here</span></div>
                     </div>
                 </div>
             </div>
@@ -1539,36 +1556,36 @@
             <div class="container">
                 <div class="section-head">
                     <div class="section-kicker" data-i18n="howKicker">How it works</div>
-                    <h2 data-i18n="howTitle">Give Jobsy the target. Jobsy does the searching.</h2>
+                    <h2 data-i18n="howTitle">Give Jobsy a target. It builds the search.</h2>
                 </div>
                 <div class="steps">
                     <article class="step-card">
                         <div class="step-number">1</div>
-                        <h3 data-i18n="step1Title">Tell Jobsy what you want</h3>
-                        <p data-i18n="step1Text">Upload your CV and tell Jobsy what kind of work you're looking for.</p>
-                        <strong data-i18n="step1Strong">What you've done + what you want to do next.</strong>
-                        <p data-i18n="step1More">Your CV alone doesn't always tell the whole story. One person may have several professions, different experience, or want to move into something new.</p>
+                        <h3 data-i18n="step1Title">Set the target</h3>
+                        <p data-i18n="step1Text">Upload your CV and describe the work you want now.</p>
+                        <strong data-i18n="step1Strong">Your past experience plus your next move.</strong>
+                        <p data-i18n="step1More">A CV alone can be too broad. Jobsy uses your direction to avoid irrelevant matches.</p>
                     </article>
                     <article class="step-card">
                         <div class="step-number">2</div>
-                        <h3 data-i18n="step2Title">Jobsy finds the right employers</h3>
-                        <p data-i18n="step2Text">Jobsy searches for companies and recruitment or staffing agencies that fit your experience and goals.</p>
-                        <strong data-i18n="step2Strong">You should not have to do the browsing.</strong>
-                        <p data-i18n="step2More">Jobsy does the searching, instead of asking you to manually decide which companies might need you.</p>
+                        <h3 data-i18n="step2Title">Find the right recipients</h3>
+                        <p data-i18n="step2Text">Jobsy searches for employers, recruiters and staffing agencies that fit your profile.</p>
+                        <strong data-i18n="step2Strong">Less guessing, more qualified outreach.</strong>
+                        <p data-i18n="step2More">You get a focused search instead of hundreds of ads that may not match you.</p>
                     </article>
                     <article class="step-card">
                         <div class="step-number">3</div>
-                        <h3 data-i18n="step3Title">Jobsy reaches out</h3>
-                        <p data-i18n="step3Text">Jobsy helps prepare personalized outreach for each recipient.</p>
-                        <strong data-i18n="step3Strong">The right person, the right company, the right way.</strong>
-                        <p data-i18n="step3More">The message is adapted to the company and written in the recipient's language.</p>
+                        <h3 data-i18n="step3Title">Prepare the approach</h3>
+                        <p data-i18n="step3Text">Jobsy helps prepare a clear message for each recipient.</p>
+                        <strong data-i18n="step3Strong">Relevant, specific, and in their language.</strong>
+                        <p data-i18n="step3More">The outreach explains why your profile fits instead of sending a generic application.</p>
                     </article>
                     <article class="step-card highlight">
                         <div class="step-number">4</div>
-                        <h3 data-i18n="step4Title">Jobsy keeps looking</h3>
-                        <p data-i18n="step4Text">Jobsy is not a one-time search that gives you a list and disappears.</p>
-                        <strong data-i18n="step4Strong">Your job search doesn't stop after one search. Neither does Jobsy.</strong>
-                        <p data-i18n="step4More">It continues looking for new opportunities until you find work.</p>
+                        <h3 data-i18n="step4Title">Keep the pipeline alive</h3>
+                        <p data-i18n="step4Text">Jobsy is not a one-time export of leads.</p>
+                        <strong data-i18n="step4Strong">New matches can appear while you handle replies.</strong>
+                        <p data-i18n="step4More">The search keeps moving until you find work.</p>
                     </article>
                 </div>
             </div>
@@ -1577,38 +1594,38 @@
         <section class="loop-section">
             <div class="container loop-panel">
                 <div>
-                    <div class="section-kicker" data-i18n="loopKicker">Ongoing search</div>
-                    <h2 data-i18n="loopTitle">Your job search doesn't stop after one search. Neither does Jobsy.</h2>
-                    <p data-i18n="loopText">Jobsy searches for work so you don't have to. New suitable employers and recruitment agencies can be found, prepared, and approached while you stay focused on replies and interviews.</p>
+                    <div class="section-kicker" data-i18n="loopKicker">Always moving</div>
+                    <h2 data-i18n="loopTitle">A job search should not depend on your free evenings.</h2>
+                    <p data-i18n="loopText">Jobsy keeps the search active in the background: new suitable companies, new agencies, new prepared outreach. Your time goes to replies, calls and interviews.</p>
                 </div>
                 <div class="loop-card" data-i18n-aria-label="loopAria" aria-label="Ongoing search cycle">
-                    <div class="loop-row"><span class="loop-icon">1</span><div><b data-i18n="loop1Title">Understand your goal</b><span data-i18n="loop1Text">What work you want now</span></div></div>
-                    <div class="loop-row"><span class="loop-icon">2</span><div><b data-i18n="loop2Title">Search for fit</b><span data-i18n="loop2Text">Employers and agencies</span></div></div>
-                    <div class="loop-row"><span class="loop-icon">3</span><div><b data-i18n="loop3Title">Prepare outreach</b><span data-i18n="loop3Text">Personal and language-aware</span></div></div>
-                    <div class="loop-row"><span class="loop-icon">4</span><div><b data-i18n="loop4Title">Keep moving</b><span data-i18n="loop4Text">More opportunities, not one list</span></div></div>
+                    <div class="loop-row"><span class="loop-icon">1</span><div><b data-i18n="loop1Title">Target is clear</b><span data-i18n="loop1Text">Role, country, conditions</span></div></div>
+                    <div class="loop-row"><span class="loop-icon">2</span><div><b data-i18n="loop2Title">Market is scanned</b><span data-i18n="loop2Text">Employers and agencies</span></div></div>
+                    <div class="loop-row"><span class="loop-icon">3</span><div><b data-i18n="loop3Title">Outreach is prepared</b><span data-i18n="loop3Text">Personal and language-aware</span></div></div>
+                    <div class="loop-row"><span class="loop-icon">4</span><div><b data-i18n="loop4Title">Search keeps going</b><span data-i18n="loop4Text">More chances, not one list</span></div></div>
                 </div>
             </div>
         </section>
 
         <section>
             <div class="container proof-grid">
-                <div class="proof-card"><b data-i18n="proof1Title">6 markets</b><span data-i18n="proof1Text">Finland, Sweden, Norway, Spain, Italy and Germany support the search.</span></div>
-                <div class="proof-card"><b>2.6M+</b><span data-i18n="proof2Text">Employer and recruitment agency records support matching.</span></div>
-                <div class="proof-card"><b data-i18n="proof3Title">Languages</b><span data-i18n="proof3Text">Outreach can be adapted to the recipient's language.</span></div>
+                <div class="proof-card"><b data-i18n="proof1Title">6 countries</b><span data-i18n="proof1Text">Search support across Finland, Sweden, Norway, Spain, Italy and Germany.</span></div>
+                <div class="proof-card"><b>2.6M+</b><span data-i18n="proof2Text">Employer and recruitment agency records used for matching.</span></div>
+                <div class="proof-card"><b data-i18n="proof3Title">Local language</b><span data-i18n="proof3Text">Outreach can be adapted to how recipients actually communicate.</span></div>
             </div>
         </section>
 
         <section id="pricing" class="pricing">
             <div class="container pricing-card">
                 <div>
-                    <div class="section-kicker" data-i18n="pricingKicker">Start simple</div>
-                    <h2 data-i18n="pricingTitle">Start finding work.</h2>
-                    <p data-i18n="pricingText">Upload your CV, tell Jobsy what kind of work you want, and let Jobsy start searching for suitable employers and recruitment agencies.</p>
+                    <div class="section-kicker" data-i18n="pricingKicker">Start today</div>
+                    <h2 data-i18n="pricingTitle">Put your search in motion for €5.50.</h2>
+                    <p data-i18n="pricingText">Start with your CV and target role. Jobsy begins finding suitable employers and preparing outreach without asking you to spend every evening on job boards.</p>
                 </div>
                 <div class="price-box">
                     <strong>€5.50</strong>
                     <span data-i18n="priceMonth">/ month</span>
-                    <a href="/app" class="btn" data-i18n="primaryCta">Start finding work</a>
+                    <a href="/app" class="btn" data-i18n="primaryCta">Start my search</a>
                 </div>
             </div>
         </section>
@@ -1616,17 +1633,17 @@
         <section id="community" class="community">
             <div class="container community-hero">
                 <div class="community-copy">
-                    <div class="section-kicker" data-i18n="communityKicker">We Are Jobsy</div>
-                    <h2 data-i18n="communityTitle">We are Jobsy.</h2>
-                    <p class="lead" data-i18n="communityLead">Every question. Every experience. Every success makes Jobsy smarter.</p>
-                    <p data-i18n="communityText1">Jobsy is not a company publishing information while everyone else only reads. We build Jobsy together with the people who use it.</p>
-                    <p data-i18n="communityText2">People living and working in different countries know things no database can know on its own. Each person knows a small piece. Jobsy brings those pieces together.</p>
+                    <div class="section-kicker" data-i18n="communityKicker">Practical support</div>
+                    <h2 data-i18n="communityTitle">The search is stronger when it knows the country.</h2>
+                    <p class="lead" data-i18n="communityLead">Jobsy combines employer data with practical knowledge from people who live and work there.</p>
+                    <p data-i18n="communityText1">Finding work abroad is not only about sending a CV. Language, certificates, expectations and local hiring habits matter.</p>
+                    <p data-i18n="communityText2">Jobsy keeps learning from guides, questions and shared experience, so the next person gets a clearer path.</p>
                 </div>
                 <div class="pieces-card" aria-label="Shared experience examples">
-                    <div class="piece"><span class="avatar-dot">DE</span><div><b data-i18n="piece1Title">Electrician in Germany</b><span data-i18n="piece1Text">What the work is really like, what certificates matter, and what employers expect.</span></div></div>
-                    <div class="piece"><span class="avatar-dot">FI</span><div><b data-i18n="piece2Title">Retraining after 40 in Finland</b><span data-i18n="piece2Text">How courses, support and career changes actually work for adults.</span></div></div>
-                    <div class="piece"><span class="avatar-dot">NO</span><div><b data-i18n="piece3Title">Finding work without Norwegian</b><span data-i18n="piece3Text">Where language blocks you, where it does not, and how people started.</span></div></div>
-                    <div class="piece"><span class="avatar-dot">IT</span><div><b data-i18n="piece4Title">A profession in real life</b><span data-i18n="piece4Text">How a job actually works in a specific country, not only what a job ad says.</span></div></div>
+                    <div class="piece"><span class="avatar-dot">DE</span><div><b data-i18n="piece1Title">Certificates in Germany</b><span data-i18n="piece1Text">What employers ask for before they reply.</span></div></div>
+                    <div class="piece"><span class="avatar-dot">FI</span><div><b data-i18n="piece2Title">Retraining in Finland</b><span data-i18n="piece2Text">Which paths are realistic for adults changing direction.</span></div></div>
+                    <div class="piece"><span class="avatar-dot">NO</span><div><b data-i18n="piece3Title">Work without Norwegian</b><span data-i18n="piece3Text">Where language blocks you and where it does not.</span></div></div>
+                    <div class="piece"><span class="avatar-dot">IT</span><div><b data-i18n="piece4Title">Local expectations</b><span data-i18n="piece4Text">How a profession works in real life, not only in a job ad.</span></div></div>
                 </div>
             </div>
         </section>
@@ -1634,9 +1651,9 @@
         <section>
             <div class="container">
                 <div class="section-head">
-                    <div class="section-kicker" data-i18n="askKicker">Ask Jobsy</div>
-                    <h2 data-i18n="askTitle">Ask a practical question. See where the answer comes from.</h2>
-                    <p data-i18n="askText">Jobsy helps people find and understand the knowledge already inside Jobsy: structured guides, country articles and real experiences shared by users.</p>
+                    <div class="section-kicker" data-i18n="askKicker">Ask before you apply</div>
+                    <h2 data-i18n="askTitle">Know what to check before you contact employers.</h2>
+                    <p data-i18n="askText">Use Jobsy to understand the practical parts of a job search in another country: language, certificates, rights, documents and realistic routes.</p>
                 </div>
                 <div class="ask-layout">
                     <div class="question-stack" aria-label="Example questions">
@@ -1651,8 +1668,8 @@
                             <span class="ask-pill" data-i18n="answerPill">Jobsy answer</span>
                             <span class="pulse-dot"></span>
                         </div>
-                        <h3 data-i18n="answerTitle">A useful answer, with sources you can open.</h3>
-                        <p data-i18n="answerText">The answer can summarize what Jobsy knows, then show the guide and real user experiences behind it. You are not just getting a black-box reply. You can read what other people actually experienced.</p>
+                        <h3 data-i18n="answerTitle">A practical answer, with sources you can open.</h3>
+                        <p data-i18n="answerText">Jobsy can summarize what matters, then point you to the guide or shared experience behind the answer. You see the reasoning, not a black-box reply.</p>
                         <div class="source-grid">
                             <article class="source-card"><small data-i18n="source1Label">Jobsy answer</small><b data-i18n="source1Title">Short practical summary</b><p data-i18n="source1Text">What matters first, what to check, and what to do next.</p><a href="/app" data-i18n="sourceOpen">Open source</a></article>
                             <article class="source-card"><small data-i18n="source2Label">From Jobsy</small><b data-i18n="source2Title">Relevant article or guide</b><p data-i18n="source2Text">Country-specific information about work, documents, language or rights.</p><a href="/app" data-i18n="sourceOpen">Open source</a></article>
@@ -1666,19 +1683,19 @@
         <section>
             <div class="container">
                 <div class="section-head">
-                    <div class="section-kicker" data-i18n="blogsKicker">Jobsy knowledge</div>
-                    <h2 data-i18n="blogsTitle">Articles start the conversation. People add what they know.</h2>
-                    <p data-i18n="blogsText">Jobsy country content covers practical life and work topics. Articles are not a separate media product. They are part of Jobsy's growing knowledge.</p>
+                    <div class="section-kicker" data-i18n="blogsKicker">Guides that support the search</div>
+                    <h2 data-i18n="blogsTitle">Better context makes better outreach.</h2>
+                    <p data-i18n="blogsText">Country guides help you understand what employers expect before Jobsy starts contacting them.</p>
                 </div>
                 <div class="knowledge-grid">
                     <article class="knowledge-card featured">
-                        <h3 data-i18n="knowledgeFeaturedTitle">Country-specific blogs</h3>
-                        <p data-i18n="knowledgeFeaturedText">Work, professions, retraining, documents, housing, taxes and everyday life in the country. A guide can start with Jobsy, then become stronger when people add lived experience.</p>
+                        <h3 data-i18n="knowledgeFeaturedTitle">Country-specific guides</h3>
+                        <p data-i18n="knowledgeFeaturedText">Work, professions, retraining, documents, housing, taxes and everyday life. Guides help turn a vague plan into a search Jobsy can act on.</p>
                         <div class="topic-list"><span data-i18n="topicWork">Work</span><span data-i18n="topicRights">Worker rights</span><span data-i18n="topicLanguage">Languages</span><span data-i18n="topicHousing">Housing</span><span data-i18n="topicCost">Cost of living</span></div>
                     </article>
-                    <article class="knowledge-card"><h3 data-i18n="knowledge1Title">Broader than job search</h3><p data-i18n="knowledge1Text">People need practical context about documents, legalization, education, family, integration and local opportunities.</p></article>
-                    <article class="knowledge-card"><h3 data-i18n="knowledge2Title">Comments become useful</h3><p data-i18n="knowledge2Text">A comment is not just a reaction. It can become part of the knowledge Jobsy uses to help the next person.</p></article>
-                    <article class="knowledge-card"><h3 data-i18n="knowledge3Title">Real experience matters</h3><p data-i18n="knowledge3Text">Someone who just found work can tell others what worked, what took time and what they would do differently.</p></article>
+                    <article class="knowledge-card"><h3 data-i18n="knowledge1Title">Clearer target</h3><p data-i18n="knowledge1Text">Understand which roles, countries and conditions make sense before starting outreach.</p></article>
+                    <article class="knowledge-card"><h3 data-i18n="knowledge2Title">Fewer surprises</h3><p data-i18n="knowledge2Text">Check documents, language expectations and common blockers before they slow you down.</p></article>
+                    <article class="knowledge-card"><h3 data-i18n="knowledge3Title">Real experience</h3><p data-i18n="knowledge3Text">Learn what people tried, what worked and what they would do differently.</p></article>
                 </div>
             </div>
         </section>
@@ -1686,17 +1703,17 @@
         <section>
             <div class="container contribute-panel">
                 <div>
-                    <div class="section-kicker" data-i18n="contributeKicker">From reader to contributor</div>
-                    <h2 data-i18n="contributeTitle">Know something that could help?</h2>
-                    <p data-i18n="contributeText1">Share your experience. You don't need to be an expert.</p>
-                    <p data-i18n="contributeText2">If you've lived it, learned it, tried it or solved it, your experience may help someone else. Together, we make Jobsy smarter.</p>
-                    <div class="hero-actions"><a href="/app" class="btn" data-i18n="contributeCta">Share your experience</a></div>
+                    <div class="section-kicker" data-i18n="contributeKicker">Help the next search</div>
+                    <h2 data-i18n="contributeTitle">Found a route that worked?</h2>
+                    <p data-i18n="contributeText1">Share the practical details someone else would otherwise learn too late.</p>
+                    <p data-i18n="contributeText2">A short note about certificates, interviews, agencies or local expectations can make Jobsy more useful for the next person.</p>
+                    <div class="hero-actions"><a href="/app" class="btn" data-i18n="contributeCta">Share what worked</a></div>
                 </div>
                 <div class="action-list">
-                    <div class="action-item"><span>1</span><div><b data-i18n="action1Title">Answer a question</b></div></div>
-                    <div class="action-item"><span>2</span><div><b data-i18n="action2Title">Add a comment to an article</b></div></div>
-                    <div class="action-item"><span>3</span><div><b data-i18n="action3Title">Share how you found work</b></div></div>
-                    <div class="action-item"><span>4</span><div><b data-i18n="action4Title">Correct or improve a guide</b></div></div>
+                    <div class="action-item"><span>1</span><div><b data-i18n="action1Title">Answer a practical question</b></div></div>
+                    <div class="action-item"><span>2</span><div><b data-i18n="action2Title">Add detail to a guide</b></div></div>
+                    <div class="action-item"><span>3</span><div><b data-i18n="action3Title">Share how you got replies</b></div></div>
+                    <div class="action-item"><span>4</span><div><b data-i18n="action4Title">Correct outdated information</b></div></div>
                 </div>
             </div>
         </section>
@@ -1705,10 +1722,10 @@
             <div class="container waves-hero">
                 <div class="waves-copy">
                     <div class="section-kicker" data-i18n="wavesKicker">Jobsy Waves</div>
-                    <h2 data-i18n="wavesTitle">Make Waves.</h2>
-                    <p class="lead" data-i18n="wavesLead">Share something useful. See how far it goes.</p>
-                    <p data-i18n="wavesText1">Jobsy helps you, and we build Jobsy together. What we create together can also spread from person to person.</p>
-                    <p data-i18n="wavesText2">When you share useful Jobsy content, your share stays attached to you automatically. No codes to create. No complicated setup. Just share something that could help someone you know.</p>
+                    <h2 data-i18n="wavesTitle">Useful help can travel.</h2>
+                    <p class="lead" data-i18n="wavesLead">Share Jobsy with someone who needs work. If it helps them, your contribution is visible.</p>
+                    <p data-i18n="wavesText1">Jobsy grows when people pass useful routes to each other: a guide, a search idea, or the product itself.</p>
+                    <p data-i18n="wavesText2">When you share useful Jobsy content, your share can stay connected to you automatically. No codes to invent. No setup. Just send something that may help.</p>
                 </div>
                 <div class="wave-visual" data-i18n-aria-label="wavesVisualAria" aria-label="Waves spreading outward from one useful share">
                     <div class="wave-ring one"></div>
@@ -1768,7 +1785,7 @@
 
     <footer>
         <div class="container footer-inner">
-            <p data-i18n="footerText">Jobsy - Find work without searching alone.</p>
+            <p data-i18n="footerText">Jobsy - job search that keeps moving.</p>
             <div class="footer-links">
                 <a href="/privacy" data-i18n="footerPrivacy">Privacy Policy</a>
                 <a href="/terms" data-i18n="footerTerms">Terms of Service</a>
@@ -1780,109 +1797,109 @@
         const translations = {
             en: {
                 navHow: "How it works",
-                navPrice: "Price",
-                navCommunity: "We Are Jobsy",
-                navWaves: "Waves",
+                navPrice: "Pricing",
+                navCommunity: "Support",
+                navWaves: "Rewards",
                 navSignIn: "Sign in",
-                heroBadge: "Jobsy is searching",
-                heroTitleTop: "Find",
-                heroTitleBottom: "Work",
-                heroPromise: "Tell Jobsy what job you want. Jobsy will keep looking until you find it.",
-                heroNeed: "You don't need another place to search for jobs. You need someone searching for you.",
-                heroText: "Upload your CV and tell Jobsy what you're looking for. Jobsy finds suitable employers and recruitment agencies, prepares personalized outreach in their language, and keeps searching for new opportunities until you find work.",
-                primaryCta: "Start finding work",
+                heroBadge: "Your job search is active",
+                heroTitleTop: "Stop",
+                heroTitleBottom: "scrolling jobs",
+                heroPromise: "Upload your CV once. Jobsy finds suitable employers, prepares personal outreach, and keeps searching for you.",
+                heroNeed: "Most job boards make you do the work. Jobsy works like a search assistant: it starts from your profile and brings the search to companies that may actually need you.",
+                heroText: "Choose the role, country and direction you want next. Jobsy matches your profile with employers and recruitment agencies, adapts outreach to their language, and keeps moving while you focus on replies and interviews.",
+                primaryCta: "Start my search",
                 priceMonth: "/ month",
                 searchPreview: "Jobsy search movement preview",
-                orbitCvTitle: "Your CV",
+                orbitCvTitle: "CV signal",
                 orbitCvText: "Experience, skills, languages",
-                orbitGoalTitle: "What you want",
-                orbitGoalText: "Role, country, next step",
-                orbitCenterLabel: "Active search",
-                orbitCenterTitle: "Jobsy looks for you",
-                orbitEmployersTitle: "Employers",
-                orbitEmployersText: "Companies that fit your profile",
+                orbitGoalTitle: "Your target",
+                orbitGoalText: "Role, country, next move",
+                orbitCenterLabel: "Search room",
+                orbitCenterTitle: "Jobsy builds your route",
+                orbitEmployersTitle: "Fit list",
+                orbitEmployersText: "Employers and agencies worth contacting",
                 orbitOutreachTitle: "Outreach",
-                orbitOutreachText: "Personalized in their language",
-                orbitReplies: "Replies come back to you",
-                contrastLeftTitle: "Not another job board.",
-                contrastLeftText: "You should not have to browse hundreds of job ads and guess which companies might need you.",
-                contrastRightTitle: "Jobsy searches for you.",
-                contrastRightText: "It starts with your CV, your goals, and the kind of work you actually want next.",
+                orbitOutreachText: "Personal, direct, language-aware",
+                orbitReplies: "Replies land with you",
+                contrastLeftTitle: "Job boards wait for you.",
+                contrastLeftText: "You scroll, filter, compare and still have to guess which company is worth your time.",
+                contrastRightTitle: "Jobsy starts the search.",
+                contrastRightText: "It turns your CV and target into a working pipeline of employers, agencies and prepared messages.",
                 flowAria: "Simple visual explanation",
-                flowTitle: "From your CV to employer replies.",
-                flowText: "A simple flow with movement. Jobsy keeps the search moving instead of leaving you with a static list.",
-                flow1Title: "Your CV + What you want",
+                flowTitle: "From CV to real conversations.",
+                flowText: "One route, not another dashboard to maintain.",
+                flow1Title: "Your CV + target",
                 flow1Text: "Experience and direction",
-                flow2Title: "Jobsy searches",
+                flow2Title: "Jobsy maps the market",
                 flow2Text: "Active matching",
-                flow3Title: "Employers & recruitment agencies",
+                flow3Title: "Employers and agencies",
                 flow3Text: "Relevant recipients",
-                flow4Title: "Personalized outreach",
+                flow4Title: "Personal outreach",
                 flow4Text: "Written for their language",
                 flow5Title: "Replies come back to you",
-                flow5Text: "Your inbox",
+                flow5Text: "Interviews start here",
                 howKicker: "How it works",
-                howTitle: "Give Jobsy the target. Jobsy does the searching.",
-                step1Title: "Tell Jobsy what you want",
-                step1Text: "Upload your CV and tell Jobsy what kind of work you're looking for.",
-                step1Strong: "What you've done + what you want to do next.",
-                step1More: "Your CV alone doesn't always tell the whole story. One person may have several professions, different experience, or want to move into something new.",
-                step2Title: "Jobsy finds the right employers",
-                step2Text: "Jobsy searches for companies and recruitment or staffing agencies that fit your experience and goals.",
-                step2Strong: "You should not have to do the browsing.",
-                step2More: "Jobsy does the searching, instead of asking you to manually decide which companies might need you.",
-                step3Title: "Jobsy reaches out",
-                step3Text: "Jobsy helps prepare personalized outreach for each recipient.",
-                step3Strong: "The right person, the right company, the right way.",
-                step3More: "The message is adapted to the company and written in the recipient's language.",
-                step4Title: "Jobsy keeps looking",
-                step4Text: "Jobsy is not a one-time search that gives you a list and disappears.",
-                step4Strong: "Your job search doesn't stop after one search. Neither does Jobsy.",
-                step4More: "It continues looking for new opportunities until you find work.",
-                loopKicker: "Ongoing search",
-                loopTitle: "Your job search doesn't stop after one search. Neither does Jobsy.",
-                loopText: "Jobsy searches for work so you don't have to. New suitable employers and recruitment agencies can be found, prepared, and approached while you stay focused on replies and interviews.",
+                howTitle: "Give Jobsy a target. It builds the search.",
+                step1Title: "Set the target",
+                step1Text: "Upload your CV and describe the work you want now.",
+                step1Strong: "Your past experience plus your next move.",
+                step1More: "A CV alone can be too broad. Jobsy uses your direction to avoid irrelevant matches.",
+                step2Title: "Find the right recipients",
+                step2Text: "Jobsy searches for employers, recruiters and staffing agencies that fit your profile.",
+                step2Strong: "Less guessing, more qualified outreach.",
+                step2More: "You get a focused search instead of hundreds of ads that may not match you.",
+                step3Title: "Prepare the approach",
+                step3Text: "Jobsy helps prepare a clear message for each recipient.",
+                step3Strong: "Relevant, specific, and in their language.",
+                step3More: "The outreach explains why your profile fits instead of sending a generic application.",
+                step4Title: "Keep the pipeline alive",
+                step4Text: "Jobsy is not a one-time export of leads.",
+                step4Strong: "New matches can appear while you handle replies.",
+                step4More: "The search keeps moving until you find work.",
+                loopKicker: "Always moving",
+                loopTitle: "A job search should not depend on your free evenings.",
+                loopText: "Jobsy keeps the search active in the background: new suitable companies, new agencies, new prepared outreach. Your time goes to replies, calls and interviews.",
                 loopAria: "Ongoing search cycle",
-                loop1Title: "Understand your goal",
-                loop1Text: "What work you want now",
-                loop2Title: "Search for fit",
+                loop1Title: "Target is clear",
+                loop1Text: "Role, country, conditions",
+                loop2Title: "Market is scanned",
                 loop2Text: "Employers and agencies",
-                loop3Title: "Prepare outreach",
+                loop3Title: "Outreach is prepared",
                 loop3Text: "Personal and language-aware",
-                loop4Title: "Keep moving",
-                loop4Text: "More opportunities, not one list",
-                proof1Title: "6 markets",
-                proof1Text: "Finland, Sweden, Norway, Spain, Italy and Germany support the search.",
-                proof2Text: "Employer and recruitment agency records support matching.",
-                proof3Title: "Languages",
-                proof3Text: "Outreach can be adapted to the recipient's language.",
-                pricingKicker: "Start simple",
-                pricingTitle: "Start finding work.",
-                pricingText: "Upload your CV, tell Jobsy what kind of work you want, and let Jobsy start searching for suitable employers and recruitment agencies.",
-                communityKicker: "We Are Jobsy",
-                communityTitle: "We are Jobsy.",
-                communityLead: "Every question. Every experience. Every success makes Jobsy smarter.",
-                communityText1: "Jobsy is not a company publishing information while everyone else only reads. We build Jobsy together with the people who use it.",
-                communityText2: "People living and working in different countries know things no database can know on its own. Each person knows a small piece. Jobsy brings those pieces together.",
-                piece1Title: "Electrician in Germany",
-                piece1Text: "What the work is really like, what certificates matter, and what employers expect.",
-                piece2Title: "Retraining after 40 in Finland",
-                piece2Text: "How courses, support and career changes actually work for adults.",
-                piece3Title: "Finding work without Norwegian",
-                piece3Text: "Where language blocks you, where it does not, and how people started.",
-                piece4Title: "A profession in real life",
-                piece4Text: "How a job actually works in a specific country, not only what a job ad says.",
-                askKicker: "Ask Jobsy",
-                askTitle: "Ask a practical question. See where the answer comes from.",
-                askText: "Jobsy helps people find and understand the knowledge already inside Jobsy: structured guides, country articles and real experiences shared by users.",
+                loop4Title: "Search keeps going",
+                loop4Text: "More chances, not one list",
+                proof1Title: "6 countries",
+                proof1Text: "Search support across Finland, Sweden, Norway, Spain, Italy and Germany.",
+                proof2Text: "Employer and recruitment agency records used for matching.",
+                proof3Title: "Local language",
+                proof3Text: "Outreach can be adapted to how recipients actually communicate.",
+                pricingKicker: "Start today",
+                pricingTitle: "Put your search in motion for €5.50.",
+                pricingText: "Start with your CV and target role. Jobsy begins finding suitable employers and preparing outreach without asking you to spend every evening on job boards.",
+                communityKicker: "Practical support",
+                communityTitle: "The search is stronger when it knows the country.",
+                communityLead: "Jobsy combines employer data with practical knowledge from people who live and work there.",
+                communityText1: "Finding work abroad is not only about sending a CV. Language, certificates, expectations and local hiring habits matter.",
+                communityText2: "Jobsy keeps learning from guides, questions and shared experience, so the next person gets a clearer path.",
+                piece1Title: "Certificates in Germany",
+                piece1Text: "What employers ask for before they reply.",
+                piece2Title: "Retraining in Finland",
+                piece2Text: "Which paths are realistic for adults changing direction.",
+                piece3Title: "Work without Norwegian",
+                piece3Text: "Where language blocks you and where it does not.",
+                piece4Title: "Local expectations",
+                piece4Text: "How a profession works in real life, not only in a job ad.",
+                askKicker: "Ask before you apply",
+                askTitle: "Know what to check before you contact employers.",
+                askText: "Use Jobsy to understand the practical parts of a job search in another country: language, certificates, rights, documents and realistic routes.",
                 question1: "Can I find work in Germany without speaking German?",
                 question2: "Is it worth retraining after 45 in Finland?",
                 question3: "How do I become an electrician in Norway?",
                 question4: "What is it really like to work in a warehouse in Sweden?",
                 question5: "How long does it usually take to find work in my profession?",
                 answerPill: "Jobsy answer",
-                answerTitle: "A useful answer, with sources you can open.",
-                answerText: "The answer can summarize what Jobsy knows, then show the guide and real user experiences behind it. You are not just getting a black-box reply. You can read what other people actually experienced.",
+                answerTitle: "A practical answer, with sources you can open.",
+                answerText: "Jobsy can summarize what matters, then point you to the guide or shared experience behind the answer. You see the reasoning, not a black-box reply.",
                 source1Label: "Jobsy answer",
                 source1Title: "Short practical summary",
                 source1Text: "What matters first, what to check, and what to do next.",
@@ -1893,36 +1910,36 @@
                 source3Title: "Experiences and comments",
                 source3Text: "What people tried, what worked, what failed and what surprised them.",
                 sourceOpen: "Open source",
-                blogsKicker: "Jobsy knowledge",
-                blogsTitle: "Articles start the conversation. People add what they know.",
-                blogsText: "Jobsy country content covers practical life and work topics. Articles are not a separate media product. They are part of Jobsy's growing knowledge.",
-                knowledgeFeaturedTitle: "Country-specific blogs",
-                knowledgeFeaturedText: "Work, professions, retraining, documents, housing, taxes and everyday life in the country. A guide can start with Jobsy, then become stronger when people add lived experience.",
+                blogsKicker: "Guides that support the search",
+                blogsTitle: "Better context makes better outreach.",
+                blogsText: "Country guides help you understand what employers expect before Jobsy starts contacting them.",
+                knowledgeFeaturedTitle: "Country-specific guides",
+                knowledgeFeaturedText: "Work, professions, retraining, documents, housing, taxes and everyday life. Guides help turn a vague plan into a search Jobsy can act on.",
                 topicWork: "Work",
                 topicRights: "Worker rights",
                 topicLanguage: "Languages",
                 topicHousing: "Housing",
                 topicCost: "Cost of living",
-                knowledge1Title: "Broader than job search",
-                knowledge1Text: "People need practical context about documents, legalization, education, family, integration and local opportunities.",
-                knowledge2Title: "Comments become useful",
-                knowledge2Text: "A comment is not just a reaction. It can become part of the knowledge Jobsy uses to help the next person.",
-                knowledge3Title: "Real experience matters",
-                knowledge3Text: "Someone who just found work can tell others what worked, what took time and what they would do differently.",
-                contributeKicker: "From reader to contributor",
-                contributeTitle: "Know something that could help?",
-                contributeText1: "Share your experience. You don't need to be an expert.",
-                contributeText2: "If you've lived it, learned it, tried it or solved it, your experience may help someone else. Together, we make Jobsy smarter.",
-                contributeCta: "Share your experience",
-                action1Title: "Answer a question",
-                action2Title: "Add a comment to an article",
-                action3Title: "Share how you found work",
-                action4Title: "Correct or improve a guide",
+                knowledge1Title: "Clearer target",
+                knowledge1Text: "Understand which roles, countries and conditions make sense before starting outreach.",
+                knowledge2Title: "Fewer surprises",
+                knowledge2Text: "Check documents, language expectations and common blockers before they slow you down.",
+                knowledge3Title: "Real experience",
+                knowledge3Text: "Learn what people tried, what worked and what they would do differently.",
+                contributeKicker: "Help the next search",
+                contributeTitle: "Found a route that worked?",
+                contributeText1: "Share the practical details someone else would otherwise learn too late.",
+                contributeText2: "A short note about certificates, interviews, agencies or local expectations can make Jobsy more useful for the next person.",
+                contributeCta: "Share what worked",
+                action1Title: "Answer a practical question",
+                action2Title: "Add detail to a guide",
+                action3Title: "Share how you got replies",
+                action4Title: "Correct outdated information",
                 wavesKicker: "Jobsy Waves",
-                wavesTitle: "Make Waves.",
-                wavesLead: "Share something useful. See how far it goes.",
-                wavesText1: "Jobsy helps you, and we build Jobsy together. What we create together can also spread from person to person.",
-                wavesText2: "When you share useful Jobsy content, your share stays attached to you automatically. No codes to create. No complicated setup. Just share something that could help someone you know.",
+                wavesTitle: "Useful help can travel.",
+                wavesLead: "Share Jobsy with someone who needs work. If it helps them, your contribution is visible.",
+                wavesText1: "Jobsy grows when people pass useful routes to each other: a guide, a search idea, or the product itself.",
+                wavesText2: "When you share useful Jobsy content, your share can stay connected to you automatically. No codes to invent. No setup. Just send something that may help.",
                 wavesVisualAria: "Waves spreading outward from one useful share",
                 floating1: "A friend reads",
                 floating2: "Someone joins",
@@ -1952,116 +1969,116 @@
                 jbwText1: "JBW are not money. They do not have a fixed EUR value and cannot be exchanged at a fixed rate.",
                 jbwText2: "They are simply Jobsy's way of beginning to measure how a useful share or contribution moves through the community.",
                 rewardText: "Money stays secondary: if someone joins from your share and becomes a paid user, Jobsy can give you €1 as a simple thank-you.",
-                footerText: "Jobsy - Find work without searching alone.",
+                footerText: "Jobsy - job search that keeps moving.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
                 footerContact: "Contact"
             },
             ru: {
                 navHow: "Как это работает",
-                navPrice: "Цена",
-                navCommunity: "Мы - Jobsy",
-                navWaves: "Волны",
+                navPrice: "Тариф",
+                navCommunity: "Поддержка",
+                navWaves: "Рекомендации",
                 navSignIn: "Войти",
-                heroBadge: "Jobsy ищет",
-                heroTitleTop: "Найти",
-                heroTitleBottom: "работу",
-                heroPromise: "Скажите Jobsy, какую работу вы хотите. Jobsy будет искать, пока вы ее не найдете.",
-                heroNeed: "Вам не нужен еще один сайт, где нужно самому искать вакансии. Вам нужен тот, кто ищет за вас.",
-                heroText: "Загрузите CV и расскажите, что вы ищете. Jobsy находит подходящих работодателей и рекрутинговые агентства, готовит персональные сообщения на их языке и продолжает искать новые возможности, пока вы не найдете работу.",
-                primaryCta: "Начать поиск работы",
+                heroBadge: "Ваш поиск работы уже в движении",
+                heroTitleTop: "Хватит",
+                heroTitleBottom: "листать вакансии",
+                heroPromise: "Загрузите CV один раз. Jobsy найдет подходящих работодателей, подготовит персональные обращения и продолжит искать за вас.",
+                heroNeed: "Большинство job board заставляют вас делать всю работу. Jobsy работает как поисковый ассистент: начинает с вашего профиля и выводит поиск к компаниям, которым вы можете быть нужны.",
+                heroText: "Выберите роль, страну и направление. Jobsy сопоставит профиль с работодателями и агентствами, адаптирует сообщения под их язык и будет двигать поиск, пока вы занимаетесь ответами и интервью.",
+                primaryCta: "Запустить мой поиск",
                 priceMonth: "/ месяц",
                 searchPreview: "Визуализация активного поиска Jobsy",
-                orbitCvTitle: "Ваше CV",
+                orbitCvTitle: "Сигнал CV",
                 orbitCvText: "Опыт, навыки, языки",
-                orbitGoalTitle: "Что вы хотите",
+                orbitGoalTitle: "Ваша цель",
                 orbitGoalText: "Роль, страна, следующий шаг",
-                orbitCenterLabel: "Активный поиск",
-                orbitCenterTitle: "Jobsy ищет за вас",
-                orbitEmployersTitle: "Работодатели",
-                orbitEmployersText: "Компании, которым подходит ваш профиль",
+                orbitCenterLabel: "Центр поиска",
+                orbitCenterTitle: "Jobsy строит маршрут",
+                orbitEmployersTitle: "Подходящие контакты",
+                orbitEmployersText: "Работодатели и агентства, к которым стоит обратиться",
                 orbitOutreachTitle: "Сообщения",
-                orbitOutreachText: "Персонально и на их языке",
-                orbitReplies: "Ответы приходят вам",
-                contrastLeftTitle: "Не еще одна доска вакансий.",
-                contrastLeftText: "Вы не должны просматривать сотни вакансий и гадать, каким компаниям вы можете быть нужны.",
-                contrastRightTitle: "Jobsy ищет за вас.",
-                contrastRightText: "Он начинает с вашего CV, ваших целей и той работы, которую вы действительно хотите дальше.",
+                orbitOutreachText: "Персонально, прямо и на их языке",
+                orbitReplies: "Ответы приходят к вам",
+                contrastLeftTitle: "Job board ждут вас.",
+                contrastLeftText: "Вы листаете, фильтруете, сравниваете и все равно гадаете, какая компания стоит времени.",
+                contrastRightTitle: "Jobsy запускает поиск.",
+                contrastRightText: "Он превращает ваше CV и цель в рабочий поток: работодатели, агентства и подготовленные сообщения.",
                 flowAria: "Простое визуальное объяснение",
-                flowTitle: "От вашего CV к ответам работодателей.",
-                flowText: "Простой поток в движении. Jobsy продолжает поиск, а не оставляет вас со статичным списком.",
-                flow1Title: "Ваше CV + что вы хотите",
+                flowTitle: "От CV к реальным разговорам.",
+                flowText: "Один маршрут, а не еще одна панель, которую нужно обслуживать.",
+                flow1Title: "Ваше CV + цель",
                 flow1Text: "Опыт и направление",
-                flow2Title: "Jobsy ищет",
+                flow2Title: "Jobsy сканирует рынок",
                 flow2Text: "Активный подбор",
                 flow3Title: "Работодатели и агентства",
                 flow3Text: "Подходящие получатели",
-                flow4Title: "Персональные сообщения",
+                flow4Title: "Персональное обращение",
                 flow4Text: "На языке получателя",
                 flow5Title: "Ответы приходят вам",
-                flow5Text: "В вашу почту",
+                flow5Text: "Отсюда начинаются интервью",
                 howKicker: "Как это работает",
-                howTitle: "Дайте Jobsy цель. Jobsy займется поиском.",
-                step1Title: "Скажите Jobsy, что вы хотите",
-                step1Text: "Загрузите CV и расскажите, какую работу вы ищете.",
-                step1Strong: "Что вы уже делали + что хотите делать дальше.",
-                step1More: "Одно CV не всегда рассказывает всю историю. У человека может быть несколько профессий, разный опыт или желание перейти в новую сферу.",
-                step2Title: "Jobsy находит подходящих работодателей",
-                step2Text: "Jobsy ищет компании и рекрутинговые или staffing-агентства, которые подходят вашему опыту и целям.",
-                step2Strong: "Вам не нужно просматривать все самому.",
-                step2More: "Jobsy ищет сам, вместо того чтобы заставлять вас вручную решать, каким компаниям вы можете быть нужны.",
-                step3Title: "Jobsy помогает обратиться",
-                step3Text: "Jobsy помогает подготовить персональное сообщение для каждого получателя.",
-                step3Strong: "Правильный человек, правильная компания, правильный способ.",
-                step3More: "Сообщение адаптируется под компанию и пишется на языке получателя.",
-                step4Title: "Jobsy продолжает искать",
-                step4Text: "Jobsy - это не одноразовый поиск, который выдает список и исчезает.",
-                step4Strong: "Ваш поиск работы не заканчивается после одного поиска. Jobsy тоже не останавливается.",
-                step4More: "Он продолжает искать новые возможности, пока вы не найдете работу.",
-                loopKicker: "Постоянный поиск",
-                loopTitle: "Ваш поиск работы не заканчивается после одного поиска. Jobsy тоже не останавливается.",
-                loopText: "Jobsy ищет работу, чтобы вам не приходилось делать это одному. Новые подходящие работодатели и агентства могут находиться, подготавливаться и получать сообщения, пока вы сосредоточены на ответах и интервью.",
+                howTitle: "Дайте Jobsy цель. Он построит поиск.",
+                step1Title: "Задайте цель",
+                step1Text: "Загрузите CV и опишите работу, которую хотите сейчас.",
+                step1Strong: "Ваш прошлый опыт плюс следующий шаг.",
+                step1More: "Одно CV может быть слишком широким. Jobsy использует направление, чтобы отсечь лишнее.",
+                step2Title: "Найдите правильных получателей",
+                step2Text: "Jobsy ищет работодателей, рекрутеров и staffing-агентства, которым подходит ваш профиль.",
+                step2Strong: "Меньше гадания, больше точных обращений.",
+                step2More: "Вы получаете сфокусированный поиск вместо сотен объявлений, которые могут вам не подходить.",
+                step3Title: "Подготовьте обращение",
+                step3Text: "Jobsy помогает подготовить понятное сообщение для каждого получателя.",
+                step3Strong: "Релевантно, конкретно и на их языке.",
+                step3More: "Обращение объясняет, почему ваш профиль подходит, вместо общей массовой заявки.",
+                step4Title: "Держите поток живым",
+                step4Text: "Jobsy - это не одноразовая выгрузка контактов.",
+                step4Strong: "Новые совпадения могут появляться, пока вы отвечаете работодателям.",
+                step4More: "Поиск продолжает двигаться, пока вы не найдете работу.",
+                loopKicker: "Всегда в движении",
+                loopTitle: "Поиск работы не должен зависеть от ваших свободных вечеров.",
+                loopText: "Jobsy держит поиск активным в фоне: новые подходящие компании, новые агентства, новые подготовленные обращения. Ваше время уходит на ответы, звонки и интервью.",
                 loopAria: "Цикл постоянного поиска",
-                loop1Title: "Понять цель",
-                loop1Text: "Какую работу вы хотите сейчас",
-                loop2Title: "Найти совпадения",
+                loop1Title: "Цель ясна",
+                loop1Text: "Роль, страна, условия",
+                loop2Title: "Рынок просканирован",
                 loop2Text: "Работодатели и агентства",
-                loop3Title: "Подготовить сообщение",
+                loop3Title: "Обращения готовы",
                 loop3Text: "Персонально и с учетом языка",
-                loop4Title: "Двигаться дальше",
-                loop4Text: "Больше возможностей, не один список",
-                proof1Title: "6 рынков",
-                proof1Text: "Финляндия, Швеция, Норвегия, Испания, Италия и Германия поддерживают поиск.",
-                proof2Text: "Записи о работодателях и рекрутинговых агентствах помогают подбору.",
-                proof3Title: "Языки",
-                proof3Text: "Сообщения могут адаптироваться к языку получателя.",
-                pricingKicker: "Простой старт",
-                pricingTitle: "Начните искать работу.",
-                pricingText: "Загрузите CV, расскажите Jobsy, какую работу хотите, и дайте Jobsy начать поиск подходящих работодателей и рекрутинговых агентств.",
-                communityKicker: "Мы - Jobsy",
-                communityTitle: "Мы - Jobsy.",
-                communityLead: "Каждый вопрос. Каждый опыт. Каждый успех делает Jobsy умнее.",
-                communityText1: "Jobsy - это не компания, которая публикует информацию, пока остальные только читают. Мы строим Jobsy вместе с людьми, которые им пользуются.",
-                communityText2: "Люди, которые живут и работают в разных странах, знают то, чего база данных не может знать сама. Каждый знает маленькую часть. Jobsy соединяет эти части вместе.",
-                piece1Title: "Электрик в Германии",
-                piece1Text: "Как работа выглядит на самом деле, какие сертификаты важны и чего ждут работодатели.",
-                piece2Title: "Переобучение после 40 в Финляндии",
-                piece2Text: "Как на практике работают курсы, поддержка и смена профессии для взрослых.",
+                loop4Title: "Поиск продолжается",
+                loop4Text: "Больше шансов, не один список",
+                proof1Title: "6 стран",
+                proof1Text: "Поддержка поиска в Финляндии, Швеции, Норвегии, Испании, Италии и Германии.",
+                proof2Text: "Записи о работодателях и рекрутинговых агентствах используются для подбора.",
+                proof3Title: "Местный язык",
+                proof3Text: "Обращения можно адаптировать к тому, как получатели реально общаются.",
+                pricingKicker: "Начните сегодня",
+                pricingTitle: "Запустите поиск за €5.50.",
+                pricingText: "Начните с CV и целевой роли. Jobsy начнет находить подходящих работодателей и готовить обращения без необходимости проводить каждый вечер на сайтах вакансий.",
+                communityKicker: "Практическая поддержка",
+                communityTitle: "Поиск сильнее, когда он понимает страну.",
+                communityLead: "Jobsy соединяет данные о работодателях с практическими знаниями людей, которые живут и работают в стране.",
+                communityText1: "Поиск работы за границей - это не только отправка CV. Важны язык, сертификаты, ожидания и местные привычки найма.",
+                communityText2: "Jobsy учится на гайдах, вопросах и опыте людей, чтобы следующий человек видел более понятный путь.",
+                piece1Title: "Сертификаты в Германии",
+                piece1Text: "Что работодатели спрашивают до того, как ответить.",
+                piece2Title: "Переобучение в Финляндии",
+                piece2Text: "Какие маршруты реалистичны для взрослых, меняющих направление.",
                 piece3Title: "Работа без норвежского",
-                piece3Text: "Где язык становится барьером, где нет, и как люди начинали.",
-                piece4Title: "Профессия в реальной жизни",
-                piece4Text: "Как работа устроена в конкретной стране, а не только как она описана в вакансии.",
-                askKicker: "Спросить Jobsy",
-                askTitle: "Задайте практический вопрос. Посмотрите, откуда берется ответ.",
-                askText: "Jobsy помогает людям находить и понимать знания внутри Jobsy: структурированные гайды, статьи по странам и реальный опыт пользователей.",
+                piece3Text: "Где язык блокирует, а где нет.",
+                piece4Title: "Местные ожидания",
+                piece4Text: "Как профессия работает в жизни, а не только в объявлении.",
+                askKicker: "Спросите до отклика",
+                askTitle: "Поймите, что проверить до контакта с работодателями.",
+                askText: "Используйте Jobsy, чтобы разобраться в практической части поиска в другой стране: язык, сертификаты, права, документы и реалистичные маршруты.",
                 question1: "Можно ли найти работу в Германии без немецкого?",
                 question2: "Стоит ли переучиваться после 45 в Финляндии?",
                 question3: "Как стать электриком в Норвегии?",
                 question4: "Как на самом деле работать на складе в Швеции?",
                 question5: "Сколько обычно занимает поиск работы в моей профессии?",
                 answerPill: "Ответ Jobsy",
-                answerTitle: "Полезный ответ с источниками, которые можно открыть.",
-                answerText: "Ответ может кратко объяснить, что знает Jobsy, а затем показать гайд и реальный опыт пользователей за этим ответом. Вы получаете не черный ящик. Вы можете прочитать, что на самом деле пережили другие люди.",
+                answerTitle: "Практический ответ с источниками, которые можно открыть.",
+                answerText: "Jobsy может кратко объяснить, что важно, а затем показать гайд или опыт людей за этим ответом. Вы видите логику, а не черный ящик.",
                 source1Label: "Ответ Jobsy",
                 source1Title: "Короткое практическое резюме",
                 source1Text: "Что важно сначала, что проверить и что делать дальше.",
@@ -2072,36 +2089,36 @@
                 source3Title: "Опыт и комментарии",
                 source3Text: "Что люди пробовали, что сработало, что не сработало и что удивило.",
                 sourceOpen: "Открыть источник",
-                blogsKicker: "Знания Jobsy",
-                blogsTitle: "Статьи начинают разговор. Люди добавляют то, что знают.",
-                blogsText: "Контент Jobsy по странам охватывает практические темы жизни и работы. Статьи - это не отдельный медиа-бизнес. Это часть растущих знаний Jobsy.",
-                knowledgeFeaturedTitle: "Блоги по странам",
-                knowledgeFeaturedText: "Работа, профессии, переобучение, документы, жилье, налоги и повседневная жизнь в стране. Гайд может начаться с Jobsy, а затем стать сильнее, когда люди добавят свой опыт.",
+                blogsKicker: "Гайды, которые поддерживают поиск",
+                blogsTitle: "Лучший контекст делает обращения сильнее.",
+                blogsText: "Гайды по странам помогают понять, чего ждут работодатели, до того как Jobsy начнет с ними контактировать.",
+                knowledgeFeaturedTitle: "Гайды по странам",
+                knowledgeFeaturedText: "Работа, профессии, переобучение, документы, жилье, налоги и повседневная жизнь. Гайды помогают превратить расплывчатый план в поиск, по которому Jobsy может действовать.",
                 topicWork: "Работа",
                 topicRights: "Права работников",
                 topicLanguage: "Языки",
                 topicHousing: "Жилье",
                 topicCost: "Стоимость жизни",
-                knowledge1Title: "Шире, чем поиск работы",
-                knowledge1Text: "Людям нужен практический контекст про документы, легализацию, образование, семью, интеграцию и местные возможности.",
-                knowledge2Title: "Комментарии становятся полезными",
-                knowledge2Text: "Комментарий - это не просто реакция. Он может стать частью знаний, которые Jobsy использует, чтобы помочь следующему человеку.",
-                knowledge3Title: "Реальный опыт важен",
-                knowledge3Text: "Тот, кто только что нашел работу, может рассказать другим, что сработало, что заняло время и что он сделал бы иначе.",
-                contributeKicker: "От читателя к участнику",
-                contributeTitle: "Знаете что-то, что может помочь?",
-                contributeText1: "Поделитесь опытом. Не нужно быть экспертом.",
-                contributeText2: "Если вы это прожили, узнали, попробовали или решили, ваш опыт может помочь кому-то еще. Вместе мы делаем Jobsy умнее.",
-                contributeCta: "Поделиться опытом",
-                action1Title: "Ответить на вопрос",
-                action2Title: "Добавить комментарий к статье",
-                action3Title: "Рассказать, как вы нашли работу",
-                action4Title: "Исправить или улучшить гайд",
+                knowledge1Title: "Более ясная цель",
+                knowledge1Text: "Поймите, какие роли, страны и условия имеют смысл до начала обращений.",
+                knowledge2Title: "Меньше сюрпризов",
+                knowledge2Text: "Проверьте документы, языковые ожидания и типичные блокеры до того, как они замедлят поиск.",
+                knowledge3Title: "Реальный опыт",
+                knowledge3Text: "Узнайте, что люди пробовали, что сработало и что они сделали бы иначе.",
+                contributeKicker: "Помогите следующему поиску",
+                contributeTitle: "Нашли маршрут, который сработал?",
+                contributeText1: "Поделитесь практическими деталями, которые другой человек иначе узнает слишком поздно.",
+                contributeText2: "Короткая заметка про сертификаты, интервью, агентства или местные ожидания может сделать Jobsy полезнее для следующего человека.",
+                contributeCta: "Поделиться тем, что сработало",
+                action1Title: "Ответить на практический вопрос",
+                action2Title: "Добавить детали в гайд",
+                action3Title: "Рассказать, как вы получили ответы",
+                action4Title: "Исправить устаревшую информацию",
                 wavesKicker: "Jobsy Waves",
-                wavesTitle: "Создавайте волны.",
-                wavesLead: "Поделитесь чем-то полезным. Посмотрите, как далеко это уйдет.",
-                wavesText1: "Jobsy помогает вам, и мы строим Jobsy вместе. То, что мы создаем вместе, может передаваться от человека к человеку.",
-                wavesText2: "Когда вы делитесь полезным контентом Jobsy, ваша связь с этой публикацией прикрепляется автоматически. Не нужно создавать коды. Не нужно ничего сложно настраивать. Просто поделитесь тем, что может помочь знакомому человеку.",
+                wavesTitle: "Полезная помощь может идти дальше.",
+                wavesLead: "Поделитесь Jobsy с человеком, которому нужна работа. Если это поможет, ваш вклад будет виден.",
+                wavesText1: "Jobsy растет, когда люди передают друг другу полезные маршруты: гайд, идею для поиска или сам продукт.",
+                wavesText2: "Когда вы делитесь полезным контентом Jobsy, связь с вами может сохраняться автоматически. Не нужно придумывать коды. Не нужна настройка. Просто отправьте то, что может помочь.",
                 wavesVisualAria: "Волны расходятся от одного полезного действия",
                 floating1: "Друг читает",
                 floating2: "Кто-то присоединяется",
@@ -2131,7 +2148,7 @@
                 jbwText1: "JBW - это не деньги. У них нет фиксированной стоимости в евро, и их нельзя обменять по фиксированному курсу.",
                 jbwText2: "Это просто способ Jobsy начать измерять, как полезная публикация или вклад движется внутри сообщества.",
                 rewardText: "Деньги остаются второстепенными: если человек присоединится через вашу публикацию и станет платным пользователем, Jobsy может дать вам €1 как простое спасибо.",
-                footerText: "Jobsy - найти работу без поиска в одиночку.",
+                footerText: "Jobsy - поиск работы, который продолжает двигаться.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
                 footerContact: "Контакты"
