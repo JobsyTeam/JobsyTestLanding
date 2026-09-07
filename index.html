@@ -150,17 +150,6 @@
             transform: translateY(-1px);
         }
 
-        .button.secondary {
-            background: transparent;
-            border-color: rgba(255, 255, 255, 0.3);
-            color: var(--white);
-        }
-
-        .button.secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.42);
-        }
-
         h1,
         h2,
         h3 {
@@ -401,12 +390,6 @@
             color: var(--signal);
         }
 
-        .target-copy p {
-            color: #c2d4d5;
-            font-size: 1.12rem;
-            margin-top: 20px;
-        }
-
         .target-example {
             background: var(--white);
             border: 1px solid var(--line);
@@ -526,12 +509,9 @@
 
         .proof-grid {
             display: grid;
-            gap: 18px;
-            grid-template-columns: 0.95fr 1.05fr;
         }
 
-        .scale-card,
-        .trust-card {
+        .scale-card {
             border-radius: 34px;
             padding: 34px;
         }
@@ -552,10 +532,23 @@
             margin-bottom: 14px;
         }
 
-        .scale-card p,
-        .trust-card p {
+        .scale-card p {
             color: var(--muted);
             font-size: 1.08rem;
+        }
+
+        .scale-label {
+            color: var(--ink) !important;
+            font-size: clamp(1.65rem, 3vw, 2.5rem) !important;
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.05;
+            max-width: 560px;
+        }
+
+        .scale-note {
+            margin-top: 24px;
+            max-width: 620px;
         }
 
         .country-list {
@@ -572,43 +565,6 @@
             color: var(--ink);
             font-weight: 900;
             padding: 10px 13px;
-        }
-
-        .trust-card {
-            background: var(--paper-strong);
-            border: 1px solid #eadfc6;
-            display: grid;
-            gap: 14px;
-        }
-
-        .trust-line {
-            align-items: flex-start;
-            background: rgba(255, 255, 255, 0.52);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 22px;
-            display: grid;
-            gap: 12px;
-            grid-template-columns: 38px 1fr;
-            padding: 18px;
-        }
-
-        .trust-icon {
-            align-items: center;
-            background: var(--signal);
-            border-radius: 15px;
-            color: var(--night);
-            display: inline-flex;
-            font-weight: 900;
-            height: 38px;
-            justify-content: center;
-            width: 38px;
-        }
-
-        .trust-line strong {
-            display: block;
-            font-size: 1.12rem;
-            letter-spacing: -0.04em;
-            margin-bottom: 3px;
         }
 
         .final-cta {
@@ -676,7 +632,7 @@
             align-items: center;
             display: flex;
             gap: 16px;
-            justify-content: space-between;
+            justify-content: center;
         }
 
         .footer-inner p,
@@ -706,7 +662,6 @@
         @media (max-width: 980px) {
             .hero-grid,
             .target-grid,
-            .proof-grid,
             .cta-panel {
                 grid-template-columns: 1fr;
             }
@@ -780,7 +735,6 @@
             .target-copy,
             .target-example,
             .scale-card,
-            .trust-card,
             .cta-panel {
                 border-radius: 26px;
             }
@@ -791,7 +745,6 @@
             .target-copy,
             .target-example,
             .scale-card,
-            .trust-card,
             .cta-panel {
                 padding: 22px;
             }
@@ -858,7 +811,6 @@
                     <p class="hero-copy" data-i18n="heroCopy">You do not need another place to search for jobs. You need someone searching for you.</p>
                     <div class="hero-actions">
                         <a class="button" href="/app" data-i18n="primaryCta">Start search</a>
-                        <a class="button secondary" href="#target" data-i18n="secondaryCta">See the search input</a>
                         <span class="price-inline"><strong>€5.50</strong> <span data-i18n="priceInline">per month</span></span>
                     </div>
                 </div>
@@ -886,7 +838,6 @@
                 <div class="target-copy">
                     <div class="section-mark" data-i18n="targetMark">Tell Jobsy what to look for</div>
                     <h2 data-i18n="targetTitle">Your CV is the past. Jobsy needs to know what you want now.</h2>
-                    <p data-i18n="targetText">A person can have several professions, mixed experience, or a new direction. Jobsy searches from experience plus intent.</p>
                 </div>
                 <div class="target-example" aria-label="Search input example" data-i18n-aria-label="targetExampleAria">
                     <div class="target-row"><span data-i18n="experienceLabel">Experience</span><strong data-i18n="experienceExample">Cook, warehouse worker</strong></div>
@@ -900,12 +851,11 @@
             <div class="shell">
                 <div class="section-head center">
                     <div class="section-mark" data-i18n="processMark">Jobsy starts working</div>
-                    <h2 data-i18n="processTitle">One active search, four jobs.</h2>
                 </div>
                 <div class="process-rail" aria-label="Jobsy search process" data-i18n-aria-label="processAria">
-                    <article class="process-step"><span>01</span><h3 data-i18n="process1Title">Understands your goal</h3><p data-i18n="process1Text">Experience and intent become a clear search target.</p></article>
-                    <article class="process-step"><span>02</span><h3 data-i18n="process2Title">Finds relevant recipients</h3><p data-i18n="process2Text">Employers, recruitment agencies and staffing agencies.</p></article>
-                    <article class="process-step"><span>03</span><h3 data-i18n="process3Title">Prepares outreach</h3><p data-i18n="process3Text">Personalized for the recipient and their language.</p></article>
+                    <article class="process-step"><span>01</span><h3 data-i18n="process1Title">Understands your goal</h3><p data-i18n="process1Text">Understands your experience and what work you want.</p></article>
+                    <article class="process-step"><span>02</span><h3 data-i18n="process2Title">Finds employers</h3><p data-i18n="process2Text">Companies, recruitment agencies and staffing agencies.</p></article>
+                    <article class="process-step"><span>03</span><h3 data-i18n="process3Title">Prepares outreach</h3><p data-i18n="process3Text">Personalized for the company and recipient language.</p></article>
                     <article class="process-step"><span>04</span><h3 data-i18n="process4Title">Keeps searching</h3><p data-i18n="process4Text">The search stays active after it starts.</p></article>
                 </div>
             </div>
@@ -920,7 +870,7 @@
                 <div class="proof-grid">
                     <article class="scale-card">
                         <span class="scale-number">2.6M+</span>
-                        <p data-i18n="scaleText">Employers and recruitment or staffing agency records support the search.</p>
+                        <p class="scale-label" data-i18n="scaleLabel">employers and recruitment/staffing agencies</p>
                         <div class="country-list" aria-label="Active countries" data-i18n-aria-label="countriesAria">
                             <span data-i18n="countryFinland">Finland</span>
                             <span data-i18n="countrySweden">Sweden</span>
@@ -929,11 +879,8 @@
                             <span data-i18n="countryItaly">Italy</span>
                             <span data-i18n="countryGermany">Germany</span>
                         </div>
-                    </article>
-                    <article class="trust-card">
-                        <div class="trust-line"><span class="trust-icon">EU</span><div><strong data-i18n="operatingTitle">Six active countries</strong><p data-i18n="operatingText">Jobsy is already set up for searches in the listed European markets.</p></div></div>
-                        <div class="trust-line"><span class="trust-icon">use</span><div><strong data-i18n="usageTitle">Built through real use</strong><p data-i18n="usageText">People are already using Jobsy to search for work, and the product has been improved through that usage.</p></div></div>
-                        <div class="trust-line"><span class="trust-icon">+</span><div><strong data-i18n="growthTitle">Still growing</strong><p data-i18n="growthText">The database, coverage and search logic continue to develop.</p></div></div>
+                        <p class="scale-note" data-i18n="usageText">People already use Jobsy to search for work in Europe.</p>
+                        <p class="scale-note" data-i18n="growthText">Jobsy continues to grow with them.</p>
                     </article>
                 </div>
             </div>
@@ -958,7 +905,6 @@
 
     <footer>
         <div class="shell footer-inner">
-            <p data-i18n="footerText">Jobsy - Find Work.</p>
             <div class="footer-links">
                 <a href="/privacy" data-i18n="footerPrivacy">Privacy Policy</a>
                 <a href="/terms" data-i18n="footerTerms">Terms of Service</a>
@@ -979,7 +925,6 @@
                 heroLead: "Tell Jobsy what job you want. Jobsy will keep looking until you find it.",
                 heroCopy: "You do not need another place to search for jobs. You need someone searching for you.",
                 primaryCta: "Start search",
-                secondaryCta: "See the search input",
                 priceInline: "per month",
                 heroPanelAria: "Jobsy active search preview",
                 heroPanelTitle: "Jobsy Active",
@@ -996,26 +941,24 @@
                 mapReplyText: "Back to you",
                 targetMark: "Tell Jobsy what to look for",
                 targetTitle: "Your CV is the past. Jobsy needs to know what you want now.",
-                targetText: "A person can have several professions, mixed experience, or a new direction. Jobsy searches from experience plus intent.",
                 targetExampleAria: "Search input example",
                 experienceLabel: "Experience",
                 experienceExample: "Cook, warehouse worker",
                 lookingLabel: "Looking for now",
                 lookingExample: "Warehouse or logistics work in Sweden",
                 processMark: "Jobsy starts working",
-                processTitle: "One active search, four jobs.",
                 processAria: "Jobsy search process",
                 process1Title: "Understands your goal",
-                process1Text: "Experience and intent become a clear search target.",
-                process2Title: "Finds relevant recipients",
-                process2Text: "Employers, recruitment agencies and staffing agencies.",
+                process1Text: "Understands your experience and what work you want.",
+                process2Title: "Finds employers",
+                process2Text: "Companies, recruitment agencies and staffing agencies.",
                 process3Title: "Prepares outreach",
-                process3Text: "Personalized for the recipient and their language.",
+                process3Text: "Personalized for the company and recipient language.",
                 process4Title: "Keeps searching",
                 process4Text: "The search stays active after it starts.",
                 trustMark: "Already operating",
                 trustTitle: "Jobsy is already working across Europe.",
-                scaleText: "Employers and recruitment or staffing agency records support the search.",
+                scaleLabel: "employers and recruitment/staffing agencies",
                 countriesAria: "Active countries",
                 countryFinland: "Finland",
                 countrySweden: "Sweden",
@@ -1023,17 +966,12 @@
                 countrySpain: "Spain",
                 countryItaly: "Italy",
                 countryGermany: "Germany",
-                operatingTitle: "Six active countries",
-                operatingText: "Jobsy is already set up for searches in the listed European markets.",
-                usageTitle: "Built through real use",
-                usageText: "People are already using Jobsy to search for work, and the product has been improved through that usage.",
-                growthTitle: "Still growing",
-                growthText: "The database, coverage and search logic continue to develop.",
+                usageText: "People already use Jobsy to search for work in Europe.",
+                growthText: "Jobsy continues to grow with them.",
                 finalMark: "Jobsy Active",
                 finalTitle: "Start the search.",
                 finalPrice: "per month",
                 finalCta: "Start search",
-                footerText: "Jobsy - Find Work.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
                 footerContact: "Contact"
@@ -1048,7 +986,6 @@
                 heroLead: "Скажите Jobsy, какую работу вы хотите. Jobsy будет искать, пока вы ее не найдете.",
                 heroCopy: "Вам не нужен еще один сайт, где нужно самому искать вакансии. Вам нужен тот, кто ищет за вас.",
                 primaryCta: "Начать поиск",
-                secondaryCta: "Что указать для поиска",
                 priceInline: "в месяц",
                 heroPanelAria: "Превью активного поиска Jobsy",
                 heroPanelTitle: "Jobsy Active",
@@ -1065,26 +1002,24 @@
                 mapReplyText: "К вам",
                 targetMark: "Скажите Jobsy, что искать",
                 targetTitle: "Ваше CV - это прошлое. Jobsy нужно знать, чего вы хотите сейчас.",
-                targetText: "У человека может быть несколько профессий, разный опыт или новое направление. Jobsy ищет по опыту и намерению вместе.",
                 targetExampleAria: "Пример поискового запроса",
                 experienceLabel: "Опыт",
                 experienceExample: "Повар, складской работник",
                 lookingLabel: "Сейчас ищу",
                 lookingExample: "Склад или логистика в Швеции",
                 processMark: "Jobsy начинает работать",
-                processTitle: "Один активный поиск, четыре действия.",
                 processAria: "Процесс поиска Jobsy",
                 process1Title: "Понимает цель",
-                process1Text: "Опыт и намерение становятся понятной целью поиска.",
-                process2Title: "Находит получателей",
-                process2Text: "Работодатели, рекрутинговые и кадровые агентства.",
+                process1Text: "Понимает ваш опыт и какую работу вы хотите.",
+                process2Title: "Находит работодателей",
+                process2Text: "Компании, рекрутинговые и кадровые агентства.",
                 process3Title: "Готовит обращения",
-                process3Text: "Персонально под получателя и его язык.",
+                process3Text: "Персонально под компанию и на языке получателя.",
                 process4Title: "Продолжает искать",
                 process4Text: "Поиск остается активным после старта.",
                 trustMark: "Уже работает",
                 trustTitle: "Jobsy уже работает по Европе.",
-                scaleText: "Записи о работодателях, рекрутинговых и кадровых агентствах поддерживают поиск.",
+                scaleLabel: "работодателей и кадровых агентств",
                 countriesAria: "Активные страны",
                 countryFinland: "Финляндия",
                 countrySweden: "Швеция",
@@ -1092,17 +1027,12 @@
                 countrySpain: "Испания",
                 countryItaly: "Италия",
                 countryGermany: "Германия",
-                operatingTitle: "Шесть активных стран",
-                operatingText: "Jobsy уже настроен для поиска на этих европейских рынках.",
-                usageTitle: "Развивается через реальное использование",
-                usageText: "Люди уже используют Jobsy для поиска работы, и продукт улучшался на основе этого опыта.",
-                growthTitle: "Jobsy продолжает расти",
-                growthText: "База, покрытие стран и логика поиска продолжают развиваться.",
+                usageText: "Люди уже используют Jobsy для поиска работы в Европе.",
+                growthText: "Jobsy продолжает расти вместе с ними.",
                 finalMark: "Jobsy Active",
                 finalTitle: "Запустите поиск.",
                 finalPrice: "в месяц",
                 finalCta: "Начать поиск",
-                footerText: "Jobsy - Найти работу.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
                 footerContact: "Контакты"
