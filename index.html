@@ -618,6 +618,235 @@
             margin: 8px 0 18px;
         }
 
+        .we-jobsy {
+            background:
+                radial-gradient(circle at 10% 12%, rgba(240, 201, 106, 0.22), transparent 28%),
+                linear-gradient(180deg, #f8f2e3 0%, var(--paper) 62%);
+            padding-top: 104px;
+        }
+
+        .we-grid {
+            align-items: stretch;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 0.9fr 1.1fr;
+        }
+
+        .we-copy,
+        .knowledge-board,
+        .guide-card {
+            border-radius: 36px;
+            padding: 34px;
+        }
+
+        .we-copy {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .we-copy .section-mark {
+            color: var(--signal);
+        }
+
+        .we-copy h2 {
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-weight: 600;
+        }
+
+        .we-copy .we-lead {
+            color: #e6f4f1;
+            font-size: clamp(1.45rem, 3vw, 2.35rem);
+            font-weight: 800;
+            letter-spacing: -0.055em;
+            line-height: 1.08;
+            margin-top: 22px;
+        }
+
+        .we-copy p:not(.we-lead) {
+            color: #c2d4d5;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .knowledge-board {
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            display: grid;
+            gap: 14px;
+        }
+
+        .knowledge-note {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 18px;
+        }
+
+        .knowledge-note strong {
+            display: block;
+            font-size: clamp(1.5rem, 3vw, 2.6rem);
+            font-weight: 900;
+            letter-spacing: -0.065em;
+            line-height: 1;
+        }
+
+        .knowledge-note span {
+            color: var(--muted);
+            display: block;
+            font-weight: 800;
+            margin-top: 10px;
+        }
+
+        .topic-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .topic-strip span {
+            background: var(--mist);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink);
+            font-weight: 900;
+            padding: 9px 12px;
+        }
+
+        .question-stack {
+            display: grid;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .question-card {
+            background: var(--paper);
+            border: 1px solid #eadfc6;
+            border-radius: 22px;
+            padding: 18px;
+        }
+
+        .question-card span {
+            color: var(--route);
+            display: block;
+            font-size: 0.86rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .question-card strong {
+            display: block;
+            font-size: 1.08rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+        }
+
+        .experience-section {
+            background: var(--paper);
+            padding-top: 70px;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .guide-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .guide-card h3 {
+            font-size: clamp(2rem, 4vw, 3.7rem);
+            font-weight: 900;
+            margin-bottom: 22px;
+        }
+
+        .guide-layer {
+            border-top: 1px solid var(--line);
+            padding: 22px 0;
+        }
+
+        .guide-layer:last-child {
+            padding-bottom: 0;
+        }
+
+        .guide-layer span {
+            color: var(--route);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .guide-layer p {
+            color: var(--muted);
+            font-size: 1.04rem;
+        }
+
+        .human-card {
+            background: var(--paper-strong);
+            border: 1px solid #eadfc6;
+            border-radius: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 34px;
+        }
+
+        .human-card h3 {
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(2.4rem, 5vw, 5rem);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .human-card p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .experience-quote {
+            background: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            color: var(--ink) !important;
+            font-size: 1.2rem !important;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.22;
+            margin-top: 28px;
+            padding: 22px;
+        }
+
+        .contribute-section {
+            background: linear-gradient(180deg, var(--paper) 0%, #f5efe0 100%);
+            padding-top: 70px;
+        }
+
+        .contribute-panel {
+            align-items: center;
+            background: var(--night);
+            border-radius: 42px;
+            box-shadow: var(--shadow);
+            color: var(--white);
+            display: grid;
+            gap: 28px;
+            grid-template-columns: 1fr auto;
+            padding: 42px;
+        }
+
+        .contribute-panel .section-mark {
+            color: var(--signal);
+        }
+
+        .contribute-panel p {
+            color: #c2d4d5;
+            font-size: 1.1rem;
+            margin-top: 18px;
+            max-width: 650px;
+        }
+
         .future-anchor {
             background: linear-gradient(180deg, transparent, rgba(7, 26, 44, 0.05));
             height: 72px;
@@ -662,7 +891,10 @@
         @media (max-width: 980px) {
             .hero-grid,
             .target-grid,
-            .cta-panel {
+            .cta-panel,
+            .we-grid,
+            .experience-grid,
+            .contribute-panel {
                 grid-template-columns: 1fr;
             }
 
@@ -735,7 +967,12 @@
             .target-copy,
             .target-example,
             .scale-card,
-            .cta-panel {
+            .cta-panel,
+            .we-copy,
+            .knowledge-board,
+            .guide-card,
+            .human-card,
+            .contribute-panel {
                 border-radius: 26px;
             }
 
@@ -745,7 +982,12 @@
             .target-copy,
             .target-example,
             .scale-card,
-            .cta-panel {
+            .cta-panel,
+            .we-copy,
+            .knowledge-board,
+            .guide-card,
+            .human-card,
+            .contribute-panel {
                 padding: 22px;
             }
 
@@ -900,6 +1142,66 @@
             </div>
         </section>
 
+        <section id="we-are-jobsy" class="we-jobsy">
+            <div class="shell we-grid">
+                <div class="we-copy">
+                    <div class="section-mark" data-i18n="weMark">We are Jobsy</div>
+                    <h2 data-i18n="weTitle">We are Jobsy.</h2>
+                    <p class="we-lead" data-i18n="weLead">Every question. Every experience. Every success makes Jobsy smarter.</p>
+                    <p data-i18n="weText">Jobsy helps people find work, and people help Jobsy understand what work and life in different countries are really like.</p>
+                </div>
+                <div class="knowledge-board" aria-label="Jobsy country knowledge examples" data-i18n-aria-label="knowledgeAria">
+                    <div class="knowledge-note">
+                        <strong data-i18n="knowledgeTitle">One person knows a little. Together, we know a lot.</strong>
+                        <span data-i18n="knowledgeText">Useful knowledge is often practical, local and learned the hard way.</span>
+                    </div>
+                    <div class="topic-strip" aria-label="Country knowledge topics" data-i18n-aria-label="topicsAria">
+                        <span data-i18n="topicWork">Work</span>
+                        <span data-i18n="topicRetraining">Retraining</span>
+                        <span data-i18n="topicLanguage">Language</span>
+                        <span data-i18n="topicDocuments">Documents</span>
+                        <span data-i18n="topicHousing">Housing</span>
+                        <span data-i18n="topicRights">Worker rights</span>
+                    </div>
+                    <div class="question-stack">
+                        <article class="question-card"><span data-i18n="question1Country">Finland</span><strong data-i18n="question1">Can I retrain after 40 in Finland?</strong></article>
+                        <article class="question-card"><span data-i18n="question2Country">Sweden</span><strong data-i18n="question2">How much Swedish do I need for warehouse work?</strong></article>
+                        <article class="question-card"><span data-i18n="question3Country">Germany</span><strong data-i18n="question3">How does changing profession work in Germany?</strong></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <div class="shell experience-grid">
+                <article class="guide-card">
+                    <div class="section-mark" data-i18n="guideMark">Jobsy Guide</div>
+                    <h3 data-i18n="guideTitle">Useful answers should show where they come from.</h3>
+                    <div class="guide-layer"><span data-i18n="guideLayer1">Information</span><p data-i18n="guideInfo">A clear article can explain rules, documents, education, language or work conditions.</p></div>
+                    <div class="guide-layer"><span data-i18n="guideLayer2">Real experience</span><p data-i18n="guideExperience">Then someone who went through it can add what surprised them, what took time and what helped.</p></div>
+                </article>
+                <article class="human-card">
+                    <div>
+                        <div class="section-mark" data-i18n="humanMark">People help people</div>
+                        <h3 data-i18n="humanTitle">Not a social network. A place for useful knowledge.</h3>
+                        <p data-i18n="humanText">Someone has already faced the question another person is asking today.</p>
+                    </div>
+                    <p class="experience-quote" data-i18n="humanExample">Example: I started retraining at 43. Here is what surprised me...</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contribute-section">
+            <div class="shell contribute-panel">
+                <div>
+                    <div class="section-mark" data-i18n="contributeMark">What you know can help</div>
+                    <h2 data-i18n="contributeTitle">Jobsy learns from real paths.</h2>
+                    <p data-i18n="contributeText">Ask a question, read an article, add what you know, or share an experience that could make the next person's search clearer.</p>
+                </div>
+                <a class="button" href="/app" data-i18n="contributeCta">Open Jobsy</a>
+            </div>
+        </section>
+
         <div class="future-anchor" aria-hidden="true"></div>
     </main>
 
@@ -972,6 +1274,40 @@
                 finalTitle: "Start the search.",
                 finalPrice: "per month",
                 finalCta: "Start search",
+                weMark: "We are Jobsy",
+                weTitle: "We are Jobsy.",
+                weLead: "Every question. Every experience. Every success makes Jobsy smarter.",
+                weText: "Jobsy helps people find work, and people help Jobsy understand what work and life in different countries are really like.",
+                knowledgeAria: "Jobsy country knowledge examples",
+                knowledgeTitle: "One person knows a little. Together, we know a lot.",
+                knowledgeText: "Useful knowledge is often practical, local and learned the hard way.",
+                topicsAria: "Country knowledge topics",
+                topicWork: "Work",
+                topicRetraining: "Retraining",
+                topicLanguage: "Language",
+                topicDocuments: "Documents",
+                topicHousing: "Housing",
+                topicRights: "Worker rights",
+                question1Country: "Finland",
+                question1: "Can I retrain after 40 in Finland?",
+                question2Country: "Sweden",
+                question2: "How much Swedish do I need for warehouse work?",
+                question3Country: "Germany",
+                question3: "How does changing profession work in Germany?",
+                guideMark: "Jobsy Guide",
+                guideTitle: "Useful answers should show where they come from.",
+                guideLayer1: "Information",
+                guideInfo: "A clear article can explain rules, documents, education, language or work conditions.",
+                guideLayer2: "Real experience",
+                guideExperience: "Then someone who went through it can add what surprised them, what took time and what helped.",
+                humanMark: "People help people",
+                humanTitle: "Not a social network. A place for useful knowledge.",
+                humanText: "Someone has already faced the question another person is asking today.",
+                humanExample: "Example: I started retraining at 43. Here is what surprised me...",
+                contributeMark: "What you know can help",
+                contributeTitle: "Jobsy learns from real paths.",
+                contributeText: "Ask a question, read an article, add what you know, or share an experience that could make the next person's search clearer.",
+                contributeCta: "Open Jobsy",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
                 footerContact: "Contact"
@@ -1033,6 +1369,40 @@
                 finalTitle: "Запустите поиск.",
                 finalPrice: "в месяц",
                 finalCta: "Начать поиск",
+                weMark: "Мы - Jobsy",
+                weTitle: "Мы - Jobsy.",
+                weLead: "Каждый вопрос. Каждый опыт. Каждый успех делает Jobsy умнее.",
+                weText: "Jobsy помогает людям искать работу, а люди помогают Jobsy лучше понимать работу и жизнь в разных странах.",
+                knowledgeAria: "Примеры знаний Jobsy по странам",
+                knowledgeTitle: "Один человек знает немного. Вместе мы знаем многое.",
+                knowledgeText: "Самые полезные знания часто практичные, местные и полученные через собственный опыт.",
+                topicsAria: "Темы знаний по странам",
+                topicWork: "Работа",
+                topicRetraining: "Переобучение",
+                topicLanguage: "Язык",
+                topicDocuments: "Документы",
+                topicHousing: "Жилье",
+                topicRights: "Права работников",
+                question1Country: "Финляндия",
+                question1: "Можно ли переучиться после 40 в Финляндии?",
+                question2Country: "Швеция",
+                question2: "Сколько шведского нужно для работы на складе?",
+                question3Country: "Германия",
+                question3: "Как в Германии меняют профессию?",
+                guideMark: "Jobsy Guide",
+                guideTitle: "Полезный ответ должен показывать, откуда он взялся.",
+                guideLayer1: "Информация",
+                guideInfo: "Статья может понятно объяснить правила, документы, учебу, язык или условия работы.",
+                guideLayer2: "Реальный опыт",
+                guideExperience: "А человек, который уже через это прошел, может добавить, что удивило, что заняло время и что помогло.",
+                humanMark: "Люди помогают людям",
+                humanTitle: "Не соцсеть. Место для полезных знаний.",
+                humanText: "Кто-то уже сталкивался с вопросом, который другой человек задает сегодня.",
+                humanExample: "Например: я начал переобучение в 43. Вот что меня удивило...",
+                contributeMark: "То, что знаете вы, может помочь",
+                contributeTitle: "Jobsy учится на реальных путях.",
+                contributeText: "Задайте вопрос, прочитайте статью, добавьте то, что знаете, или поделитесь опытом, который сделает следующий поиск понятнее.",
+                contributeCta: "Открыть Jobsy",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
                 footerContact: "Контакты"
