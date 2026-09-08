@@ -799,6 +799,214 @@
             gap: 12px;
         }
 
+        .waves-section {
+            background:
+                radial-gradient(circle at 84% 18%, rgba(28, 111, 121, 0.22), transparent 30%),
+                linear-gradient(180deg, #f5efe0 0%, var(--night) 100%);
+            color: var(--white);
+            overflow: hidden;
+            padding-top: 104px;
+        }
+
+        .waves-grid {
+            align-items: stretch;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 0.88fr 1.12fr;
+        }
+
+        .waves-copy,
+        .wave-story,
+        .jbw-card {
+            border-radius: 36px;
+            padding: 34px;
+        }
+
+        .waves-copy {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .waves-copy .section-mark,
+        .jbw-card .section-mark {
+            color: var(--signal);
+        }
+
+        .waves-copy h2 {
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-weight: 600;
+        }
+
+        .waves-copy p {
+            color: #d8e9e8;
+            font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.055em;
+            line-height: 1.08;
+            margin-top: 22px;
+        }
+
+        .wave-story {
+            background: var(--paper);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            box-shadow: var(--shadow);
+            color: var(--ink);
+            position: relative;
+        }
+
+        .wave-story::before,
+        .wave-story::after {
+            border: 1px solid rgba(28, 111, 121, 0.18);
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            right: 34px;
+            top: 34px;
+        }
+
+        .wave-story::before {
+            height: 150px;
+            width: 150px;
+        }
+
+        .wave-story::after {
+            height: 240px;
+            transform: translate(45px, -45px);
+            width: 240px;
+        }
+
+        .wave-story > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .shared-article {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 22px;
+        }
+
+        .shared-article span,
+        .wave-step span {
+            color: var(--route);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .shared-article strong {
+            display: block;
+            font-size: clamp(1.4rem, 3vw, 2.45rem);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.05;
+            max-width: 460px;
+        }
+
+        .share-button {
+            align-items: center;
+            background: var(--signal);
+            border-radius: 999px;
+            color: var(--night);
+            display: inline-flex;
+            font-weight: 900;
+            margin-top: 18px;
+            min-height: 44px;
+            padding: 0 18px;
+        }
+
+        .wave-path {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .wave-step {
+            background: rgba(255, 255, 255, 0.68);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 18px;
+        }
+
+        .wave-step strong {
+            display: block;
+            font-size: 1.08rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+        }
+
+        .wave-arrow {
+            color: var(--signal-deep);
+            font-size: 1.25rem;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .wave-begins {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .wave-begins span {
+            color: var(--signal);
+        }
+
+        .jbw-wrap {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 0.9fr;
+            margin-top: 20px;
+        }
+
+        .jbw-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .jbw-number {
+            display: block;
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(4rem, 9vw, 7.2rem);
+            font-weight: 600;
+            letter-spacing: -0.09em;
+            line-height: 0.9;
+            margin: 18px 0 14px;
+        }
+
+        .jbw-card p {
+            color: #d8e9e8;
+            font-size: 1.08rem;
+        }
+
+        .jbw-note {
+            background: var(--paper);
+            border-radius: 36px;
+            color: var(--ink);
+            padding: 34px;
+        }
+
+        .jbw-note h3 {
+            font-size: clamp(1.9rem, 4vw, 3.4rem);
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .jbw-note ul {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .jbw-note li {
+            color: var(--muted);
+            font-weight: 800;
+        }
+
+        .waves-actions {
+            margin-top: 28px;
+        }
+
         .future-anchor {
             background: linear-gradient(180deg, transparent, rgba(7, 26, 44, 0.05));
             height: 72px;
@@ -845,7 +1053,9 @@
             .target-grid,
             .cta-panel,
             .we-grid,
-            .contribute-panel {
+            .contribute-panel,
+            .waves-grid,
+            .jbw-wrap {
                 grid-template-columns: 1fr;
             }
 
@@ -925,6 +1135,13 @@
                 border-radius: 26px;
             }
 
+            .waves-copy,
+            .wave-story,
+            .jbw-card,
+            .jbw-note {
+                border-radius: 26px;
+            }
+
             .panel-top,
             .search-map,
             .map-main,
@@ -935,6 +1152,13 @@
             .we-copy,
             .knowledge-board,
             .contribute-panel {
+                padding: 22px;
+            }
+
+            .waves-copy,
+            .wave-story,
+            .jbw-card,
+            .jbw-note {
                 padding: 22px;
             }
 
@@ -1138,6 +1362,47 @@
             </div>
         </section>
 
+        <section id="jobsy-waves" class="waves-section">
+            <div class="shell waves-grid">
+                <div class="waves-copy">
+                    <div class="section-mark" data-i18n="wavesMark">Jobsy Waves</div>
+                    <h2 data-i18n="wavesTitle">Make Waves.</h2>
+                    <p data-i18n="wavesLead">When something is useful, it deserves to travel.</p>
+                </div>
+                <div class="wave-story" aria-label="How a Jobsy Wave begins" data-i18n-aria-label="waveStoryAria">
+                    <div class="shared-article">
+                        <span data-i18n="waveArticleLabel">Useful Jobsy article</span>
+                        <strong data-i18n="waveArticleTitle">Adult retraining in Finland</strong>
+                        <div class="share-button" data-i18n="waveShareButton">Share</div>
+                    </div>
+                    <div class="wave-path">
+                        <div class="wave-arrow">↓</div>
+                        <div class="wave-step"><span data-i18n="waveStep1Label">Shared</span><strong data-i18n="waveStep1">A friend receives useful content</strong></div>
+                        <div class="wave-arrow">↓</div>
+                        <div class="wave-step"><span data-i18n="waveStep2Label">Read</span><strong data-i18n="waveStep2">They discover Jobsy through the article</strong></div>
+                        <div class="wave-arrow">↓</div>
+                        <div class="wave-step wave-begins"><span data-i18n="waveStep3Label">Wave begins</span><strong data-i18n="waveStep3">They join and later share something useful too</strong></div>
+                    </div>
+                </div>
+            </div>
+            <div class="shell jbw-wrap">
+                <div class="jbw-card">
+                    <div class="section-mark" data-i18n="jbwMark">Your Waves</div>
+                    <span class="jbw-number">1,284 JBW</span>
+                    <p data-i18n="jbwText">JBW measures how far your contribution to Jobsy has spread.</p>
+                    <div class="waves-actions"><a class="button" href="/app" data-i18n="wavesCta">Share something useful</a></div>
+                </div>
+                <div class="jbw-note">
+                    <h3 data-i18n="jbwNoteTitle">JBW is not money.</h3>
+                    <ul>
+                        <li data-i18n="jbwNote1">It is not a cryptocurrency or investment.</li>
+                        <li data-i18n="jbwNote2">It has no fixed euro value.</li>
+                        <li data-i18n="jbwNote3">It cannot currently be exchanged for money.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <div class="future-anchor" aria-hidden="true"></div>
     </main>
 
@@ -1234,6 +1499,26 @@
                 contributeTitle: "Useful experience becomes part of Jobsy knowledge.",
                 askCta: "Ask a question",
                 shareCta: "Share experience",
+                wavesMark: "Jobsy Waves",
+                wavesTitle: "Make Waves.",
+                wavesLead: "When something is useful, it deserves to travel.",
+                waveStoryAria: "How a Jobsy Wave begins",
+                waveArticleLabel: "Useful Jobsy article",
+                waveArticleTitle: "Adult retraining in Finland",
+                waveShareButton: "Share",
+                waveStep1Label: "Shared",
+                waveStep1: "A friend receives useful content",
+                waveStep2Label: "Read",
+                waveStep2: "They discover Jobsy through the article",
+                waveStep3Label: "Wave begins",
+                waveStep3: "They join and later share something useful too",
+                jbwMark: "Your Waves",
+                jbwText: "JBW measures how far your contribution to Jobsy has spread.",
+                wavesCta: "Share something useful",
+                jbwNoteTitle: "JBW is not money.",
+                jbwNote1: "It is not a cryptocurrency or investment.",
+                jbwNote2: "It has no fixed euro value.",
+                jbwNote3: "It cannot currently be exchanged for money.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
                 footerContact: "Contact"
@@ -1319,6 +1604,26 @@
                 contributeTitle: "Полезный опыт становится частью знаний Jobsy.",
                 askCta: "Задать вопрос",
                 shareCta: "Поделиться опытом",
+                wavesMark: "Jobsy Waves",
+                wavesTitle: "Создавайте волны.",
+                wavesLead: "Если что-то полезно, оно должно идти дальше.",
+                waveStoryAria: "Как начинается Jobsy Wave",
+                waveArticleLabel: "Полезная статья Jobsy",
+                waveArticleTitle: "Переобучение взрослых в Финляндии",
+                waveShareButton: "Поделиться",
+                waveStep1Label: "Поделились",
+                waveStep1: "Друг получает полезный материал",
+                waveStep2Label: "Прочитал",
+                waveStep2: "Он узнает о Jobsy через статью",
+                waveStep3Label: "Волна начинается",
+                waveStep3: "Он присоединяется и позже делится чем-то полезным дальше",
+                jbwMark: "Ваши волны",
+                jbwText: "JBW показывает, как далеко распространился ваш вклад в Jobsy.",
+                wavesCta: "Поделиться полезным",
+                jbwNoteTitle: "JBW - это не деньги.",
+                jbwNote1: "Это не криптовалюта и не инвестиция.",
+                jbwNote2: "У JBW нет фиксированной стоимости в евро.",
+                jbwNote3: "Сейчас JBW нельзя обменять на деньги.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
                 footerContact: "Контакты"
