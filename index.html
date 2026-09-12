@@ -676,23 +676,7 @@
             gap: 16px;
         }
 
-        .guide-search {
-            background: var(--paper);
-            border: 1px solid #eadfc6;
-            border-radius: 24px;
-            padding: 20px;
-        }
-
-        .guide-search span,
-        .guide-answer span,
-        .source-card span {
-            color: var(--route);
-            display: block;
-            font-weight: 900;
-            margin-bottom: 8px;
-        }
-
-        .guide-search strong {
+        .experience-board-head strong {
             display: block;
             font-size: clamp(1.5rem, 3vw, 2.5rem);
             font-weight: 900;
@@ -700,11 +684,103 @@
             line-height: 1.05;
         }
 
+        .human-examples {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .human-example,
+        .recognition-card,
+        .demo-question,
+        .answer-layer {
+            background: var(--paper);
+            border: 1px solid #eadfc6;
+            border-radius: 22px;
+            padding: 18px;
+        }
+
+        .human-example span,
+        .recognition-card span,
+        .demo-question span,
+        .answer-layer span {
+            color: var(--route);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .human-example strong,
+        .recognition-card strong,
+        .demo-question strong,
+        .answer-layer strong {
+            display: block;
+            font-size: 1.08rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.16;
+        }
+
+        .recognition-card {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .recognition-card span {
+            color: var(--signal);
+        }
+
+        .knowledge-demo {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 0.78fr 1.22fr;
+        }
+
+        .demo-question {
+            align-content: center;
+            background: var(--night);
+            color: var(--white);
+            display: grid;
+            min-height: 320px;
+        }
+
+        .demo-question span {
+            color: var(--signal);
+        }
+
+        .demo-question strong {
+            font-size: clamp(2rem, 4vw, 3.7rem);
+            letter-spacing: -0.065em;
+            line-height: 1;
+        }
+
+        .demo-answer {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 36px;
+            box-shadow: var(--shadow);
+            padding: 34px;
+        }
+
+        .answer-layers {
+            display: grid;
+            gap: 12px;
+        }
+
+        .answer-layer strong::after {
+            content: " →";
+        }
+
+        .question-layer {
+            background: var(--mist);
+            border-color: var(--line);
+        }
+
         .topic-strip {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 6px;
+            margin-top: 18px;
         }
 
         .topic-strip span {
@@ -714,55 +790,6 @@
             color: var(--ink);
             font-weight: 900;
             padding: 9px 12px;
-        }
-
-        .guide-flow {
-            align-items: center;
-            color: var(--signal-deep);
-            display: grid;
-            font-size: 1.4rem;
-            font-weight: 900;
-            justify-content: center;
-        }
-
-        .guide-answer {
-            background: var(--night);
-            border-radius: 26px;
-            color: var(--white);
-            padding: 22px;
-        }
-
-        .guide-answer span {
-            color: var(--signal);
-        }
-
-        .guide-answer p {
-            color: #d8e9e8;
-            font-size: 1.08rem;
-        }
-
-        .source-grid {
-            display: grid;
-            gap: 12px;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .source-card {
-            background: var(--paper);
-            border: 1px solid #eadfc6;
-            border-radius: 22px;
-            padding: 18px;
-        }
-
-        .source-card strong {
-            display: block;
-            font-size: 1.08rem;
-            font-weight: 900;
-            letter-spacing: -0.04em;
-        }
-
-        .source-card strong::after {
-            content: " →";
         }
 
         .contribute-section {
@@ -1072,6 +1099,7 @@
             .target-grid,
             .cta-panel,
             .we-grid,
+            .knowledge-demo,
             .contribute-panel,
             .waves-grid,
             .jbw-wrap {
@@ -1150,6 +1178,8 @@
             .cta-panel,
             .we-copy,
             .knowledge-board,
+            .demo-question,
+            .demo-answer,
             .contribute-panel {
                 border-radius: 26px;
             }
@@ -1171,6 +1201,8 @@
             .cta-panel,
             .we-copy,
             .knowledge-board,
+            .demo-question,
+            .demo-answer,
             .contribute-panel {
                 padding: 22px;
             }
@@ -1186,7 +1218,7 @@
             .map-main,
             .target-row,
             .process-rail,
-            .source-grid {
+            .human-examples {
                 grid-template-columns: 1fr;
             }
 
@@ -1341,22 +1373,37 @@
                     <div class="section-mark" data-i18n="weMark">We are Jobsy</div>
                     <h2 data-i18n="weTitle">We are Jobsy.</h2>
                     <p class="we-lead" data-i18n="weLead">Every question. Every experience. Every success makes Jobsy smarter.</p>
-                    <p data-i18n="weText">One person knows a little. Together, we know a lot.</p>
+                    <p data-i18n="weText">Jobsy becomes more useful when real experience does not disappear after one person solves a problem.</p>
                 </div>
-                <div class="knowledge-board" aria-label="Jobsy Guide example" data-i18n-aria-label="knowledgeAria">
-                    <div class="guide-search">
-                        <span data-i18n="guideQuestionLabel">Question</span>
-                        <strong data-i18n="guideQuestion">Can I retrain after 40 in Finland?</strong>
+                <div class="knowledge-board" aria-label="Real experience examples" data-i18n-aria-label="knowledgeAria">
+                    <div class="experience-board-head">
+                        <strong data-i18n="knowledgeTitle">One person knows a little. Together, we know a lot.</strong>
                     </div>
-                    <div class="guide-flow" aria-hidden="true">↓</div>
-                    <div class="guide-answer">
-                        <span data-i18n="guideAnswerLabel">Jobsy Guide</span>
-                        <p data-i18n="guideAnswer">Yes, retraining as an adult can be possible in Finland. The useful next step is to understand study options, language expectations and how adult education works.</p>
+                    <div class="human-examples">
+                        <article class="human-example"><span data-i18n="human1Label">Lived there</span><strong data-i18n="human1Text">Someone has lived in Finland for 20 years.</strong></article>
+                        <article class="human-example"><span data-i18n="human2Label">Changed direction</span><strong data-i18n="human2Text">Someone changed profession at 40.</strong></article>
+                        <article class="human-example"><span data-i18n="human3Label">Found a route</span><strong data-i18n="human3Text">Someone found work through a staffing agency.</strong></article>
                     </div>
-                    <div class="guide-flow" aria-hidden="true">↓</div>
-                    <div class="source-grid">
-                        <article class="source-card"><span data-i18n="sourceInfoLabel">Useful Jobsy article</span><strong data-i18n="sourceInfo">Adult retraining in Finland</strong></article>
-                        <article class="source-card"><span data-i18n="sourceExperienceLabel">Real experience</span><strong data-i18n="sourceExperience">Example: I started retraining at 43. Here is what surprised me...</strong></article>
+                    <div class="recognition-card">
+                        <span data-i18n="recognitionLabel">You may know something useful too</span>
+                        <strong data-i18n="recognitionText">You do not need to be an expert. If you have lived it, solved it, tried it or learned it, it may help someone else.</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contribute-section">
+            <div class="shell knowledge-demo">
+                <div class="demo-question">
+                    <span data-i18n="demoQuestionLabel">Question</span>
+                    <strong data-i18n="demoQuestion">Can I retrain after 40 in Finland?</strong>
+                </div>
+                <div class="demo-answer">
+                    <div class="section-mark" data-i18n="demoMark">Information + real experience</div>
+                    <div class="answer-layers">
+                        <article class="answer-layer"><span data-i18n="infoLabel">Useful information</span><strong data-i18n="infoText">Adult retraining in Finland</strong></article>
+                        <article class="answer-layer"><span data-i18n="experienceLabel2">Real human experience</span><strong data-i18n="experienceText2">Example: I started retraining at 43. Here is how it was for me...</strong></article>
+                        <article class="answer-layer question-layer"><span data-i18n="questionValueLabel">Questions also help</span><strong data-i18n="questionValueText">A good question shows what people need to know next.</strong></article>
                     </div>
                     <div class="topic-strip" aria-label="Country knowledge topics" data-i18n-aria-label="topicsAria">
                         <span data-i18n="topicWork">Work</span>
@@ -1370,25 +1417,12 @@
             </div>
         </section>
 
-        <section class="contribute-section">
-            <div class="shell contribute-panel">
-                <div>
-                    <div class="section-mark" data-i18n="contributeMark">What you know can help</div>
-                    <h2 data-i18n="contributeTitle">Useful experience becomes part of Jobsy knowledge.</h2>
-                </div>
-                <div class="contribute-actions">
-                    <a class="button" href="/app" data-i18n="askCta">Ask a question</a>
-                    <a class="button" href="/app" data-i18n="shareCta">Share experience</a>
-                </div>
-            </div>
-        </section>
-
         <section id="jobsy-waves" class="waves-section">
             <div class="shell waves-grid">
                 <div class="waves-copy">
                     <div class="section-mark" data-i18n="wavesMark">Jobsy Waves</div>
                     <h2 data-i18n="wavesTitle">Make Waves.</h2>
-                    <p data-i18n="wavesLead">When something is useful, it deserves to travel.</p>
+                    <p data-i18n="wavesLead">Useful things should not stop with one person.</p>
                 </div>
                 <div class="wave-story" aria-label="How a Jobsy Wave begins" data-i18n-aria-label="waveStoryAria">
                     <div class="shared-article">
@@ -1422,7 +1456,7 @@
                 <div class="jbw-note">
                     <h3 data-i18n="pilotTitle">Jobsy Waves is a pilot.</h3>
                     <p data-i18n="pilotToday">Today, when someone you directly introduced to Jobsy makes their first successful Jobsy Active payment, Jobsy adds €1 to your Rewards once.</p>
-                    <p data-i18n="pilotFuture">This is only the beginning. We want to find a fair way to recognize useful contribution to Jobsy as the product grows.</p>
+                    <p data-i18n="pilotFuture">This is only the beginning. We are exploring how Jobsy can fairly recognize and reward useful contribution as the product grows.</p>
                     <p class="landing-end" data-i18n="landingEnd">Find Work. Share what you know. Make Waves. We are Jobsy.</p>
                     <div class="waves-actions"><a class="button" href="/app" data-i18n="wavesCta">Share something useful</a></div>
                 </div>
@@ -1504,16 +1538,26 @@
                 weMark: "We are Jobsy",
                 weTitle: "We are Jobsy.",
                 weLead: "Every question. Every experience. Every success makes Jobsy smarter.",
-                weText: "One person knows a little. Together, we know a lot.",
-                knowledgeAria: "Jobsy Guide example",
-                guideQuestionLabel: "Question",
-                guideQuestion: "Can I retrain after 40 in Finland?",
-                guideAnswerLabel: "Jobsy Guide",
-                guideAnswer: "Yes, retraining as an adult can be possible in Finland. The useful next step is to understand study options, language expectations and how adult education works.",
-                sourceInfoLabel: "Useful Jobsy article",
-                sourceInfo: "Adult retraining in Finland",
-                sourceExperienceLabel: "Real experience",
-                sourceExperience: "Example: I started retraining at 43. Here is what surprised me...",
+                weText: "Jobsy becomes more useful when real experience does not disappear after one person solves a problem.",
+                knowledgeAria: "Real experience examples",
+                knowledgeTitle: "One person knows a little. Together, we know a lot.",
+                human1Label: "Lived there",
+                human1Text: "Someone has lived in Finland for 20 years.",
+                human2Label: "Changed direction",
+                human2Text: "Someone changed profession at 40.",
+                human3Label: "Found a route",
+                human3Text: "Someone found work through a staffing agency.",
+                recognitionLabel: "You may know something useful too",
+                recognitionText: "You do not need to be an expert. If you have lived it, solved it, tried it or learned it, it may help someone else.",
+                demoQuestionLabel: "Question",
+                demoQuestion: "Can I retrain after 40 in Finland?",
+                demoMark: "Information + real experience",
+                infoLabel: "Useful information",
+                infoText: "Adult retraining in Finland",
+                experienceLabel2: "Real human experience",
+                experienceText2: "Example: I started retraining at 43. Here is how it was for me...",
+                questionValueLabel: "A question can help too",
+                questionValueText: "A good question shows what people need to know next.",
                 topicsAria: "Country knowledge topics",
                 topicWork: "Work",
                 topicRetraining: "Retraining",
@@ -1527,7 +1571,7 @@
                 shareCta: "Share experience",
                 wavesMark: "Jobsy Waves",
                 wavesTitle: "Make Waves.",
-                wavesLead: "When something is useful, it deserves to travel.",
+                wavesLead: "Useful things should not stop with one person.",
                 waveStoryAria: "How a Jobsy Wave begins",
                 waveArticleLabel: "Useful Jobsy article",
                 waveArticleTitle: "Adult retraining in Finland",
@@ -1545,7 +1589,7 @@
                 wavesCta: "Share something useful",
                 pilotTitle: "Jobsy Waves is a pilot.",
                 pilotToday: "Today, when someone you directly introduced to Jobsy makes their first successful Jobsy Active payment, Jobsy adds €1 to your Rewards once.",
-                pilotFuture: "This is only the beginning. We want to find a fair way to recognize useful contribution to Jobsy as the product grows.",
+                pilotFuture: "This is only the beginning. We are exploring how Jobsy can fairly recognize and reward useful contribution as the product grows.",
                 landingEnd: "Find Work. Share what you know. Make Waves. We are Jobsy.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
@@ -1611,16 +1655,26 @@
                 weMark: "Мы - Jobsy",
                 weTitle: "Мы - Jobsy.",
                 weLead: "Каждый вопрос. Каждый опыт. Каждый успех делает Jobsy умнее.",
-                weText: "Один человек знает немного. Вместе мы знаем многое.",
-                knowledgeAria: "Пример Jobsy Guide",
-                guideQuestionLabel: "Вопрос",
-                guideQuestion: "Можно ли переучиться после 40 в Финляндии?",
-                guideAnswerLabel: "Jobsy Guide",
-                guideAnswer: "Да, переобучение во взрослом возрасте в Финляндии возможно. Сначала стоит понять варианты учебы, требования к языку и как устроено обучение взрослых.",
-                sourceInfoLabel: "Полезная статья Jobsy",
-                sourceInfo: "Переобучение взрослых в Финляндии",
-                sourceExperienceLabel: "Реальный опыт",
-                sourceExperience: "Например: я начал переобучение в 43. Вот что меня удивило...",
+                weText: "Jobsy становится полезнее, когда реальный опыт не исчезает после того, как один человек решил свою проблему.",
+                knowledgeAria: "Примеры реального опыта",
+                knowledgeTitle: "Один человек знает немного. Вместе мы знаем многое.",
+                human1Label: "Жил в стране",
+                human1Text: "Кто-то прожил в Финляндии 20 лет.",
+                human2Label: "Сменил профессию",
+                human2Text: "Кто-то поменял профессию после 40.",
+                human3Label: "Нашел путь",
+                human3Text: "Кто-то нашел работу через кадровое агентство.",
+                recognitionLabel: "Вы тоже можете знать что-то полезное",
+                recognitionText: "Не нужно быть экспертом. Если вы это прожили, решили, попробовали или узнали, это может помочь другому человеку.",
+                demoQuestionLabel: "Вопрос",
+                demoQuestion: "Можно ли переучиться после 40 в Финляндии?",
+                demoMark: "Информация + реальный опыт",
+                infoLabel: "Полезная информация",
+                infoText: "Переобучение взрослых в Финляндии",
+                experienceLabel2: "Реальный опыт человека",
+                experienceText2: "Например: я начал переучиваться в 43. Вот как это было у меня...",
+                questionValueLabel: "Вопрос тоже помогает",
+                questionValueText: "Хороший вопрос показывает, что людям важно узнать дальше.",
                 topicsAria: "Темы знаний по странам",
                 topicWork: "Работа",
                 topicRetraining: "Переобучение",
@@ -1634,7 +1688,7 @@
                 shareCta: "Поделиться опытом",
                 wavesMark: "Jobsy Waves",
                 wavesTitle: "Создавайте волны.",
-                wavesLead: "Если что-то полезно, оно должно идти дальше.",
+                wavesLead: "Полезное не должно останавливаться на одном человеке.",
                 waveStoryAria: "Как начинается Jobsy Wave",
                 waveArticleLabel: "Полезная статья Jobsy",
                 waveArticleTitle: "Переобучение взрослых в Финляндии",
@@ -1652,7 +1706,7 @@
                 wavesCta: "Поделиться полезным",
                 pilotTitle: "Jobsy Waves - это пилот.",
                 pilotToday: "Сейчас, если человек, которого вы напрямую привели в Jobsy, делает первый успешный платеж за Jobsy Active, Jobsy один раз добавляет €1 в ваши Rewards.",
-                pilotFuture: "Это только начало. Мы хотим найти справедливый способ признавать полезный вклад в Jobsy по мере роста продукта.",
+                pilotFuture: "Это только начало. Мы ищем справедливый способ признавать и вознаграждать полезный вклад в Jobsy по мере роста продукта.",
                 landingEnd: "Найти работу. Поделиться тем, что знаете. Создавать волны. Мы - Jobsy.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
