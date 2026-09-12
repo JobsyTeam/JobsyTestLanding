@@ -618,42 +618,57 @@
             margin: 8px 0 18px;
         }
 
-        .we-jobsy {
+        .story-section {
             background:
-                radial-gradient(circle at 10% 12%, rgba(240, 201, 106, 0.22), transparent 28%),
+                radial-gradient(circle at 12% 12%, rgba(240, 201, 106, 0.22), transparent 28%),
                 linear-gradient(180deg, #f8f2e3 0%, var(--paper) 62%);
             padding-top: 104px;
         }
 
-        .we-grid {
+        .story-grid {
             align-items: stretch;
             display: grid;
             gap: 20px;
-            grid-template-columns: 0.9fr 1.1fr;
+            grid-template-columns: 0.95fr 1.05fr;
         }
 
-        .we-copy,
-        .knowledge-board,
-        .guide-card {
+        .story-copy,
+        .people-knowledge,
+        .human-proof,
+        .waves-question,
+        .waves-lab {
             border-radius: 36px;
             padding: 34px;
         }
 
-        .we-copy {
+        .story-copy,
+        .waves-question {
             background: var(--night);
             color: var(--white);
         }
 
-        .we-copy .section-mark {
+        .story-copy .section-mark,
+        .waves-question .section-mark,
+        .waves-lab .section-mark {
             color: var(--signal);
         }
 
-        .we-copy h2 {
+        .story-copy h2,
+        .waves-question h2 {
             font-family: "IBM Plex Serif", Georgia, serif;
             font-weight: 600;
         }
 
-        .we-copy .we-lead {
+        .story-copy p,
+        .waves-question p,
+        .waves-lab p {
+            color: #d8e9e8;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .story-copy .story-lead,
+        .waves-question .waves-lead {
             color: #e6f4f1;
             font-size: clamp(1.45rem, 3vw, 2.35rem);
             font-weight: 800;
@@ -662,58 +677,39 @@
             margin-top: 22px;
         }
 
-        .we-copy p:not(.we-lead) {
-            color: #c2d4d5;
-            font-size: 1.1rem;
-            margin-top: 20px;
-        }
-
-        .knowledge-board {
+        .people-knowledge,
+        .human-proof {
             background: var(--white);
             border: 1px solid var(--line);
             box-shadow: var(--shadow);
-            display: grid;
-            gap: 16px;
         }
 
-        .experience-board-head strong {
-            display: block;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 900;
-            letter-spacing: -0.06em;
-            line-height: 1.05;
-        }
-
-        .human-examples {
+        .knowledge-lines {
             display: grid;
             gap: 12px;
-            grid-template-columns: repeat(3, 1fr);
         }
 
-        .human-example,
-        .recognition-card,
-        .demo-question,
-        .answer-layer {
+        .knowledge-line,
+        .bridge-layer,
+        .wave-signal {
             background: var(--paper);
             border: 1px solid #eadfc6;
             border-radius: 22px;
             padding: 18px;
         }
 
-        .human-example span,
-        .recognition-card span,
-        .demo-question span,
-        .answer-layer span {
+        .knowledge-line span,
+        .bridge-layer span,
+        .wave-signal span {
             color: var(--route);
             display: block;
             font-weight: 900;
             margin-bottom: 8px;
         }
 
-        .human-example strong,
-        .recognition-card strong,
-        .demo-question strong,
-        .answer-layer strong {
+        .knowledge-line strong,
+        .bridge-layer strong,
+        .wave-signal strong {
             display: block;
             font-size: 1.08rem;
             font-weight: 900;
@@ -721,59 +717,67 @@
             line-height: 1.16;
         }
 
-        .recognition-card {
+        .not-expert {
             background: var(--night);
+            border-radius: 26px;
             color: var(--white);
+            margin-top: 14px;
+            padding: 22px;
         }
 
-        .recognition-card span {
+        .not-expert span {
             color: var(--signal);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 8px;
         }
 
-        .knowledge-demo {
+        .not-expert strong {
+            display: block;
+            font-size: clamp(1.4rem, 3vw, 2.45rem);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.08;
+        }
+
+        .human-proof-grid {
             display: grid;
             gap: 20px;
             grid-template-columns: 0.78fr 1.22fr;
         }
 
-        .demo-question {
+        .proof-question {
             align-content: center;
             background: var(--night);
+            border-radius: 36px;
             color: var(--white);
             display: grid;
             min-height: 320px;
+            padding: 34px;
         }
 
-        .demo-question span {
+        .proof-question span {
             color: var(--signal);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 10px;
         }
 
-        .demo-question strong {
+        .proof-question strong {
+            display: block;
             font-size: clamp(2rem, 4vw, 3.7rem);
+            font-weight: 900;
             letter-spacing: -0.065em;
             line-height: 1;
         }
 
-        .demo-answer {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 36px;
-            box-shadow: var(--shadow);
-            padding: 34px;
-        }
-
-        .answer-layers {
+        .bridge-layers {
             display: grid;
             gap: 12px;
         }
 
-        .answer-layer strong::after {
+        .bridge-layer strong::after {
             content: " →";
-        }
-
-        .question-layer {
-            background: var(--mist);
-            border-color: var(--line);
         }
 
         .topic-strip {
@@ -792,15 +796,10 @@
             padding: 9px 12px;
         }
 
-        .contribute-section {
-            background: linear-gradient(180deg, var(--paper) 0%, #f5efe0 100%);
-            padding-top: 70px;
-        }
-
         .waves-section {
             background:
                 radial-gradient(circle at 84% 18%, rgba(28, 111, 121, 0.22), transparent 30%),
-                linear-gradient(180deg, #f5efe0 0%, var(--night) 100%);
+                linear-gradient(180deg, var(--paper) 0%, var(--night) 100%);
             color: var(--white);
             overflow: hidden;
             padding-top: 104px;
@@ -810,205 +809,62 @@
             align-items: stretch;
             display: grid;
             gap: 20px;
-            grid-template-columns: 0.88fr 1.12fr;
+            grid-template-columns: 0.9fr 1.1fr;
         }
 
-        .waves-copy,
-        .wave-story {
-            border-radius: 36px;
-            padding: 34px;
-        }
-
-        .waves-copy {
+        .waves-lab {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.13);
         }
 
-        .waves-copy .section-mark {
+        .wave-signals {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 18px;
+        }
+
+        .wave-signal {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.13);
+        }
+
+        .wave-signal span {
             color: var(--signal);
         }
 
-        .waves-copy h2 {
-            font-family: "IBM Plex Serif", Georgia, serif;
-            font-weight: 600;
-        }
-
-        .waves-copy p {
-            color: #d8e9e8;
-            font-size: clamp(1.35rem, 2.6vw, 2.2rem);
-            font-weight: 800;
-            letter-spacing: -0.055em;
-            line-height: 1.08;
-            margin-top: 22px;
-        }
-
-        .wave-story {
-            background: var(--paper);
-            border: 1px solid rgba(255, 255, 255, 0.24);
-            box-shadow: var(--shadow);
-            color: var(--ink);
-            position: relative;
-        }
-
-        .wave-story::before,
-        .wave-story::after {
-            border: 1px solid rgba(28, 111, 121, 0.18);
-            border-radius: 50%;
-            content: "";
-            position: absolute;
-            right: 34px;
-            top: 34px;
-        }
-
-        .wave-story::before {
-            height: 150px;
-            width: 150px;
-        }
-
-        .wave-story::after {
-            height: 240px;
-            transform: translate(45px, -45px);
-            width: 240px;
-        }
-
-        .wave-story > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .shared-article {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 24px;
-            padding: 22px;
-        }
-
-        .shared-article span,
-        .wave-step span {
-            color: var(--route);
-            display: block;
-            font-weight: 900;
-            margin-bottom: 8px;
-        }
-
-        .shared-article strong {
-            display: block;
-            font-size: clamp(1.4rem, 3vw, 2.45rem);
-            font-weight: 900;
-            letter-spacing: -0.06em;
-            line-height: 1.05;
-            max-width: 460px;
-        }
-
-        .share-button {
-            align-items: center;
-            background: var(--signal);
-            border-radius: 999px;
-            color: var(--night);
-            display: inline-flex;
-            font-weight: 900;
-            margin-top: 18px;
-            min-height: 44px;
-            padding: 0 18px;
-        }
-
-        .wave-path {
-            display: grid;
-            gap: 12px;
-            margin-top: 18px;
-        }
-
-        .wave-step {
-            background: rgba(255, 255, 255, 0.68);
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            padding: 18px;
-        }
-
-        .wave-step strong {
-            display: block;
-            font-size: 1.08rem;
-            font-weight: 900;
-            letter-spacing: -0.04em;
-        }
-
-        .wave-arrow {
-            color: var(--signal-deep);
-            font-size: 1.25rem;
-            font-weight: 900;
-            text-align: center;
-        }
-
-        .wave-begins {
-            background: var(--night);
+        .wave-signal strong {
             color: var(--white);
         }
 
-        .wave-begins span {
-            color: var(--signal);
-        }
-
-        .waves-vision {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: 0.92fr 1.08fr;
-            margin-top: 20px;
-        }
-
-        .pilot-card,
         .value-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.13);
+            background: var(--paper);
             border-radius: 36px;
+            color: var(--ink);
+            margin-top: 20px;
             padding: 34px;
         }
 
-        .pilot-card .section-mark,
-        .value-card .section-mark {
-            color: var(--signal);
-        }
-
-        .pilot-card h3,
         .value-card h3 {
             font-size: clamp(2rem, 4vw, 3.7rem);
             font-weight: 900;
             margin-bottom: 18px;
         }
 
-        .pilot-card p,
         .value-card p {
-            color: #d8e9e8;
+            color: var(--muted);
             font-size: 1.08rem;
         }
 
-        .value-card {
-            background: var(--paper);
-            color: var(--ink);
-        }
-
-        .value-card .section-mark,
-        .value-card p {
-            color: var(--muted);
-        }
-
-        .pilot-card p + p,
-        .value-card p + p {
-            margin-top: 16px;
-        }
-
         .landing-end {
-            border-top: 1px solid rgba(255, 255, 255, 0.14);
-            color: var(--white) !important;
+            border-top: 1px solid rgba(7, 26, 44, 0.12);
+            color: var(--ink) !important;
             font-size: clamp(1.5rem, 3vw, 2.7rem) !important;
             font-weight: 900;
             letter-spacing: -0.06em;
             line-height: 1.05;
             margin-top: 28px;
             padding-top: 24px;
-        }
-
-        .waves-actions {
-            margin-top: 28px;
         }
 
         .future-anchor {
@@ -1056,10 +912,9 @@
             .hero-grid,
             .target-grid,
             .cta-panel,
-            .we-grid,
-            .knowledge-demo,
-            .waves-grid,
-            .waves-vision {
+            .story-grid,
+            .human-proof-grid,
+            .waves-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1133,16 +988,15 @@
             .target-example,
             .scale-card,
             .cta-panel,
-            .we-copy,
-            .knowledge-board,
-            .demo-question,
-            .demo-answer {
+            .story-copy,
+            .people-knowledge,
+            .proof-question,
+            .human-proof {
                 border-radius: 26px;
             }
 
-            .waves-copy,
-            .wave-story,
-            .pilot-card,
+            .waves-question,
+            .waves-lab,
             .value-card {
                 border-radius: 26px;
             }
@@ -1154,16 +1008,15 @@
             .target-example,
             .scale-card,
             .cta-panel,
-            .we-copy,
-            .knowledge-board,
-            .demo-question,
-            .demo-answer {
+            .story-copy,
+            .people-knowledge,
+            .proof-question,
+            .human-proof {
                 padding: 22px;
             }
 
-            .waves-copy,
-            .wave-story,
-            .pilot-card,
+            .waves-question,
+            .waves-lab,
             .value-card {
                 padding: 22px;
             }
@@ -1171,7 +1024,8 @@
             .map-main,
             .target-row,
             .process-rail,
-            .human-examples {
+            .human-proof-grid,
+            .wave-signals {
                 grid-template-columns: 1fr;
             }
 
@@ -1320,44 +1174,39 @@
             </div>
         </section>
 
-        <section id="we-are-jobsy" class="we-jobsy">
-            <div class="shell we-grid">
-                <div class="we-copy">
-                    <div class="section-mark" data-i18n="weMark">We are Jobsy</div>
-                    <h2 data-i18n="weTitle">We are Jobsy.</h2>
-                    <p class="we-lead" data-i18n="weLead">Every question. Every experience. Every success makes Jobsy smarter.</p>
-                    <p data-i18n="weText">Jobsy becomes more useful when real experience does not disappear after one person solves a problem.</p>
+        <section id="we-are-jobsy" class="story-section">
+            <div class="shell story-grid">
+                <div class="story-copy">
+                    <div class="section-mark" data-i18n="storyMark">The story of Jobsy</div>
+                    <h2 data-i18n="storyTitle">It started with finding work.</h2>
+                    <p class="story-lead" data-i18n="storyLead">Then we saw that work is only one part of people's real lives.</p>
+                    <p data-i18n="storyText">People ask about changing profession, education, language, documents, housing and everyday life in another country. Very often, someone else has already lived through the same problem.</p>
                 </div>
-                <div class="knowledge-board" aria-label="Real experience examples" data-i18n-aria-label="knowledgeAria">
-                    <div class="experience-board-head">
-                        <strong data-i18n="knowledgeTitle">One person knows a little. Together, we know a lot.</strong>
+                <div class="people-knowledge" aria-label="Real human knowledge examples" data-i18n-aria-label="peopleAria">
+                    <div class="knowledge-lines">
+                        <article class="knowledge-line"><span data-i18n="life1Label">Lived experience</span><strong data-i18n="life1Text">Someone has lived in Finland for 20 years.</strong></article>
+                        <article class="knowledge-line"><span data-i18n="life2Label">Changed profession</span><strong data-i18n="life2Text">Someone changed profession after 40.</strong></article>
+                        <article class="knowledge-line"><span data-i18n="life3Label">Found a path</span><strong data-i18n="life3Text">Someone found work without speaking the local language.</strong></article>
+                        <article class="knowledge-line"><span data-i18n="life4Label">Solved it yesterday</span><strong data-i18n="life4Text">Someone dealt with the problem another person has today.</strong></article>
                     </div>
-                    <div class="human-examples">
-                        <article class="human-example"><span data-i18n="human1Label">Lived there</span><strong data-i18n="human1Text">Someone has lived in Finland for 20 years.</strong></article>
-                        <article class="human-example"><span data-i18n="human2Label">Changed direction</span><strong data-i18n="human2Text">Someone changed profession at 40.</strong></article>
-                        <article class="human-example"><span data-i18n="human3Label">Found a route</span><strong data-i18n="human3Text">Someone found work through a staffing agency.</strong></article>
-                    </div>
-                    <div class="recognition-card">
-                        <span data-i18n="recognitionLabel">You may know something useful too</span>
-                        <strong data-i18n="recognitionText">You do not need to be an expert. If you have lived it, solved it, tried it or learned it, it may help someone else.</strong>
-                    </div>
+                    <div class="not-expert"><span data-i18n="expertLabel">You do not need to be an expert</span><strong data-i18n="expertText">What you know may be useful to someone else.</strong></div>
                 </div>
             </div>
         </section>
 
-        <section class="contribute-section">
-            <div class="shell knowledge-demo">
-                <div class="demo-question">
-                    <span data-i18n="demoQuestionLabel">Question</span>
-                    <strong data-i18n="demoQuestion">Can I retrain after 40 in Finland?</strong>
+        <section class="story-section">
+            <div class="shell human-proof-grid">
+                <div class="proof-question">
+                    <span data-i18n="proofQuestionLabel">Question</span>
+                    <strong data-i18n="proofQuestion">Can I retrain after 40 in Finland?</strong>
                 </div>
-                <div class="demo-answer">
-                    <div class="section-mark" data-i18n="demoMark">Information + real experience</div>
-                    <div class="answer-layers">
-                        <article class="answer-layer"><span data-i18n="infoLabel">Useful information</span><strong data-i18n="infoText">Adult retraining in Finland</strong></article>
-                        <article class="answer-layer"><span data-i18n="experienceLabel2">Real human experience</span><strong data-i18n="experienceText2">Example: I started retraining at 43. Here is how it was for me...</strong></article>
-                        <article class="answer-layer question-layer"><span data-i18n="questionValueLabel">Questions also help</span><strong data-i18n="questionValueText">A good question shows what people need to know next.</strong></article>
-                        <article class="answer-layer"><span data-i18n="aiLabel">Modern AI helps connect it</span><strong data-i18n="aiText">So useful articles, questions and experience become easier to find.</strong></article>
+                <div class="human-proof">
+                    <div class="section-mark" data-i18n="proofMark">Information + real human experience</div>
+                    <div class="bridge-layers">
+                        <article class="bridge-layer"><span data-i18n="officialLabel">Useful information</span><strong data-i18n="officialText">Adult retraining in Finland</strong></article>
+                        <article class="bridge-layer"><span data-i18n="humanLabel">Real human experience</span><strong data-i18n="humanText">Example: I started retraining at 43. Here is how it was for me...</strong></article>
+                        <article class="bridge-layer"><span data-i18n="questionLabel">Questions matter too</span><strong data-i18n="questionText">A good question shows what people need to understand next.</strong></article>
+                        <article class="bridge-layer"><span data-i18n="aiLabel">AI helps connect it</span><strong data-i18n="aiText">Not to replace people, but to make what people know easier to find.</strong></article>
                     </div>
                     <div class="topic-strip" aria-label="Country knowledge topics" data-i18n-aria-label="topicsAria">
                         <span data-i18n="topicWork">Work</span>
@@ -1373,38 +1222,28 @@
 
         <section id="jobsy-waves" class="waves-section">
             <div class="shell waves-grid">
-                <div class="waves-copy">
+                <div class="waves-question">
                     <div class="section-mark" data-i18n="wavesMark">Jobsy Waves</div>
-                    <h2 data-i18n="wavesTitle">Make Waves.</h2>
-                    <p data-i18n="wavesLead">Useful things should not stop with one person.</p>
+                    <h2 data-i18n="wavesTitle">What if useful experience could also help the person who shared it?</h2>
+                    <p class="waves-lead" data-i18n="wavesLead">Jobsy Waves is an experiment.</p>
+                    <p data-i18n="wavesText">We want to learn how useful participation in Jobsy can eventually be measured and monetized fairly for users.</p>
                 </div>
-                <div class="wave-story" aria-label="How a Jobsy Wave begins" data-i18n-aria-label="waveStoryAria">
-                    <div class="shared-article">
-                        <span data-i18n="waveArticleLabel">Useful Jobsy article</span>
-                        <strong data-i18n="waveArticleTitle">Adult retraining in Finland</strong>
-                        <div class="share-button" data-i18n="waveShareButton">Share</div>
-                    </div>
-                    <div class="wave-path">
-                        <div class="wave-arrow">↓</div>
-                        <div class="wave-step"><span data-i18n="waveStep1Label">Shared</span><strong data-i18n="waveStep1">A friend receives useful content</strong></div>
-                        <div class="wave-arrow">↓</div>
-                        <div class="wave-step"><span data-i18n="waveStep2Label">Read</span><strong data-i18n="waveStep2">They discover Jobsy through the article</strong></div>
-                        <div class="wave-arrow">↓</div>
-                        <div class="wave-step wave-begins"><span data-i18n="waveStep3Label">Wave begins</span><strong data-i18n="waveStep3">They join and later share something useful too</strong></div>
+                <div class="waves-lab" aria-label="Useful contribution signals" data-i18n-aria-label="wavesAria">
+                    <div class="section-mark" data-i18n="signalsMark">What creates value?</div>
+                    <div class="wave-signals">
+                        <article class="wave-signal"><span data-i18n="signal1Label">Questions</span><strong data-i18n="signal1Text">What do people need to know?</strong></article>
+                        <article class="wave-signal"><span data-i18n="signal2Label">Comments</span><strong data-i18n="signal2Text">What helps many people?</strong></article>
+                        <article class="wave-signal"><span data-i18n="signal3Label">Experience</span><strong data-i18n="signal3Text">What remains useful over time?</strong></article>
+                        <article class="wave-signal"><span data-i18n="signal4Label">Growth</span><strong data-i18n="signal4Text">What helps Jobsy become better?</strong></article>
                     </div>
                 </div>
             </div>
-            <div class="shell waves-vision">
-                <div class="pilot-card">
-                    <div class="section-mark" data-i18n="pilotMark">A pilot, not a finished program</div>
-                    <h3 data-i18n="pilotTitle">Jobsy Waves is how we begin learning.</h3>
-                    <p data-i18n="pilotText">We want to understand how useful contribution can be recognized fairly as Jobsy grows.</p>
-                    <div class="waves-actions"><a class="button" href="/app" data-i18n="wavesCta">Share something useful</a></div>
-                </div>
+            <div class="shell">
                 <div class="value-card">
-                    <div class="section-mark" data-i18n="valueMark">Where we want to go</div>
-                    <h3 data-i18n="valueTitle">If people help create value, they should be part of that value.</h3>
-                    <p data-i18n="valueText">Questions, experience, useful answers and shared content can make Jobsy more helpful for the next person. We are building the mechanism carefully, together with the people who use Jobsy.</p>
+                    <div class="section-mark" data-i18n="pilotMark">Pilot</div>
+                    <h3 data-i18n="pilotTitle">We are building this mechanism carefully.</h3>
+                    <p data-i18n="pilotText">The first Waves and reward mechanisms are already being tested. The detailed rules will live separately on a dedicated Jobsy Waves page.</p>
+                    <p data-i18n="valueText">The larger goal is simple: if people's contribution makes Jobsy more useful, we want to explore a fair way for some of that value to return to the people who helped create it.</p>
                     <p class="landing-end" data-i18n="landingEnd">Find Work. Share what you know. Make Waves. We are Jobsy.</p>
                 </div>
             </div>
@@ -1482,31 +1321,32 @@
                 finalTitle: "Start the search.",
                 finalPrice: "per month",
                 finalCta: "Start search",
-                weMark: "We are Jobsy",
-                weTitle: "We are Jobsy.",
-                weLead: "Every question. Every experience. Every success makes Jobsy smarter.",
-                weText: "Jobsy becomes more useful when real experience does not disappear after one person solves a problem.",
-                knowledgeAria: "Real experience examples",
-                knowledgeTitle: "One person knows a little. Together, we know a lot.",
-                human1Label: "Lived there",
-                human1Text: "Someone has lived in Finland for 20 years.",
-                human2Label: "Changed direction",
-                human2Text: "Someone changed profession at 40.",
-                human3Label: "Found a route",
-                human3Text: "Someone found work through a staffing agency.",
-                recognitionLabel: "You may know something useful too",
-                recognitionText: "You do not need to be an expert. If you have lived it, solved it, tried it or learned it, it may help someone else.",
-                demoQuestionLabel: "Question",
-                demoQuestion: "Can I retrain after 40 in Finland?",
-                demoMark: "Information + real experience",
-                infoLabel: "Useful information",
-                infoText: "Adult retraining in Finland",
-                experienceLabel2: "Real human experience",
-                experienceText2: "Example: I started retraining at 43. Here is how it was for me...",
-                questionValueLabel: "A question can help too",
-                questionValueText: "A good question shows what people need to know next.",
-                aiLabel: "Modern AI helps connect it",
-                aiText: "So useful articles, questions and experience become easier to find.",
+                storyMark: "The story of Jobsy",
+                storyTitle: "It started with finding work.",
+                storyLead: "Then we saw that work is only one part of people's real lives.",
+                storyText: "People ask about changing profession, education, language, documents, housing and everyday life in another country. Very often, someone else has already lived through the same problem.",
+                peopleAria: "Real human knowledge examples",
+                life1Label: "Lived experience",
+                life1Text: "Someone has lived in Finland for 20 years.",
+                life2Label: "Changed profession",
+                life2Text: "Someone changed profession after 40.",
+                life3Label: "Found a path",
+                life3Text: "Someone found work without speaking the local language.",
+                life4Label: "Solved it yesterday",
+                life4Text: "Someone dealt with the problem another person has today.",
+                expertLabel: "You do not need to be an expert",
+                expertText: "What you know may be useful to someone else.",
+                proofQuestionLabel: "Question",
+                proofQuestion: "Can I retrain after 40 in Finland?",
+                proofMark: "Information + real human experience",
+                officialLabel: "Useful information",
+                officialText: "Adult retraining in Finland",
+                humanLabel: "Real human experience",
+                humanText: "Example: I started retraining at 43. Here is how it was for me...",
+                questionLabel: "Questions matter too",
+                questionText: "A good question shows what people need to understand next.",
+                aiLabel: "AI helps connect it",
+                aiText: "Not to replace people, but to make what people know easier to find.",
                 topicsAria: "Country knowledge topics",
                 topicWork: "Work",
                 topicRetraining: "Retraining",
@@ -1515,25 +1355,23 @@
                 topicHousing: "Housing",
                 topicRights: "Worker rights",
                 wavesMark: "Jobsy Waves",
-                wavesTitle: "Make Waves.",
-                wavesLead: "Useful things should not stop with one person.",
-                waveStoryAria: "How a Jobsy Wave begins",
-                waveArticleLabel: "Useful Jobsy article",
-                waveArticleTitle: "Adult retraining in Finland",
-                waveShareButton: "Share",
-                waveStep1Label: "Shared",
-                waveStep1: "A friend receives useful content",
-                waveStep2Label: "Read",
-                waveStep2: "They discover Jobsy through the article",
-                waveStep3Label: "Wave begins",
-                waveStep3: "They join and later share something useful too",
-                wavesCta: "Share something useful",
-                pilotMark: "A pilot, not a finished program",
-                pilotTitle: "Jobsy Waves is how we begin learning.",
-                pilotText: "We want to understand how useful contribution can be recognized and rewarded fairly as Jobsy grows.",
-                valueMark: "Where we want to go",
-                valueTitle: "If people help create value, they should be part of that value.",
-                valueText: "Questions, experience, useful answers and shared content can make Jobsy more helpful for the next person. We are building the mechanism carefully, together with the people who use Jobsy.",
+                wavesTitle: "What if useful experience could also help the person who shared it?",
+                wavesLead: "Jobsy Waves is an experiment.",
+                wavesText: "We want to learn how useful participation in Jobsy can eventually be measured and monetized fairly for users.",
+                wavesAria: "Useful contribution signals",
+                signalsMark: "What creates value?",
+                signal1Label: "Questions",
+                signal1Text: "What do people need to know?",
+                signal2Label: "Comments",
+                signal2Text: "What helps many people?",
+                signal3Label: "Experience",
+                signal3Text: "What remains useful over time?",
+                signal4Label: "Growth",
+                signal4Text: "What helps Jobsy become better?",
+                pilotMark: "Pilot",
+                pilotTitle: "We are building this mechanism carefully.",
+                pilotText: "The first Waves and reward mechanisms are already being tested. The detailed rules will live separately on a dedicated Jobsy Waves page.",
+                valueText: "The larger goal is simple: if people's contribution makes Jobsy more useful, we want to explore a fair way for some of that value to return to the people who helped create it.",
                 landingEnd: "Find Work. Share what you know. Make Waves. We are Jobsy.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
@@ -1596,31 +1434,32 @@
                 finalTitle: "Запустите поиск.",
                 finalPrice: "в месяц",
                 finalCta: "Начать поиск",
-                weMark: "Мы - Jobsy",
-                weTitle: "Мы - Jobsy.",
-                weLead: "Каждый вопрос. Каждый опыт. Каждый успех делает Jobsy умнее.",
-                weText: "Jobsy становится полезнее, когда реальный опыт не исчезает после того, как один человек решил свою проблему.",
-                knowledgeAria: "Примеры реального опыта",
-                knowledgeTitle: "Один человек знает немного. Вместе мы знаем многое.",
-                human1Label: "Жил в стране",
-                human1Text: "Кто-то прожил в Финляндии 20 лет.",
-                human2Label: "Сменил профессию",
-                human2Text: "Кто-то поменял профессию после 40.",
-                human3Label: "Нашел путь",
-                human3Text: "Кто-то нашел работу через кадровое агентство.",
-                recognitionLabel: "Вы тоже можете знать что-то полезное",
-                recognitionText: "Не нужно быть экспертом. Если вы это прожили, решили, попробовали или узнали, это может помочь другому человеку.",
-                demoQuestionLabel: "Вопрос",
-                demoQuestion: "Можно ли переучиться после 40 в Финляндии?",
-                demoMark: "Информация + реальный опыт",
-                infoLabel: "Полезная информация",
-                infoText: "Переобучение взрослых в Финляндии",
-                experienceLabel2: "Реальный опыт человека",
-                experienceText2: "Например: я начал переучиваться в 43. Вот как это было у меня...",
-                questionValueLabel: "Вопрос тоже помогает",
-                questionValueText: "Хороший вопрос показывает, что людям важно узнать дальше.",
-                aiLabel: "Современный AI помогает это связать",
-                aiText: "Чтобы полезные статьи, вопросы и опыт было легче найти.",
+                storyMark: "История Jobsy",
+                storyTitle: "Все началось с поиска работы.",
+                storyLead: "Потом мы увидели, что работа - только одна часть реальной жизни человека.",
+                storyText: "Люди спрашивают о смене профессии, учебе, языке, документах, жилье и жизни в другой стране. И часто кто-то уже проходил через похожую проблему.",
+                peopleAria: "Примеры реального опыта людей",
+                life1Label: "Опыт жизни",
+                life1Text: "Кто-то прожил в Финляндии 20 лет.",
+                life2Label: "Смена профессии",
+                life2Text: "Кто-то поменял профессию после 40.",
+                life3Label: "Нашел путь",
+                life3Text: "Кто-то нашел работу без знания местного языка.",
+                life4Label: "Решил вчера",
+                life4Text: "Кто-то уже разобрался с проблемой, которая у другого человека появилась сегодня.",
+                expertLabel: "Не обязательно быть экспертом",
+                expertText: "То, что знаете вы, тоже может быть кому-то полезно.",
+                proofQuestionLabel: "Вопрос",
+                proofQuestion: "Можно ли переучиться после 40 в Финляндии?",
+                proofMark: "Информация + реальный опыт человека",
+                officialLabel: "Полезная информация",
+                officialText: "Переобучение взрослых в Финляндии",
+                humanLabel: "Реальный опыт",
+                humanText: "Например: я начал переучиваться в 43. Вот как это было у меня...",
+                questionLabel: "Вопросы тоже важны",
+                questionText: "Хороший вопрос показывает, что людям важно понять дальше.",
+                aiLabel: "AI помогает это связать",
+                aiText: "Не чтобы заменить людей, а чтобы знания людей было легче найти.",
                 topicsAria: "Темы знаний по странам",
                 topicWork: "Работа",
                 topicRetraining: "Переобучение",
@@ -1629,25 +1468,23 @@
                 topicHousing: "Жилье",
                 topicRights: "Права работников",
                 wavesMark: "Jobsy Waves",
-                wavesTitle: "Создавайте волны.",
-                wavesLead: "Полезное не должно останавливаться на одном человеке.",
-                waveStoryAria: "Как начинается Jobsy Wave",
-                waveArticleLabel: "Полезная статья Jobsy",
-                waveArticleTitle: "Переобучение взрослых в Финляндии",
-                waveShareButton: "Поделиться",
-                waveStep1Label: "Поделились",
-                waveStep1: "Друг получает полезный материал",
-                waveStep2Label: "Прочитал",
-                waveStep2: "Он узнает о Jobsy через статью",
-                waveStep3Label: "Волна начинается",
-                waveStep3: "Он присоединяется и позже делится чем-то полезным дальше",
-                wavesCta: "Поделиться полезным",
-                pilotMark: "Пилот, а не готовая программа",
-                pilotTitle: "Jobsy Waves - так мы начинаем учиться.",
-                pilotText: "Мы хотим понять, как справедливо признавать и вознаграждать полезный вклад людей по мере роста Jobsy.",
-                valueMark: "Куда мы хотим прийти",
-                valueTitle: "Если люди помогают создавать ценность, они должны быть частью этой ценности.",
-                valueText: "Вопросы, опыт, полезные ответы и материалы могут сделать Jobsy полезнее для следующего человека. Мы строим этот механизм осторожно, вместе с людьми, которые пользуются Jobsy.",
+                wavesTitle: "А что, если полезный опыт сможет приносить пользу и тому, кто им поделился?",
+                wavesLead: "Jobsy Waves - это эксперимент.",
+                wavesText: "Мы хотим понять, как полезное участие в Jobsy со временем можно измерять и справедливо монетизировать для пользователей.",
+                wavesAria: "Сигналы полезного вклада",
+                signalsMark: "Что создает ценность?",
+                signal1Label: "Вопросы",
+                signal1Text: "Что людям важно узнать?",
+                signal2Label: "Комментарии",
+                signal2Text: "Что помогает многим?",
+                signal3Label: "Опыт",
+                signal3Text: "Что остается полезным со временем?",
+                signal4Label: "Рост",
+                signal4Text: "Что помогает Jobsy становиться лучше?",
+                pilotMark: "Пилот",
+                pilotTitle: "Мы строим этот механизм осторожно.",
+                pilotText: "Первые Waves и механизмы вознаграждения уже тестируются. Подробные правила будут на отдельной странице «Как работает Jobsy Waves».",
+                valueText: "Большая цель простая: если вклад людей делает Jobsy полезнее, мы хотим найти справедливый способ вернуть часть этой ценности тем, кто помог ее создать.",
                 landingEnd: "Найти работу. Поделиться тем, что знаете. Создавать волны. Мы - Jobsy.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
