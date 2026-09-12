@@ -817,7 +817,8 @@
 
         .waves-copy,
         .wave-story,
-        .jbw-card {
+        .jbw-card,
+        .reward-card {
             border-radius: 36px;
             padding: 34px;
         }
@@ -828,7 +829,8 @@
         }
 
         .waves-copy .section-mark,
-        .jbw-card .section-mark {
+        .jbw-card .section-mark,
+        .reward-card .section-mark {
             color: var(--signal);
         }
 
@@ -955,16 +957,23 @@
         .jbw-wrap {
             display: grid;
             gap: 20px;
-            grid-template-columns: 1fr 0.9fr;
+            grid-template-columns: 0.9fr 1.1fr;
             margin-top: 20px;
         }
 
-        .jbw-card {
+        .wave-metrics {
+            display: grid;
+            gap: 14px;
+        }
+
+        .jbw-card,
+        .reward-card {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.13);
         }
 
-        .jbw-number {
+        .jbw-number,
+        .reward-number {
             display: block;
             font-family: "IBM Plex Serif", Georgia, serif;
             font-size: clamp(4rem, 9vw, 7.2rem);
@@ -974,7 +983,8 @@
             margin: 18px 0 14px;
         }
 
-        .jbw-card p {
+        .jbw-card p,
+        .reward-card p {
             color: #d8e9e8;
             font-size: 1.08rem;
         }
@@ -992,15 +1002,24 @@
             margin-bottom: 18px;
         }
 
-        .jbw-note ul {
-            display: grid;
-            gap: 12px;
-            list-style: none;
+        .jbw-note p {
+            color: var(--muted);
+            font-size: 1.08rem;
         }
 
-        .jbw-note li {
-            color: var(--muted);
-            font-weight: 800;
+        .jbw-note p + p {
+            margin-top: 16px;
+        }
+
+        .landing-end {
+            border-top: 1px solid rgba(7, 26, 44, 0.12);
+            color: var(--ink) !important;
+            font-size: clamp(1.5rem, 3vw, 2.7rem) !important;
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.05;
+            margin-top: 28px;
+            padding-top: 24px;
         }
 
         .waves-actions {
@@ -1138,6 +1157,7 @@
             .waves-copy,
             .wave-story,
             .jbw-card,
+            .reward-card,
             .jbw-note {
                 border-radius: 26px;
             }
@@ -1158,6 +1178,7 @@
             .waves-copy,
             .wave-story,
             .jbw-card,
+            .reward-card,
             .jbw-note {
                 padding: 22px;
             }
@@ -1386,19 +1407,24 @@
                 </div>
             </div>
             <div class="shell jbw-wrap">
-                <div class="jbw-card">
-                    <div class="section-mark" data-i18n="jbwMark">Your Waves</div>
-                    <span class="jbw-number">1,284 JBW</span>
-                    <p data-i18n="jbwText">JBW measures how far your contribution to Jobsy has spread.</p>
-                    <div class="waves-actions"><a class="button" href="/app" data-i18n="wavesCta">Share something useful</a></div>
+                <div class="wave-metrics">
+                    <div class="jbw-card">
+                        <div class="section-mark" data-i18n="jbwMark">Your Waves</div>
+                        <span class="jbw-number">1,284 JBW</span>
+                        <p data-i18n="jbwText">JBW shows how far your contribution to Jobsy has spread.</p>
+                    </div>
+                    <div class="reward-card">
+                        <div class="section-mark" data-i18n="rewardsMark">Your Rewards</div>
+                        <span class="reward-number">€8</span>
+                        <p data-i18n="rewardsText">Today, Rewards begin with a simple direct-introduction pilot.</p>
+                    </div>
                 </div>
                 <div class="jbw-note">
-                    <h3 data-i18n="jbwNoteTitle">JBW is not money.</h3>
-                    <ul>
-                        <li data-i18n="jbwNote1">It is not a cryptocurrency or investment.</li>
-                        <li data-i18n="jbwNote2">It has no fixed euro value.</li>
-                        <li data-i18n="jbwNote3">It cannot currently be exchanged for money.</li>
-                    </ul>
+                    <h3 data-i18n="pilotTitle">Jobsy Waves is a pilot.</h3>
+                    <p data-i18n="pilotToday">Today, when someone you directly introduced to Jobsy makes their first successful Jobsy Active payment, Jobsy adds €1 to your Rewards once.</p>
+                    <p data-i18n="pilotFuture">This is only the beginning. We want to find a fair way to recognize useful contribution to Jobsy as the product grows.</p>
+                    <p class="landing-end" data-i18n="landingEnd">Find Work. Share what you know. Make Waves. We are Jobsy.</p>
+                    <div class="waves-actions"><a class="button" href="/app" data-i18n="wavesCta">Share something useful</a></div>
                 </div>
             </div>
         </section>
@@ -1513,12 +1539,14 @@
                 waveStep3Label: "Wave begins",
                 waveStep3: "They join and later share something useful too",
                 jbwMark: "Your Waves",
-                jbwText: "JBW measures how far your contribution to Jobsy has spread.",
+                jbwText: "JBW shows how far your contribution to Jobsy has spread.",
+                rewardsMark: "Your Rewards",
+                rewardsText: "Today, Rewards begin with a simple direct-introduction pilot.",
                 wavesCta: "Share something useful",
-                jbwNoteTitle: "JBW is not money.",
-                jbwNote1: "It is not a cryptocurrency or investment.",
-                jbwNote2: "It has no fixed euro value.",
-                jbwNote3: "It cannot currently be exchanged for money.",
+                pilotTitle: "Jobsy Waves is a pilot.",
+                pilotToday: "Today, when someone you directly introduced to Jobsy makes their first successful Jobsy Active payment, Jobsy adds €1 to your Rewards once.",
+                pilotFuture: "This is only the beginning. We want to find a fair way to recognize useful contribution to Jobsy as the product grows.",
+                landingEnd: "Find Work. Share what you know. Make Waves. We are Jobsy.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
                 footerContact: "Contact"
@@ -1618,12 +1646,14 @@
                 waveStep3Label: "Волна начинается",
                 waveStep3: "Он присоединяется и позже делится чем-то полезным дальше",
                 jbwMark: "Ваши волны",
-                jbwText: "JBW показывает, как далеко распространился ваш вклад в Jobsy.",
+                jbwText: "JBW показывает, как далеко распространяется ваш вклад в Jobsy.",
+                rewardsMark: "Ваши Rewards",
+                rewardsText: "Сегодня Rewards начинаются с простого пилота для прямых приглашений.",
                 wavesCta: "Поделиться полезным",
-                jbwNoteTitle: "JBW - это не деньги.",
-                jbwNote1: "Это не криптовалюта и не инвестиция.",
-                jbwNote2: "У JBW нет фиксированной стоимости в евро.",
-                jbwNote3: "Сейчас JBW нельзя обменять на деньги.",
+                pilotTitle: "Jobsy Waves - это пилот.",
+                pilotToday: "Сейчас, если человек, которого вы напрямую привели в Jobsy, делает первый успешный платеж за Jobsy Active, Jobsy один раз добавляет €1 в ваши Rewards.",
+                pilotFuture: "Это только начало. Мы хотим найти справедливый способ признавать полезный вклад в Jobsy по мере роста продукта.",
+                landingEnd: "Найти работу. Поделиться тем, что знаете. Создавать волны. Мы - Jobsy.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
                 footerContact: "Контакты"
