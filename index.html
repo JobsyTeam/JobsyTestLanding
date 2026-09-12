@@ -797,35 +797,6 @@
             padding-top: 70px;
         }
 
-        .contribute-panel {
-            align-items: center;
-            background: var(--night);
-            border-radius: 42px;
-            box-shadow: var(--shadow);
-            color: var(--white);
-            display: grid;
-            gap: 28px;
-            grid-template-columns: 1fr auto;
-            padding: 42px;
-        }
-
-        .contribute-panel .section-mark {
-            color: var(--signal);
-        }
-
-        .contribute-panel p {
-            color: #c2d4d5;
-            font-size: 1.1rem;
-            margin-top: 18px;
-            max-width: 650px;
-        }
-
-        .contribute-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
         .waves-section {
             background:
                 radial-gradient(circle at 84% 18%, rgba(28, 111, 121, 0.22), transparent 30%),
@@ -843,9 +814,7 @@
         }
 
         .waves-copy,
-        .wave-story,
-        .jbw-card,
-        .reward-card {
+        .wave-story {
             border-radius: 36px;
             padding: 34px;
         }
@@ -855,9 +824,7 @@
             border: 1px solid rgba(255, 255, 255, 0.13);
         }
 
-        .waves-copy .section-mark,
-        .jbw-card .section-mark,
-        .reward-card .section-mark {
+        .waves-copy .section-mark {
             color: var(--signal);
         }
 
@@ -981,66 +948,57 @@
             color: var(--signal);
         }
 
-        .jbw-wrap {
+        .waves-vision {
             display: grid;
             gap: 20px;
-            grid-template-columns: 0.9fr 1.1fr;
+            grid-template-columns: 0.92fr 1.08fr;
             margin-top: 20px;
         }
 
-        .wave-metrics {
-            display: grid;
-            gap: 14px;
-        }
-
-        .jbw-card,
-        .reward-card {
+        .pilot-card,
+        .value-card {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.13);
-        }
-
-        .jbw-number,
-        .reward-number {
-            display: block;
-            font-family: "IBM Plex Serif", Georgia, serif;
-            font-size: clamp(4rem, 9vw, 7.2rem);
-            font-weight: 600;
-            letter-spacing: -0.09em;
-            line-height: 0.9;
-            margin: 18px 0 14px;
-        }
-
-        .jbw-card p,
-        .reward-card p {
-            color: #d8e9e8;
-            font-size: 1.08rem;
-        }
-
-        .jbw-note {
-            background: var(--paper);
             border-radius: 36px;
-            color: var(--ink);
             padding: 34px;
         }
 
-        .jbw-note h3 {
-            font-size: clamp(1.9rem, 4vw, 3.4rem);
+        .pilot-card .section-mark,
+        .value-card .section-mark {
+            color: var(--signal);
+        }
+
+        .pilot-card h3,
+        .value-card h3 {
+            font-size: clamp(2rem, 4vw, 3.7rem);
             font-weight: 900;
             margin-bottom: 18px;
         }
 
-        .jbw-note p {
-            color: var(--muted);
+        .pilot-card p,
+        .value-card p {
+            color: #d8e9e8;
             font-size: 1.08rem;
         }
 
-        .jbw-note p + p {
+        .value-card {
+            background: var(--paper);
+            color: var(--ink);
+        }
+
+        .value-card .section-mark,
+        .value-card p {
+            color: var(--muted);
+        }
+
+        .pilot-card p + p,
+        .value-card p + p {
             margin-top: 16px;
         }
 
         .landing-end {
-            border-top: 1px solid rgba(7, 26, 44, 0.12);
-            color: var(--ink) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            color: var(--white) !important;
             font-size: clamp(1.5rem, 3vw, 2.7rem) !important;
             font-weight: 900;
             letter-spacing: -0.06em;
@@ -1100,9 +1058,8 @@
             .cta-panel,
             .we-grid,
             .knowledge-demo,
-            .contribute-panel,
             .waves-grid,
-            .jbw-wrap {
+            .waves-vision {
                 grid-template-columns: 1fr;
             }
 
@@ -1179,16 +1136,14 @@
             .we-copy,
             .knowledge-board,
             .demo-question,
-            .demo-answer,
-            .contribute-panel {
+            .demo-answer {
                 border-radius: 26px;
             }
 
             .waves-copy,
             .wave-story,
-            .jbw-card,
-            .reward-card,
-            .jbw-note {
+            .pilot-card,
+            .value-card {
                 border-radius: 26px;
             }
 
@@ -1202,16 +1157,14 @@
             .we-copy,
             .knowledge-board,
             .demo-question,
-            .demo-answer,
-            .contribute-panel {
+            .demo-answer {
                 padding: 22px;
             }
 
             .waves-copy,
             .wave-story,
-            .jbw-card,
-            .reward-card,
-            .jbw-note {
+            .pilot-card,
+            .value-card {
                 padding: 22px;
             }
 
@@ -1404,6 +1357,7 @@
                         <article class="answer-layer"><span data-i18n="infoLabel">Useful information</span><strong data-i18n="infoText">Adult retraining in Finland</strong></article>
                         <article class="answer-layer"><span data-i18n="experienceLabel2">Real human experience</span><strong data-i18n="experienceText2">Example: I started retraining at 43. Here is how it was for me...</strong></article>
                         <article class="answer-layer question-layer"><span data-i18n="questionValueLabel">Questions also help</span><strong data-i18n="questionValueText">A good question shows what people need to know next.</strong></article>
+                        <article class="answer-layer"><span data-i18n="aiLabel">Modern AI helps connect it</span><strong data-i18n="aiText">So useful articles, questions and experience become easier to find.</strong></article>
                     </div>
                     <div class="topic-strip" aria-label="Country knowledge topics" data-i18n-aria-label="topicsAria">
                         <span data-i18n="topicWork">Work</span>
@@ -1440,25 +1394,18 @@
                     </div>
                 </div>
             </div>
-            <div class="shell jbw-wrap">
-                <div class="wave-metrics">
-                    <div class="jbw-card">
-                        <div class="section-mark" data-i18n="jbwMark">Your Waves</div>
-                        <span class="jbw-number">1,284 JBW</span>
-                        <p data-i18n="jbwText">JBW shows how far your contribution to Jobsy has spread.</p>
-                    </div>
-                    <div class="reward-card">
-                        <div class="section-mark" data-i18n="rewardsMark">Your Rewards</div>
-                        <span class="reward-number">€8</span>
-                        <p data-i18n="rewardsText">Today, Rewards begin with a simple direct-introduction pilot.</p>
-                    </div>
-                </div>
-                <div class="jbw-note">
-                    <h3 data-i18n="pilotTitle">Jobsy Waves is a pilot.</h3>
-                    <p data-i18n="pilotToday">Today, when someone you directly introduced to Jobsy makes their first successful Jobsy Active payment, Jobsy adds €1 to your Rewards once.</p>
-                    <p data-i18n="pilotFuture">This is only the beginning. We are exploring how Jobsy can fairly recognize and reward useful contribution as the product grows.</p>
-                    <p class="landing-end" data-i18n="landingEnd">Find Work. Share what you know. Make Waves. We are Jobsy.</p>
+            <div class="shell waves-vision">
+                <div class="pilot-card">
+                    <div class="section-mark" data-i18n="pilotMark">A pilot, not a finished program</div>
+                    <h3 data-i18n="pilotTitle">Jobsy Waves is how we begin learning.</h3>
+                    <p data-i18n="pilotText">We want to understand how useful contribution can be recognized fairly as Jobsy grows.</p>
                     <div class="waves-actions"><a class="button" href="/app" data-i18n="wavesCta">Share something useful</a></div>
+                </div>
+                <div class="value-card">
+                    <div class="section-mark" data-i18n="valueMark">Where we want to go</div>
+                    <h3 data-i18n="valueTitle">If people help create value, they should be part of that value.</h3>
+                    <p data-i18n="valueText">Questions, experience, useful answers and shared content can make Jobsy more helpful for the next person. We are building the mechanism carefully, together with the people who use Jobsy.</p>
+                    <p class="landing-end" data-i18n="landingEnd">Find Work. Share what you know. Make Waves. We are Jobsy.</p>
                 </div>
             </div>
         </section>
@@ -1558,6 +1505,8 @@
                 experienceText2: "Example: I started retraining at 43. Here is how it was for me...",
                 questionValueLabel: "A question can help too",
                 questionValueText: "A good question shows what people need to know next.",
+                aiLabel: "Modern AI helps connect it",
+                aiText: "So useful articles, questions and experience become easier to find.",
                 topicsAria: "Country knowledge topics",
                 topicWork: "Work",
                 topicRetraining: "Retraining",
@@ -1565,10 +1514,6 @@
                 topicDocuments: "Documents",
                 topicHousing: "Housing",
                 topicRights: "Worker rights",
-                contributeMark: "What you know can help",
-                contributeTitle: "Useful experience becomes part of Jobsy knowledge.",
-                askCta: "Ask a question",
-                shareCta: "Share experience",
                 wavesMark: "Jobsy Waves",
                 wavesTitle: "Make Waves.",
                 wavesLead: "Useful things should not stop with one person.",
@@ -1582,14 +1527,13 @@
                 waveStep2: "They discover Jobsy through the article",
                 waveStep3Label: "Wave begins",
                 waveStep3: "They join and later share something useful too",
-                jbwMark: "Your Waves",
-                jbwText: "JBW shows how far your contribution to Jobsy has spread.",
-                rewardsMark: "Your Rewards",
-                rewardsText: "Today, Rewards begin with a simple direct-introduction pilot.",
                 wavesCta: "Share something useful",
-                pilotTitle: "Jobsy Waves is a pilot.",
-                pilotToday: "Today, when someone you directly introduced to Jobsy makes their first successful Jobsy Active payment, Jobsy adds €1 to your Rewards once.",
-                pilotFuture: "This is only the beginning. We are exploring how Jobsy can fairly recognize and reward useful contribution as the product grows.",
+                pilotMark: "A pilot, not a finished program",
+                pilotTitle: "Jobsy Waves is how we begin learning.",
+                pilotText: "We want to understand how useful contribution can be recognized and rewarded fairly as Jobsy grows.",
+                valueMark: "Where we want to go",
+                valueTitle: "If people help create value, they should be part of that value.",
+                valueText: "Questions, experience, useful answers and shared content can make Jobsy more helpful for the next person. We are building the mechanism carefully, together with the people who use Jobsy.",
                 landingEnd: "Find Work. Share what you know. Make Waves. We are Jobsy.",
                 footerPrivacy: "Privacy Policy",
                 footerTerms: "Terms of Service",
@@ -1675,6 +1619,8 @@
                 experienceText2: "Например: я начал переучиваться в 43. Вот как это было у меня...",
                 questionValueLabel: "Вопрос тоже помогает",
                 questionValueText: "Хороший вопрос показывает, что людям важно узнать дальше.",
+                aiLabel: "Современный AI помогает это связать",
+                aiText: "Чтобы полезные статьи, вопросы и опыт было легче найти.",
                 topicsAria: "Темы знаний по странам",
                 topicWork: "Работа",
                 topicRetraining: "Переобучение",
@@ -1682,10 +1628,6 @@
                 topicDocuments: "Документы",
                 topicHousing: "Жилье",
                 topicRights: "Права работников",
-                contributeMark: "То, что знаете вы, может помочь",
-                contributeTitle: "Полезный опыт становится частью знаний Jobsy.",
-                askCta: "Задать вопрос",
-                shareCta: "Поделиться опытом",
                 wavesMark: "Jobsy Waves",
                 wavesTitle: "Создавайте волны.",
                 wavesLead: "Полезное не должно останавливаться на одном человеке.",
@@ -1699,14 +1641,13 @@
                 waveStep2: "Он узнает о Jobsy через статью",
                 waveStep3Label: "Волна начинается",
                 waveStep3: "Он присоединяется и позже делится чем-то полезным дальше",
-                jbwMark: "Ваши волны",
-                jbwText: "JBW показывает, как далеко распространяется ваш вклад в Jobsy.",
-                rewardsMark: "Ваши Rewards",
-                rewardsText: "Сегодня Rewards начинаются с простого пилота для прямых приглашений.",
                 wavesCta: "Поделиться полезным",
-                pilotTitle: "Jobsy Waves - это пилот.",
-                pilotToday: "Сейчас, если человек, которого вы напрямую привели в Jobsy, делает первый успешный платеж за Jobsy Active, Jobsy один раз добавляет €1 в ваши Rewards.",
-                pilotFuture: "Это только начало. Мы ищем справедливый способ признавать и вознаграждать полезный вклад в Jobsy по мере роста продукта.",
+                pilotMark: "Пилот, а не готовая программа",
+                pilotTitle: "Jobsy Waves - так мы начинаем учиться.",
+                pilotText: "Мы хотим понять, как справедливо признавать и вознаграждать полезный вклад людей по мере роста Jobsy.",
+                valueMark: "Куда мы хотим прийти",
+                valueTitle: "Если люди помогают создавать ценность, они должны быть частью этой ценности.",
+                valueText: "Вопросы, опыт, полезные ответы и материалы могут сделать Jobsy полезнее для следующего человека. Мы строим этот механизм осторожно, вместе с людьми, которые пользуются Jobsy.",
                 landingEnd: "Найти работу. Поделиться тем, что знаете. Создавать волны. Мы - Jobsy.",
                 footerPrivacy: "Политика конфиденциальности",
                 footerTerms: "Условия использования",
