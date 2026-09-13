@@ -5,12 +5,859 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#071a2c">
     <title>Jobsy Waves</title>
-    <meta name="robots" content="noindex">
+    <meta name="description" content="Jobsy Waves is an open product experiment about recognizing useful human contribution fairly.">
     <link rel="canonical" href="https://globaljobsy.com/waves">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --night: #071a2c;
+            --harbor: #12364a;
+            --route: #1c6f79;
+            --signal: #f0c96a;
+            --paper: #fffaf0;
+            --paper-strong: #f4ead4;
+            --mist: #e9f1ec;
+            --ink: #132331;
+            --muted: #63727c;
+            --line: #d9e1dc;
+            --white: #ffffff;
+            --shadow: 0 32px 90px rgba(7, 26, 44, 0.18);
+            --max: 1160px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Manrope, system-ui, sans-serif;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        select:focus-visible {
+            outline: 3px solid var(--signal);
+            outline-offset: 4px;
+        }
+
+        .shell {
+            margin: 0 auto;
+            max-width: var(--max);
+            padding: 0 24px;
+        }
+
+        .site-header {
+            backdrop-filter: blur(18px);
+            background: rgba(255, 250, 240, 0.88);
+            border-bottom: 1px solid rgba(217, 225, 220, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            min-height: 76px;
+        }
+
+        .brand {
+            align-items: center;
+            display: inline-flex;
+            gap: 10px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
+        .brand img {
+            height: 34px;
+            width: auto;
+        }
+
+        .nav-actions {
+            align-items: center;
+            display: flex;
+            gap: 12px;
+        }
+
+        .lang-select {
+            appearance: none;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.88rem;
+            font-weight: 800;
+            height: 40px;
+            padding: 0 14px;
+        }
+
+        .button {
+            align-items: center;
+            background: var(--signal);
+            border: 1px solid var(--signal);
+            border-radius: 999px;
+            color: var(--night);
+            display: inline-flex;
+            font-weight: 900;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 22px;
+            transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+            white-space: nowrap;
+        }
+
+        .button:hover {
+            background: #ffd97a;
+            border-color: #ffd97a;
+            transform: translateY(-1px);
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -0.07em;
+            line-height: 0.95;
+        }
+
+        h1,
+        .serif {
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: clamp(4.6rem, 12vw, 10rem);
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 5.6vw, 5.8rem);
+            font-weight: 900;
+        }
+
+        section {
+            padding: 86px 0;
+        }
+
+        .section-mark {
+            color: var(--route);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(circle at 12% 22%, rgba(240, 201, 106, 0.22), transparent 28%),
+                radial-gradient(circle at 86% 20%, rgba(28, 111, 121, 0.36), transparent 32%),
+                linear-gradient(130deg, var(--night) 0%, var(--harbor) 58%, #0f4f58 100%);
+            color: var(--white);
+            overflow: hidden;
+            padding: 84px 0 98px;
+        }
+
+        .hero-grid {
+            align-items: center;
+            display: grid;
+            gap: 54px;
+            grid-template-columns: 0.9fr 1.1fr;
+        }
+
+        .hero .section-mark,
+        .value-map .section-mark,
+        .experiment .section-mark {
+            color: var(--signal);
+        }
+
+        .hero-lead {
+            color: #e6f4f1;
+            font-size: clamp(1.45rem, 3vw, 2.4rem);
+            font-weight: 800;
+            letter-spacing: -0.055em;
+            line-height: 1.08;
+            margin-top: 24px;
+            max-width: 720px;
+        }
+
+        .hero-copy {
+            color: #c2d4d5;
+            font-size: 1.1rem;
+            margin-top: 22px;
+            max-width: 620px;
+        }
+
+        .exchange-board {
+            background: rgba(255, 250, 240, 0.96);
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            border-radius: 36px;
+            box-shadow: var(--shadow);
+            color: var(--ink);
+            padding: 26px;
+        }
+
+        .exchange-title {
+            color: var(--route);
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .exchange-flow {
+            display: grid;
+            gap: 12px;
+        }
+
+        .exchange-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 18px;
+        }
+
+        .exchange-card strong {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: -0.045em;
+        }
+
+        .exchange-card span {
+            color: var(--muted);
+            display: block;
+            font-weight: 800;
+            margin-top: 5px;
+        }
+
+        .exchange-center {
+            align-items: center;
+            background: var(--night);
+            border-radius: 24px;
+            color: var(--white);
+            display: grid;
+            min-height: 120px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .exchange-center strong {
+            color: var(--signal);
+            display: block;
+            font-size: clamp(1.7rem, 3vw, 2.6rem);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1;
+        }
+
+        .direction-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .direction-card,
+        .human-card,
+        .measure-card,
+        .learn-card,
+        .truth-card,
+        .pilot-card {
+            border-radius: 36px;
+            padding: 34px;
+        }
+
+        .direction-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .direction-card h2 {
+            font-size: clamp(2.2rem, 4.6vw, 4.6rem);
+        }
+
+        .direction-list {
+            display: grid;
+            gap: 10px;
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .direction-list li {
+            background: var(--mist);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink);
+            font-weight: 900;
+            padding: 10px 14px;
+        }
+
+        .direction-card.people {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .direction-card.people .section-mark {
+            color: var(--signal);
+        }
+
+        .direction-card.people .direction-list li {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.13);
+            color: var(--white);
+        }
+
+        .human-value {
+            background: linear-gradient(180deg, var(--paper) 0%, #f7f0df 100%);
+        }
+
+        .human-grid {
+            align-items: stretch;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 0.86fr 1.14fr;
+        }
+
+        .human-card {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .human-card .section-mark {
+            color: var(--signal);
+        }
+
+        .human-card p {
+            color: #c2d4d5;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .example-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 36px;
+            box-shadow: var(--shadow);
+            padding: 34px;
+        }
+
+        .example-label {
+            color: var(--route);
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .comment-box {
+            background: var(--paper);
+            border: 1px solid #eadfc6;
+            border-radius: 24px;
+            font-size: clamp(1.3rem, 2.7vw, 2.25rem);
+            font-weight: 900;
+            letter-spacing: -0.055em;
+            line-height: 1.12;
+            padding: 24px;
+        }
+
+        .example-card p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-top: 20px;
+        }
+
+        .measure-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 0.9fr 1.1fr;
+        }
+
+        .measure-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .measure-card p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-top: 18px;
+        }
+
+        .learn-card {
+            background: var(--paper-strong);
+            border: 1px solid #eadfc6;
+        }
+
+        .signal-list {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .signal-list li {
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.66);
+            border-radius: 20px;
+            color: var(--muted);
+            font-weight: 800;
+            padding: 16px;
+        }
+
+        .truth {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .truth-card {
+            background:
+                radial-gradient(circle at 92% 18%, rgba(240, 201, 106, 0.2), transparent 32%),
+                rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .truth-card .section-mark {
+            color: var(--signal);
+        }
+
+        .truth-card h2 {
+            max-width: 900px;
+        }
+
+        .truth-card p {
+            color: #d8e9e8;
+            font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            line-height: 1.1;
+            margin-top: 26px;
+            max-width: 900px;
+        }
+
+        .pilot {
+            background: linear-gradient(180deg, var(--night) 0%, var(--paper) 100%);
+            color: var(--white);
+        }
+
+        .pilot-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 0.95fr 1.05fr;
+        }
+
+        .pilot-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .pilot-card .section-mark {
+            color: var(--signal);
+        }
+
+        .pilot-card p {
+            color: #d8e9e8;
+            font-size: 1.08rem;
+            margin-top: 18px;
+        }
+
+        .future-card {
+            background: var(--paper);
+            border-radius: 36px;
+            color: var(--ink);
+            padding: 34px;
+        }
+
+        .future-card p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-top: 18px;
+        }
+
+        .final-line {
+            border-top: 1px solid rgba(7, 26, 44, 0.12);
+            font-size: clamp(1.5rem, 3vw, 2.7rem) !important;
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.05;
+            margin-top: 28px !important;
+            padding-top: 24px;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 30px 0;
+        }
+
+        .footer-inner {
+            align-items: center;
+            display: flex;
+            gap: 16px;
+            justify-content: space-between;
+        }
+
+        .footer-inner a,
+        .footer-inner span {
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid,
+            .direction-grid,
+            .human-grid,
+            .measure-grid,
+            .pilot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .shell {
+                padding: 0 18px;
+            }
+
+            .nav {
+                min-height: 68px;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .hero {
+                padding: 58px 0 68px;
+            }
+
+            h1 {
+                font-size: clamp(4rem, 21vw, 7rem);
+            }
+
+            section {
+                padding: 62px 0;
+            }
+
+            .exchange-board,
+            .direction-card,
+            .human-card,
+            .example-card,
+            .measure-card,
+            .learn-card,
+            .truth-card,
+            .pilot-card,
+            .future-card {
+                border-radius: 26px;
+                padding: 22px;
+            }
+
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <main id="waves-page"></main>
+    <header class="site-header">
+        <div class="shell nav">
+            <a class="brand" href="/" aria-label="Jobsy home">
+                <img src="favicon.png" alt="">
+                <span>Jobsy</span>
+            </a>
+            <div class="nav-actions">
+                <select id="language" class="lang-select" aria-label="Language">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                </select>
+                <a class="button" href="/" data-i18n="backHome">Back to Jobsy</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="shell hero-grid">
+                <div>
+                    <div class="section-mark" data-i18n="heroMark">Jobsy Waves</div>
+                    <h1 data-i18n="heroTitle">Value can move in both directions.</h1>
+                    <p class="hero-lead" data-i18n="heroLead">Jobsy helps people. People also help Jobsy and each other.</p>
+                    <p class="hero-copy" data-i18n="heroText">Jobsy Waves is our experiment for understanding useful human contribution and, over time, finding a fair way to return part of created value to the people who helped create it.</p>
+                </div>
+                <div class="exchange-board" aria-label="Two directions of value" data-i18n-aria-label="exchangeAria">
+                    <div class="exchange-title" data-i18n="exchangeTitle">Two directions of value</div>
+                    <div class="exchange-flow">
+                        <div class="exchange-card"><strong data-i18n="jobsyToPerson">Jobsy -> person</strong><span data-i18n="jobsyToPersonText">Search, information, answers, other people's experience</span></div>
+                        <div class="exchange-center"><strong data-i18n="wavesCenter">Jobsy Waves</strong></div>
+                        <div class="exchange-card"><strong data-i18n="personToJobsy">Person -> Jobsy + other people</strong><span data-i18n="personToJobsyText">Questions, comments, experience, advice, feedback, sharing useful information</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="value-map">
+            <div class="shell direction-grid">
+                <article class="direction-card">
+                    <div class="section-mark" data-i18n="direction1Mark">Jobsy creates value for people</div>
+                    <h2 data-i18n="direction1Title">A person gets help when they need it.</h2>
+                    <ul class="direction-list">
+                        <li data-i18n="jobsyValue1">Job search</li>
+                        <li data-i18n="jobsyValue2">Useful information</li>
+                        <li data-i18n="jobsyValue3">Answers</li>
+                        <li data-i18n="jobsyValue4">Experience of other people</li>
+                    </ul>
+                </article>
+                <article class="direction-card people">
+                    <div class="section-mark" data-i18n="direction2Mark">People create value too</div>
+                    <h2 data-i18n="direction2Title">Jobsy becomes more useful because people participate.</h2>
+                    <ul class="direction-list">
+                        <li data-i18n="peopleValue1">Questions</li>
+                        <li data-i18n="peopleValue2">Comments</li>
+                        <li data-i18n="peopleValue3">Experience</li>
+                        <li data-i18n="peopleValue4">Advice</li>
+                        <li data-i18n="peopleValue5">Feedback</li>
+                        <li data-i18n="peopleValue6">Sharing useful information</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="human-value">
+            <div class="shell human-grid">
+                <article class="human-card">
+                    <div class="section-mark" data-i18n="humanMark">Real human value</div>
+                    <h2 data-i18n="humanTitle">You do not need to be an expert.</h2>
+                    <p data-i18n="humanText">A useful contribution can be one real detail from something you lived through, tried, solved or learned.</p>
+                </article>
+                <article class="example-card">
+                    <div class="example-label" data-i18n="exampleLabel">Illustrative example</div>
+                    <div class="comment-box" data-i18n="exampleQuote">I worked through this staffing agency in Sweden. They do take people without Swedish, but English is needed at the interview.</div>
+                    <p data-i18n="exampleText">One comment like this might help another person tomorrow, help many people over time, or help Jobsy understand something official information does not explain well.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <div class="shell measure-grid">
+                <article class="measure-card">
+                    <div class="section-mark" data-i18n="measureMark">The difficult question</div>
+                    <h2 data-i18n="measureTitle">But how do we measure usefulness?</h2>
+                    <p data-i18n="measureText1">A comment with 5,000 views is not automatically more useful than a comment seen by 50 people.</p>
+                    <p data-i18n="measureText2">Ten comments are not automatically more valuable than one excellent answer. A popular opinion is not automatically a correct or useful one.</p>
+                </article>
+                <article class="learn-card">
+                    <div class="section-mark" data-i18n="learnMark">What the pilot should teach us</div>
+                    <ul class="signal-list">
+                        <li data-i18n="signal1">Did people find it useful?</li>
+                        <li data-i18n="signal2">Did it answer a real question?</li>
+                        <li data-i18n="signal3">Does it remain useful over time?</li>
+                        <li data-i18n="signal4">Do other people confirm or improve it?</li>
+                        <li data-i18n="signal5">Does it help useful information reach more people?</li>
+                        <li data-i18n="signal6">Does it contribute to real outcomes?</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="truth">
+            <div class="shell truth-card">
+                <div class="section-mark" data-i18n="truthMark">The main principle</div>
+                <h2 data-i18n="truthTitle">Our goal is not to pay for comments.</h2>
+                <p data-i18n="truthText">Our goal is to learn how to reward usefulness.</p>
+            </div>
+        </section>
+
+        <section class="pilot">
+            <div class="shell pilot-grid">
+                <article class="pilot-card">
+                    <div class="section-mark" data-i18n="pilotMark">Current pilot</div>
+                    <h2 data-i18n="pilotTitle">We are testing carefully.</h2>
+                    <p data-i18n="pilotText">Jobsy Waves has already started as a product experiment. We are watching what creates real value and what only creates activity.</p>
+                </article>
+                <article class="future-card">
+                    <div class="section-mark" data-i18n="futureMark">Future direction</div>
+                    <h2 data-i18n="futureTitle">Build the mechanism together.</h2>
+                    <p data-i18n="futureText">We do not claim to have the perfect model yet. We want to build a fair system with the people who use Jobsy and help make it better.</p>
+                    <p class="final-line" data-i18n="finalLine">Jobsy creates value for people. People create value for Jobsy. Waves is where we begin learning how that value can move both ways.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="shell footer-inner">
+            <a href="/" data-i18n="footerHome">Back to Jobsy</a>
+            <span>Jobsy Waves</span>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                backHome: "Back to Jobsy",
+                heroMark: "Jobsy Waves",
+                heroTitle: "Value can move in both directions.",
+                heroLead: "Jobsy helps people. People also help Jobsy and each other.",
+                heroText: "Jobsy Waves is our experiment for understanding useful human contribution and, over time, finding a fair way to return part of created value to the people who helped create it.",
+                exchangeAria: "Two directions of value",
+                exchangeTitle: "Two directions of value",
+                jobsyToPerson: "Jobsy -> person",
+                jobsyToPersonText: "Search, information, answers, other people's experience",
+                wavesCenter: "Jobsy Waves",
+                personToJobsy: "Person -> Jobsy + other people",
+                personToJobsyText: "Questions, comments, experience, advice, feedback, sharing useful information",
+                direction1Mark: "Jobsy creates value for people",
+                direction1Title: "A person gets help when they need it.",
+                jobsyValue1: "Job search",
+                jobsyValue2: "Useful information",
+                jobsyValue3: "Answers",
+                jobsyValue4: "Experience of other people",
+                direction2Mark: "People create value too",
+                direction2Title: "Jobsy becomes more useful because people participate.",
+                peopleValue1: "Questions",
+                peopleValue2: "Comments",
+                peopleValue3: "Experience",
+                peopleValue4: "Advice",
+                peopleValue5: "Feedback",
+                peopleValue6: "Sharing useful information",
+                humanMark: "Real human value",
+                humanTitle: "You do not need to be an expert.",
+                humanText: "A useful contribution can be one real detail from something you lived through, tried, solved or learned.",
+                exampleLabel: "Illustrative example",
+                exampleQuote: "I worked through this staffing agency in Sweden. They do take people without Swedish, but English is needed at the interview.",
+                exampleText: "One comment like this might help another person tomorrow, help many people over time, or help Jobsy understand something official information does not explain well.",
+                measureMark: "The difficult question",
+                measureTitle: "But how do we measure usefulness?",
+                measureText1: "A comment with 5,000 views is not automatically more useful than a comment seen by 50 people.",
+                measureText2: "Ten comments are not automatically more valuable than one excellent answer. A popular opinion is not automatically a correct or useful one.",
+                learnMark: "What the pilot should teach us",
+                signal1: "Did people find it useful?",
+                signal2: "Did it answer a real question?",
+                signal3: "Does it remain useful over time?",
+                signal4: "Do other people confirm or improve it?",
+                signal5: "Does it help useful information reach more people?",
+                signal6: "Does it contribute to real outcomes?",
+                truthMark: "The main principle",
+                truthTitle: "Our goal is not to pay for comments.",
+                truthText: "Our goal is to learn how to reward usefulness.",
+                pilotMark: "Current pilot",
+                pilotTitle: "We are testing carefully.",
+                pilotText: "Jobsy Waves has already started as a product experiment. We are watching what creates real value and what only creates activity.",
+                futureMark: "Future direction",
+                futureTitle: "Build the mechanism together.",
+                futureText: "We do not claim to have the perfect model yet. We want to build a fair system with the people who use Jobsy and help make it better.",
+                finalLine: "Jobsy creates value for people. People create value for Jobsy. Waves is where we begin learning how that value can move both ways.",
+                footerHome: "Back to Jobsy"
+            },
+            ru: {
+                backHome: "Назад к Jobsy",
+                heroMark: "Jobsy Waves",
+                heroTitle: "Ценность может двигаться в обе стороны.",
+                heroLead: "Jobsy помогает людям. Но люди тоже помогают Jobsy и друг другу.",
+                heroText: "Jobsy Waves - наш эксперимент, чтобы понять, как измерять полезный вклад людей и со временем справедливо возвращать им часть созданной ценности.",
+                exchangeAria: "Два направления ценности",
+                exchangeTitle: "Два направления ценности",
+                jobsyToPerson: "Jobsy -> человеку",
+                jobsyToPersonText: "Поиск работы, полезная информация, ответы, опыт других людей",
+                wavesCenter: "Jobsy Waves",
+                personToJobsy: "Человек -> Jobsy + другим людям",
+                personToJobsyText: "Вопросы, комментарии, опыт, советы, обратная связь, полезные материалы",
+                direction1Mark: "Jobsy создает ценность для людей",
+                direction1Title: "Человек получает помощь в нужный момент.",
+                jobsyValue1: "Поиск работы",
+                jobsyValue2: "Полезная информация",
+                jobsyValue3: "Ответы",
+                jobsyValue4: "Опыт других людей",
+                direction2Mark: "Люди тоже создают ценность",
+                direction2Title: "Jobsy становится полезнее, когда люди участвуют.",
+                peopleValue1: "Вопросы",
+                peopleValue2: "Комментарии",
+                peopleValue3: "Опыт",
+                peopleValue4: "Советы",
+                peopleValue5: "Обратная связь",
+                peopleValue6: "Полезные материалы",
+                humanMark: "Реальная человеческая ценность",
+                humanTitle: "Не нужно быть экспертом.",
+                humanText: "Полезный вклад может быть одной реальной деталью из того, что вы прожили, попробовали, решили или узнали.",
+                exampleLabel: "Иллюстративный пример",
+                exampleQuote: "Я работал через это кадровое агентство в Швеции. Они действительно берут людей без шведского, но на собеседовании нужен английский.",
+                exampleText: "Один такой комментарий может помочь другому человеку завтра, многим людям со временем или самому Jobsy понять то, что официальная информация объясняет плохо.",
+                measureMark: "Сложный вопрос",
+                measureTitle: "Но как измерить пользу?",
+                measureText1: "Комментарий с 5 000 просмотров не обязательно полезнее комментария, который увидели 50 человек.",
+                measureText2: "Десять комментариев не обязательно ценнее одного сильного ответа. Популярное мнение не обязательно правильное или полезное.",
+                learnMark: "Чему должен научить пилот",
+                signal1: "Люди нашли это полезным?",
+                signal2: "Это помогло ответить на реальный вопрос?",
+                signal3: "Это остается полезным со временем?",
+                signal4: "Другие люди подтверждают или улучшают это?",
+                signal5: "Это помогает полезной информации дойти до большего числа людей?",
+                signal6: "Это связано с реальными результатами?",
+                truthMark: "Главный принцип",
+                truthTitle: "Наша цель - не платить за комментарии.",
+                truthText: "Наша цель - научиться платить за пользу.",
+                pilotMark: "Текущий пилот",
+                pilotTitle: "Мы тестируем осторожно.",
+                pilotText: "Jobsy Waves уже начался как продуктовый эксперимент. Мы смотрим, что создает реальную ценность, а что только создает активность.",
+                futureMark: "Куда мы хотим прийти",
+                futureTitle: "Построить механизм вместе.",
+                futureText: "Мы не утверждаем, что уже нашли идеальную модель. Мы хотим строить справедливую систему вместе с людьми, которые пользуются Jobsy и помогают делать его лучше.",
+                finalLine: "Jobsy создает ценность для людей. Люди создают ценность для Jobsy. Waves - место, где мы начинаем учиться тому, как эта ценность может двигаться в обе стороны.",
+                footerHome: "Назад к Jobsy"
+            }
+        };
+
+        const languageSelect = document.getElementById("language");
+
+        function applyLanguage(language) {
+            const dictionary = translations[language] || translations.en;
+            document.documentElement.lang = language;
+            document.querySelectorAll("[data-i18n]").forEach((node) => {
+                const key = node.dataset.i18n;
+                if (dictionary[key]) node.textContent = dictionary[key];
+            });
+            document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => {
+                const key = node.dataset.i18nAriaLabel;
+                if (dictionary[key]) node.setAttribute("aria-label", dictionary[key]);
+            });
+            localStorage.setItem("jobsy-waves-language", language);
+        }
+
+        const savedLanguage = localStorage.getItem("jobsy-waves-language") || localStorage.getItem("jobsy-language");
+        const browserLanguage = navigator.language && navigator.language.startsWith("ru") ? "ru" : "en";
+        const initialLanguage = translations[savedLanguage] ? savedLanguage : browserLanguage;
+
+        languageSelect.value = initialLanguage;
+        applyLanguage(initialLanguage);
+        languageSelect.addEventListener("change", (event) => applyLanguage(event.target.value));
+    </script>
 </body>
 </html>
