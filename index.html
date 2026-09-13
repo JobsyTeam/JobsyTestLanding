@@ -248,17 +248,6 @@
             margin-top: 34px;
         }
 
-        .price-inline {
-            color: #d6e4e2;
-            font-size: 0.96rem;
-            font-weight: 800;
-        }
-
-        .price-inline strong {
-            color: var(--white);
-            font-size: 1.28rem;
-        }
-
         .free-start {
             background: linear-gradient(180deg, var(--paper) 0%, #f8fbf7 100%);
         }
@@ -462,80 +451,6 @@
             color: var(--muted);
             font-size: 1.1rem;
             margin-top: 18px;
-        }
-
-        .target {
-            background: linear-gradient(180deg, var(--paper) 0%, #f8fbf7 100%);
-        }
-
-        .target-grid {
-            align-items: stretch;
-            display: grid;
-            gap: 18px;
-            grid-template-columns: 0.86fr 1.14fr;
-        }
-
-        .target-copy,
-        .target-example {
-            border-radius: 34px;
-            padding: 34px;
-        }
-
-        .target-copy {
-            background: var(--night);
-            color: var(--white);
-        }
-
-        .target-copy .section-mark {
-            color: var(--signal);
-        }
-
-        .target-example {
-            background: var(--white);
-            border: 1px solid var(--line);
-            box-shadow: var(--shadow);
-        }
-
-        .target-row {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: 0.46fr 1fr;
-            padding: 20px 0;
-        }
-
-        .target-row + .target-row {
-            border-top: 1px solid var(--line);
-        }
-
-        .target-row:first-child {
-            padding-top: 0;
-        }
-
-        .target-row:last-child {
-            padding-bottom: 0;
-        }
-
-        .target-row span {
-            color: var(--route);
-            font-weight: 900;
-        }
-
-        .target-row strong {
-            display: block;
-            font-size: clamp(1.35rem, 2.5vw, 2.05rem);
-            font-weight: 900;
-            letter-spacing: -0.055em;
-            line-height: 1.08;
-        }
-
-        .plus-row {
-            align-items: center;
-            color: var(--signal-deep);
-            display: flex;
-            font-size: 2rem;
-            font-weight: 900;
-            justify-content: center;
-            padding: 8px 0;
         }
 
         .process {
@@ -1011,7 +926,6 @@
         @media (max-width: 980px) {
             .hero-grid,
             .free-grid,
-            .target-grid,
             .cta-panel,
             .story-grid,
             .human-proof-grid,
@@ -1087,8 +1001,6 @@
             .map-main,
             .free-copy,
             .free-result,
-            .target-copy,
-            .target-example,
             .scale-card,
             .cta-panel,
             .story-copy,
@@ -1109,8 +1021,6 @@
             .map-main,
             .free-copy,
             .free-result,
-            .target-copy,
-            .target-example,
             .scale-card,
             .cta-panel,
             .story-copy,
@@ -1127,7 +1037,6 @@
             }
 
             .map-main,
-            .target-row,
             .process-rail,
             .human-proof-grid,
             .wave-signals {
@@ -1166,7 +1075,7 @@
                 <span>Jobsy</span>
             </a>
             <nav class="nav-links" aria-label="Primary navigation">
-                <a href="#target" data-i18n="navTarget">What to search for</a>
+                <a href="#free" data-i18n="navTarget">Try free</a>
                 <a href="#process" data-i18n="navProcess">How it works</a>
                 <a href="#trust" data-i18n="navTrust">Europe</a>
             </nav>
@@ -1184,7 +1093,7 @@
         <section class="hero">
             <div class="shell hero-grid">
                 <div>
-                    <div class="notice"><span class="live-dot"></span><span data-i18n="heroNotice">Jobsy Active</span></div>
+                    <div class="notice"><span class="live-dot"></span><span data-i18n="heroNotice">Free first search</span></div>
                     <h1 data-i18n="heroTitle">Find Work</h1>
                     <p class="hero-lead" data-i18n="heroLead">Tell Jobsy what job you want. Jobsy will keep looking until you find it.</p>
                     <p class="hero-copy" data-i18n="heroCopy">You do not need another place to search for jobs. You need someone searching for you.</p>
@@ -1193,18 +1102,18 @@
                     </div>
                 </div>
 
-                <div class="search-panel" aria-label="Jobsy active search preview" data-i18n-aria-label="heroPanelAria">
+                <div class="search-panel" aria-label="Free Jobsy search preview" data-i18n-aria-label="heroPanelAria">
                     <div class="panel-top">
-                        <div class="panel-title" data-i18n="heroPanelTitle">Jobsy Active</div>
-                        <div class="status-pill"><span class="live-dot"></span><span data-i18n="heroPanelStatus">search running</span></div>
+                        <div class="panel-title" data-i18n="heroPanelTitle">Your search</div>
+                        <div class="status-pill"><span class="live-dot"></span><span data-i18n="heroPanelStatus">first result</span></div>
                     </div>
                     <div class="search-map">
                         <div class="map-main">
-                            <div class="map-card featured"><span data-i18n="mapMainLabel">Current search</span><strong data-i18n="mapMainText">Warehouse work in Sweden</strong></div>
-                            <div class="map-card"><span data-i18n="mapEmployersLabel">Employers</span><strong data-i18n="mapEmployersText">Relevant companies</strong></div>
-                            <div class="map-card"><span data-i18n="mapAgenciesLabel">Agencies</span><strong data-i18n="mapAgenciesText">Recruitment and staffing</strong></div>
-                            <div class="map-card"><span data-i18n="mapOutreachLabel">Outreach</span><strong data-i18n="mapOutreachText">Personal messages</strong></div>
-                            <div class="map-card"><span data-i18n="mapReplyLabel">Replies</span><strong data-i18n="mapReplyText">Back to you</strong></div>
+                            <div class="map-card featured"><span data-i18n="mapMainLabel">Your experience</span><strong data-i18n="mapMainText">Cook, warehouse worker</strong></div>
+                            <div class="map-card"><span data-i18n="mapEmployersLabel">Looking for now</span><strong data-i18n="mapEmployersText">Warehouse or logistics in Sweden</strong></div>
+                            <div class="map-card"><span data-i18n="mapAgenciesLabel">Jobsy searches</span><strong data-i18n="mapAgenciesText">Profile + current goal</strong></div>
+                            <div class="map-card"><span data-i18n="mapOutreachLabel">Companies</span><strong data-i18n="mapOutreachText">Found for you</strong></div>
+                            <div class="map-card"><span data-i18n="mapReplyLabel">First result</span><strong data-i18n="mapReplyText">Free</strong></div>
                         </div>
                     </div>
                 </div>
@@ -1216,7 +1125,7 @@
                 <div class="free-copy">
                     <div class="section-mark" data-i18n="freeMark">Try Jobsy first</div>
                     <h2 data-i18n="freeTitle">See your first result before you activate Jobsy Active.</h2>
-                    <p data-i18n="freeText">Create a CV for free or upload the one you already have. Tell Jobsy what work you want now, and see which companies Jobsy finds for you. No payment is required for this first result.</p>
+                    <p data-i18n="freeText">Your CV shows what you have done. Jobsy also needs to know what you want now. Create a CV for free or upload your own, then see your first personalized result without payment.</p>
                     <div class="free-actions">
                         <a class="button" href="/app" data-i18n="createCvCta">Create CV for free</a>
                         <a class="button light" href="/app" data-i18n="uploadCvCta">Upload my CV</a>
@@ -1224,7 +1133,8 @@
                 </div>
                 <div class="free-result" aria-label="Free first result preview" data-i18n-aria-label="freeResultAria">
                     <div class="result-chain">
-                        <div class="result-card"><span data-i18n="freeExperienceLabel">Your experience</span><strong data-i18n="freeExperienceText">CV uploaded</strong></div>
+                        <div class="result-card"><span data-i18n="freeExperienceLabel">Your experience</span><strong data-i18n="freeExperienceText">Cook, warehouse worker</strong></div>
+                        <div class="result-arrow">+</div>
                         <div class="result-card"><span data-i18n="freeGoalLabel">Your current goal</span><strong data-i18n="freeGoalText">Warehouse or logistics work in Sweden</strong></div>
                         <div class="result-arrow">↓</div>
                         <div class="result-card"><span data-i18n="freeSearchLabel">Jobsy searches</span><strong data-i18n="freeSearchText">Your profile + what you want now</strong></div>
@@ -1235,31 +1145,17 @@
             </div>
         </section>
 
-        <section id="target" class="target">
-            <div class="shell target-grid">
-                <div class="target-copy">
-                    <div class="section-mark" data-i18n="targetMark">Tell Jobsy what to look for</div>
-                    <h2 data-i18n="targetTitle">Your CV is the past. Jobsy needs to know what you want now.</h2>
-                </div>
-                <div class="target-example" aria-label="Search input example" data-i18n-aria-label="targetExampleAria">
-                    <div class="target-row"><span data-i18n="experienceLabel">Experience</span><strong data-i18n="experienceExample">Cook, warehouse worker</strong></div>
-                    <div class="plus-row" aria-hidden="true">+</div>
-                    <div class="target-row"><span data-i18n="lookingLabel">Looking for now</span><strong data-i18n="lookingExample">Warehouse or logistics work in Sweden</strong></div>
-                </div>
-            </div>
-        </section>
-
         <section id="process" class="process">
             <div class="shell">
                 <div class="section-head center">
                     <div class="section-mark" data-i18n="processMark">Want Jobsy to continue?</div>
-                    <h2 data-i18n="activeTitle">Turn the first search into an active job search.</h2>
+                    <h2 data-i18n="activeTitle">Connect Jobsy Active, and Jobsy will keep searching for you.</h2>
                     <p data-i18n="activeText">Jobsy Active keeps working after the first result.</p>
                 </div>
                 <div class="process-rail" aria-label="Jobsy search process" data-i18n-aria-label="processAria">
                     <article class="process-step"><span>01</span><h3 data-i18n="process1Title">Finds employers</h3><p data-i18n="process1Text">Relevant companies, recruitment agencies and staffing agencies.</p></article>
-                    <article class="process-step"><span>02</span><h3 data-i18n="process2Title">Prepares outreach</h3><p data-i18n="process2Text">Personal messages for the company and role.</p></article>
-                    <article class="process-step"><span>03</span><h3 data-i18n="process3Title">Adapts the message</h3><p data-i18n="process3Text">Written for the recipient and their language.</p></article>
+                    <article class="process-step"><span>02</span><h3 data-i18n="process2Title">Prepares personalized outreach</h3><p data-i18n="process2Text">Personal messages for the company and role.</p></article>
+                    <article class="process-step"><span>03</span><h3 data-i18n="process3Title">Adapts each message</h3><p data-i18n="process3Text">For the recipient and their language.</p></article>
                     <article class="process-step"><span>04</span><h3 data-i18n="process4Title">Keeps searching</h3><p data-i18n="process4Text">The search does not stop after the first result.</p></article>
                 </div>
             </div>
@@ -1395,59 +1291,52 @@
     <script>
         const translations = {
             en: {
-                navTarget: "What to search for",
+                navTarget: "Try free",
                 navProcess: "How it works",
                 navTrust: "Europe",
                 navCta: "Try free",
-                heroNotice: "Jobsy Active",
+                heroNotice: "Free first search",
                 heroTitle: "Find Work",
                 heroLead: "Tell Jobsy what job you want. Jobsy will keep looking until you find it.",
                 heroCopy: "You do not need another place to search for jobs. You need someone searching for you.",
                 primaryCta: "Try Jobsy free",
-                heroPanelAria: "Jobsy active search preview",
-                heroPanelTitle: "Jobsy Active",
-                heroPanelStatus: "search running",
-                mapMainLabel: "Current search",
-                mapMainText: "Warehouse work in Sweden",
-                mapEmployersLabel: "Employers",
-                mapEmployersText: "Relevant companies",
-                mapAgenciesLabel: "Agencies",
-                mapAgenciesText: "Recruitment and staffing",
-                mapOutreachLabel: "Outreach",
-                mapOutreachText: "Personal messages",
-                mapReplyLabel: "Replies",
-                mapReplyText: "Back to you",
+                heroPanelAria: "Free Jobsy search preview",
+                heroPanelTitle: "Your search",
+                heroPanelStatus: "first result",
+                mapMainLabel: "Your experience",
+                mapMainText: "Cook, warehouse worker",
+                mapEmployersLabel: "Looking for now",
+                mapEmployersText: "Warehouse or logistics in Sweden",
+                mapAgenciesLabel: "Jobsy searches",
+                mapAgenciesText: "Profile + current goal",
+                mapOutreachLabel: "Companies",
+                mapOutreachText: "Found for you",
+                mapReplyLabel: "First result",
+                mapReplyText: "Free",
                 freeMark: "Try Jobsy first",
                 freeTitle: "See your first result before you activate Jobsy Active.",
-                freeText: "Create a CV for free or upload the one you already have. Tell Jobsy what work you want now, and see which companies Jobsy finds for you. No payment is required for this first result.",
+                freeText: "Your CV shows what you have done. Jobsy also needs to know what you want now. Create a CV for free or upload your own, then see your first personalized result without payment.",
                 createCvCta: "Create CV for free",
                 uploadCvCta: "Upload my CV",
                 freeResultAria: "Free first result preview",
                 freeExperienceLabel: "Your experience",
-                freeExperienceText: "CV uploaded",
+                freeExperienceText: "Cook, warehouse worker",
                 freeGoalLabel: "Your current goal",
                 freeGoalText: "Warehouse or logistics work in Sweden",
                 freeSearchLabel: "Jobsy searches",
                 freeSearchText: "Your profile + what you want now",
                 freeFoundLabel: "Companies found for you",
                 freeFoundText: "A real personalized first result",
-                targetMark: "Tell Jobsy what to look for",
-                targetTitle: "Your CV is the past. Jobsy needs to know what you want now.",
-                targetExampleAria: "Search input example",
-                experienceLabel: "Experience",
-                experienceExample: "Cook, warehouse worker",
-                lookingLabel: "Looking for now",
-                lookingExample: "Warehouse or logistics work in Sweden",
                 processMark: "Want Jobsy to continue?",
-                activeTitle: "Turn the first search into an active job search.",
+                activeTitle: "Connect Jobsy Active, and Jobsy will keep searching for you.",
                 activeText: "Jobsy Active keeps working after the first result.",
                 processAria: "Jobsy search process",
                 process1Title: "Finds employers",
                 process1Text: "Relevant companies, recruitment agencies and staffing agencies.",
-                process2Title: "Prepares outreach",
+                process2Title: "Prepares personalized outreach",
                 process2Text: "Personal messages for the company and role.",
-                process3Title: "Adapts the message",
-                process3Text: "Written for the recipient and their language.",
+                process3Title: "Adapts each message",
+                process3Text: "For the recipient and their language.",
                 process4Title: "Keeps searching",
                 process4Text: "The search does not stop after the first result.",
                 trustMark: "Already operating",
@@ -1523,59 +1412,52 @@
                 footerContact: "Contact"
             },
             ru: {
-                navTarget: "Что искать",
+                navTarget: "Попробовать бесплатно",
                 navProcess: "Как работает",
                 navTrust: "Европа",
                 navCta: "Попробовать бесплатно",
-                heroNotice: "Jobsy Active",
+                heroNotice: "Первый поиск бесплатно",
                 heroTitle: "Найти работу",
                 heroLead: "Скажите Jobsy, какую работу вы хотите. Jobsy будет искать, пока вы ее не найдете.",
                 heroCopy: "Вам не нужен еще один сайт, где нужно самому искать вакансии. Вам нужен тот, кто ищет за вас.",
                 primaryCta: "Попробовать Jobsy бесплатно",
-                heroPanelAria: "Превью активного поиска Jobsy",
-                heroPanelTitle: "Jobsy Active",
-                heroPanelStatus: "поиск идет",
-                mapMainLabel: "Текущий поиск",
-                mapMainText: "Работа на складе в Швеции",
-                mapEmployersLabel: "Работодатели",
-                mapEmployersText: "Подходящие компании",
-                mapAgenciesLabel: "Агентства",
-                mapAgenciesText: "Рекрутинговые и кадровые",
-                mapOutreachLabel: "Обращения",
-                mapOutreachText: "Персональные сообщения",
-                mapReplyLabel: "Ответы",
-                mapReplyText: "К вам",
+                heroPanelAria: "Превью первого бесплатного поиска Jobsy",
+                heroPanelTitle: "Ваш поиск",
+                heroPanelStatus: "первый результат",
+                mapMainLabel: "Ваш опыт",
+                mapMainText: "Повар, складской работник",
+                mapEmployersLabel: "Сейчас ищу",
+                mapEmployersText: "Склад или логистика в Швеции",
+                mapAgenciesLabel: "Jobsy ищет",
+                mapAgenciesText: "Профиль + текущая цель",
+                mapOutreachLabel: "Компании",
+                mapOutreachText: "Найдены для вас",
+                mapReplyLabel: "Первый результат",
+                mapReplyText: "Бесплатно",
                 freeMark: "Сначала попробуйте бесплатно",
                 freeTitle: "Посмотрите первый результат до подключения Jobsy Active.",
-                freeText: "Создайте CV бесплатно или загрузите свое. Расскажите Jobsy, какую работу хотите сейчас, и посмотрите, какие компании Jobsy найдет именно для вас. Для первого результата оплата не нужна.",
+                freeText: "CV показывает, что вы уже делали. Jobsy также нужно знать, чего вы хотите сейчас. Создайте CV бесплатно или загрузите свое, а затем посмотрите первый персональный результат без оплаты.",
                 createCvCta: "Создать CV бесплатно",
                 uploadCvCta: "Загрузить свое CV",
                 freeResultAria: "Превью первого бесплатного результата",
                 freeExperienceLabel: "Ваш опыт",
-                freeExperienceText: "CV загружено",
+                freeExperienceText: "Повар, складской работник",
                 freeGoalLabel: "Ваша цель сейчас",
                 freeGoalText: "Склад или логистика в Швеции",
                 freeSearchLabel: "Jobsy ищет",
                 freeSearchText: "Ваш профиль + чего вы хотите сейчас",
                 freeFoundLabel: "Компании найдены для вас",
                 freeFoundText: "Реальный персональный первый результат",
-                targetMark: "Скажите Jobsy, что искать",
-                targetTitle: "Ваше CV - это прошлое. Jobsy нужно знать, чего вы хотите сейчас.",
-                targetExampleAria: "Пример поискового запроса",
-                experienceLabel: "Опыт",
-                experienceExample: "Повар, складской работник",
-                lookingLabel: "Сейчас ищу",
-                lookingExample: "Склад или логистика в Швеции",
                 processMark: "Хотите, чтобы Jobsy продолжил?",
-                activeTitle: "Превратите первый поиск в активный поиск работы.",
+                activeTitle: "Подключите Jobsy Active, и Jobsy продолжит искать для вас.",
                 activeText: "Jobsy Active продолжает работать после первого результата.",
                 processAria: "Процесс поиска Jobsy",
                 process1Title: "Находит работодателей",
                 process1Text: "Подходящие компании, рекрутинговые и кадровые агентства.",
-                process2Title: "Готовит обращения",
+                process2Title: "Готовит персональные обращения",
                 process2Text: "Персональные сообщения под компанию и роль.",
-                process3Title: "Адаптирует сообщение",
-                process3Text: "На языке получателя и под его контекст.",
+                process3Title: "Адаптирует каждое сообщение",
+                process3Text: "Под получателя и его язык.",
                 process4Title: "Продолжает искать",
                 process4Text: "Поиск не останавливается после первого результата.",
                 trustMark: "Уже работает",
