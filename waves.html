@@ -693,6 +693,132 @@
             font-weight: 800;
         }
 
+        .create-waves {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 36px;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+            padding: 34px;
+        }
+
+        .create-waves p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-top: 18px;
+        }
+
+        .create-lead {
+            color: var(--ink) !important;
+            font-size: clamp(1.45rem, 3vw, 2.4rem) !important;
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.08;
+        }
+
+        .creator-example {
+            background: var(--night);
+            border-radius: 28px;
+            color: var(--white);
+            margin-top: 24px;
+            padding: 26px;
+        }
+
+        .creator-example .section-mark {
+            color: var(--signal);
+        }
+
+        .creator-example p {
+            color: #d8e9e8;
+        }
+
+        .creator-flow {
+            display: grid;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .creator-flow span {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 999px;
+            color: var(--white);
+            font-weight: 900;
+            padding: 10px 14px;
+            text-align: center;
+        }
+
+        .creator-arrow {
+            color: var(--signal) !important;
+            font-size: 1.25rem;
+            padding: 0 !important;
+        }
+
+        .wave-examples {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 22px;
+        }
+
+        .wave-example {
+            background: var(--paper);
+            border: 1px solid #eadfc6;
+            border-radius: 22px;
+            padding: 18px;
+        }
+
+        .wave-example span {
+            color: var(--route);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .wave-example strong {
+            display: block;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.16;
+        }
+
+        .anti-spam {
+            background: var(--paper-strong);
+            border: 1px solid #eadfc6;
+            border-radius: 26px;
+            margin-top: 24px;
+            padding: 24px;
+        }
+
+        .anti-spam strong {
+            display: block;
+            font-size: clamp(1.45rem, 3vw, 2.35rem);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.08;
+        }
+
+        .anti-spam p {
+            margin-top: 16px;
+        }
+
+        .starts-now {
+            background: var(--night);
+            border-radius: 26px;
+            color: var(--white);
+            margin-top: 24px;
+            padding: 24px;
+        }
+
+        .starts-now h3 {
+            font-size: clamp(1.9rem, 4vw, 3.5rem);
+            font-weight: 900;
+        }
+
+        .starts-now p {
+            color: #d8e9e8;
+        }
+
         .together-card {
             background: var(--night);
             color: var(--white);
@@ -793,9 +919,14 @@
             .future-card,
             .ending-card,
             .current-card,
+            .create-waves,
             .together-card {
                 border-radius: 26px;
                 padding: 22px;
+            }
+
+            .wave-examples {
+                grid-template-columns: 1fr;
             }
 
             .footer-inner {
@@ -1000,6 +1131,52 @@
                 </ul>
             </div>
 
+            <div class="shell create-waves">
+                <div class="section-mark" data-i18n="createMark">How to create Waves</div>
+                <h2 data-i18n="createTitle">How to create Waves</h2>
+                <p class="create-lead" data-i18n="createLead">A Wave does not begin when you advertise Jobsy. A Wave begins when you send something useful further.</p>
+                <p data-i18n="createShare">When a logged-in user uses Share on supported Jobsy content, their personal attribution can be attached to the shared link automatically. The user does not need to manually create a referral link. This helps Jobsy understand where a Wave started.</p>
+
+                <div class="creator-example">
+                    <div class="section-mark" data-i18n="creatorMark">Illustrative example</div>
+                    <p data-i18n="creatorText">A blogger finds a Jobsy article about changing profession after 40 in Germany. Instead of advertising Jobsy, they ask their audience: “Who changed profession after 40? What was the hardest part?” Then they share the article and invite people to add their own experience.</p>
+                    <div class="creator-flow" aria-label="Wave creation example" data-i18n-aria-label="creatorFlowAria">
+                        <span data-i18n="flow1">Useful article</span>
+                        <span class="creator-arrow" aria-hidden="true">↓</span>
+                        <span data-i18n="flow2">Your opinion</span>
+                        <span class="creator-arrow" aria-hidden="true">↓</span>
+                        <span data-i18n="flow3">Conversation</span>
+                        <span class="creator-arrow" aria-hidden="true">↓</span>
+                        <span data-i18n="flow4">Other people's experience</span>
+                        <span class="creator-arrow" aria-hidden="true">↓</span>
+                        <span data-i18n="flow5">New useful knowledge</span>
+                        <span class="creator-arrow" aria-hidden="true">↓</span>
+                        <span data-i18n="flow6">Next Wave</span>
+                    </div>
+                </div>
+
+                <div class="wave-examples">
+                    <article class="wave-example"><span data-i18n="exampleCommunityLabel">Community</span><strong data-i18n="exampleCommunity">Share a relevant Jobsy article in a community and start a useful discussion.</strong></article>
+                    <article class="wave-example"><span data-i18n="exampleFriendLabel">Friend</span><strong data-i18n="exampleFriend">Send useful Jobsy information to one person who needs it.</strong></article>
+                    <article class="wave-example"><span data-i18n="exampleExperienceLabel">Experience</span><strong data-i18n="exampleExperience">Add your own real experience to an existing topic.</strong></article>
+                    <article class="wave-example"><span data-i18n="exampleQuestionLabel">Question</span><strong data-i18n="exampleQuestion">Ask something that may also matter to other people.</strong></article>
+                </div>
+
+                <p data-i18n="notOnlyCreators">You do not need a large audience. You do not need to be a blogger. You do not need to be an expert.</p>
+
+                <div class="anti-spam">
+                    <strong data-i18n="antiSpamTitle">More links ≠ more value. More comments ≠ more value.</strong>
+                    <p data-i18n="antiSpamText">You do not need to share Jobsy everywhere. Share when the material can genuinely be useful to someone.</p>
+                </div>
+
+                <div class="starts-now">
+                    <h3 data-i18n="startsNowTitle">Your contribution starts now.</h3>
+                    <p data-i18n="startsNowText">During the pilot, Jobsy begins building a history of Waves and participation so we can learn which actions actually create useful value. This does not promise future earnings, retroactive payments or JBW becoming money.</p>
+                    <p data-i18n="participationText">You are not only participating in Waves. You are helping us understand what Waves should become.</p>
+                    <p data-i18n="createFinal">Useful information can start a Wave. A conversation can make it bigger. Other people's experience can make it more valuable. Jobsy should learn to understand that.</p>
+                </div>
+            </div>
+
             <div class="shell together-card">
                 <div class="section-mark" data-i18n="togetherMark">Build it together</div>
                 <h2 data-i18n="togetherTitle">We want to invent this together.</h2>
@@ -1113,6 +1290,34 @@
                 fact3: "Rewards / EUR are monetary rewards already earned under current pilot rules.",
                 fact4: "Users can accumulate JBW without having Jobsy Active.",
                 fact5: "Current minimum Rewards payout request: €50.",
+                createMark: "How to create Waves",
+                createTitle: "How to create Waves",
+                createLead: "A Wave does not begin when you advertise Jobsy. A Wave begins when you send something useful further.",
+                createShare: "When a logged-in user uses Share on supported Jobsy content, their personal attribution can be attached to the shared link automatically. The user does not need to manually create a referral link. This helps Jobsy understand where a Wave started.",
+                creatorMark: "Illustrative example",
+                creatorText: "A blogger finds a Jobsy article about changing profession after 40 in Germany. Instead of advertising Jobsy, they ask their audience: “Who changed profession after 40? What was the hardest part?” Then they share the article and invite people to add their own experience.",
+                creatorFlowAria: "Wave creation example",
+                flow1: "Useful article",
+                flow2: "Your opinion",
+                flow3: "Conversation",
+                flow4: "Other people's experience",
+                flow5: "New useful knowledge",
+                flow6: "Next Wave",
+                exampleCommunityLabel: "Community",
+                exampleCommunity: "Share a relevant Jobsy article in a community and start a useful discussion.",
+                exampleFriendLabel: "Friend",
+                exampleFriend: "Send useful Jobsy information to one person who needs it.",
+                exampleExperienceLabel: "Experience",
+                exampleExperience: "Add your own real experience to an existing topic.",
+                exampleQuestionLabel: "Question",
+                exampleQuestion: "Ask something that may also matter to other people.",
+                notOnlyCreators: "You do not need a large audience. You do not need to be a blogger. You do not need to be an expert.",
+                antiSpamTitle: "More links ≠ more value. More comments ≠ more value.",
+                antiSpamText: "You do not need to share Jobsy everywhere. Share when the material can genuinely be useful to someone.",
+                startsNowTitle: "Your contribution starts now.",
+                startsNowText: "During the pilot, Jobsy begins building a history of Waves and participation so we can learn which actions actually create useful value. This does not promise future earnings, retroactive payments or JBW becoming money.",
+                participationText: "You are not only participating in Waves. You are helping us understand what Waves should become.",
+                createFinal: "Useful information can start a Wave. A conversation can make it bigger. Other people's experience can make it more valuable. Jobsy should learn to understand that.",
                 togetherMark: "Build it together",
                 togetherTitle: "We want to invent this together.",
                 togetherText: "We do not want to decide in advance what every human action is worth. We want to learn from what people actually ask, know, improve and find useful.",
@@ -1214,6 +1419,34 @@
                 fact3: "Rewards / EUR - это денежные вознаграждения, уже заработанные по текущим правилам пилота.",
                 fact4: "Пользователи могут накапливать JBW без Jobsy Active.",
                 fact5: "Текущий минимальный запрос на выплату Rewards: €50.",
+                createMark: "Как создавать Waves",
+                createTitle: "Как создавать Waves",
+                createLead: "Wave начинается не тогда, когда вы рекламируете Jobsy. Wave начинается, когда вы отправляете полезное дальше.",
+                createShare: "Когда пользователь вошел в Jobsy и нажимает Share у поддерживаемого материала Jobsy, его персональная атрибуция может автоматически добавляться к ссылке. Пользователю не нужно вручную создавать реферальную ссылку. Так Jobsy понимает, где началась Wave.",
+                creatorMark: "Иллюстративный пример",
+                creatorText: "Блогер находит статью Jobsy о смене профессии после 40 в Германии. Вместо рекламы Jobsy он обсуждает тему с аудиторией: «Кто из вас менял профессию после 40? Что оказалось самым сложным?» Потом он делится статьей и приглашает людей добавить свой опыт.",
+                creatorFlowAria: "Пример создания Wave",
+                flow1: "Полезная статья",
+                flow2: "Ваше мнение",
+                flow3: "Разговор",
+                flow4: "Опыт других людей",
+                flow5: "Новые знания",
+                flow6: "Следующая Wave",
+                exampleCommunityLabel: "Community",
+                exampleCommunity: "Поделиться подходящей статьей Jobsy в сообществе и начать полезное обсуждение.",
+                exampleFriendLabel: "Friend",
+                exampleFriend: "Отправить полезную информацию Jobsy одному человеку, которому она нужна.",
+                exampleExperienceLabel: "Experience",
+                exampleExperience: "Добавить свой реальный опыт к уже существующей теме.",
+                exampleQuestionLabel: "Question",
+                exampleQuestion: "Задать вопрос, который может быть важен и другим людям.",
+                notOnlyCreators: "Вам не нужна большая аудитория. Не нужно быть блогером. Не нужно быть экспертом.",
+                antiSpamTitle: "Больше ссылок ≠ больше пользы. Больше комментариев ≠ больше пользы.",
+                antiSpamText: "Не нужно делиться Jobsy везде. Делитесь тогда, когда материал действительно может быть кому-то полезен.",
+                startsNowTitle: "Ваш вклад начинается сейчас.",
+                startsNowText: "Во время пилота Jobsy начинает собирать историю Waves и участия, чтобы понять, какие действия действительно создают полезную ценность. Это не обещает будущий заработок, ретроактивные выплаты или превращение JBW в деньги.",
+                participationText: "Вы участвуете не только в Waves. Вы помогаете понять, какими Waves должны стать.",
+                createFinal: "Полезная информация может начать Wave. Разговор может сделать ее больше. Опыт других людей может сделать ее ценнее. А Jobsy должен научиться это понимать.",
                 togetherMark: "Строим вместе",
                 togetherTitle: "Мы хотим придумать это вместе.",
                 togetherText: "Мы не хотим заранее решать, сколько стоит каждое действие человека. Мы хотим учиться на том, что люди реально спрашивают, знают, улучшают и считают полезным.",
