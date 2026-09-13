@@ -462,19 +462,36 @@
             grid-template-columns: 0.95fr 1.05fr;
         }
 
-        .pilot-card {
+        .pilot-grid + .pilot-grid {
+            margin-top: 20px;
+        }
+
+        .pilot-card,
+        .rule-card,
+        .bigger-card {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.13);
         }
 
-        .pilot-card .section-mark {
+        .pilot-card .section-mark,
+        .rule-card .section-mark,
+        .bigger-card .section-mark {
             color: var(--signal);
         }
 
-        .pilot-card p {
+        .pilot-card p,
+        .rule-card p,
+        .bigger-card p {
             color: #d8e9e8;
             font-size: 1.08rem;
             margin-top: 18px;
+        }
+
+        .rule-card h3,
+        .bigger-card h3 {
+            font-size: clamp(2rem, 4vw, 3.7rem);
+            font-weight: 900;
+            margin-bottom: 18px;
         }
 
         .future-card {
@@ -488,6 +505,46 @@
             color: var(--muted);
             font-size: 1.08rem;
             margin-top: 18px;
+        }
+
+        .money-rule {
+            background: var(--signal);
+            border-radius: 28px;
+            color: var(--night);
+            margin-top: 22px;
+            padding: 24px;
+        }
+
+        .money-rule strong {
+            display: block;
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(3.6rem, 8vw, 6.4rem);
+            font-weight: 600;
+            letter-spacing: -0.08em;
+            line-height: 0.9;
+            margin-bottom: 12px;
+        }
+
+        .money-rule span {
+            display: block;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+        }
+
+        .question-list {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+            margin-top: 18px;
+        }
+
+        .question-list li {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 20px;
+            color: #d8e9e8;
+            font-weight: 800;
+            padding: 16px;
         }
 
         .final-line {
@@ -574,6 +631,8 @@
             .learn-card,
             .truth-card,
             .pilot-card,
+            .rule-card,
+            .bigger-card,
             .future-card {
                 border-radius: 26px;
                 padding: 22px;
@@ -698,15 +757,45 @@
         <section class="pilot">
             <div class="shell pilot-grid">
                 <article class="pilot-card">
-                    <div class="section-mark" data-i18n="pilotMark">Current pilot</div>
-                    <h2 data-i18n="pilotTitle">We are testing carefully.</h2>
-                    <p data-i18n="pilotText">Jobsy Waves has already started as a product experiment. We are watching what creates real value and what only creates activity.</p>
+                    <div class="section-mark" data-i18n="startMark">Next question</div>
+                    <h2 data-i18n="startTitle">But where do we start?</h2>
+                    <p data-i18n="startText1">We do not yet know how to honestly measure the monetary value of a useful comment, someone's experience, a good answer or helpful advice.</p>
+                    <p data-i18n="startText2">We do not want to pretend that we already know. So we start by learning before trying to build a full monetization model.</p>
                 </article>
                 <article class="future-card">
-                    <div class="section-mark" data-i18n="futureMark">Future direction</div>
-                    <h2 data-i18n="futureTitle">Build the mechanism together.</h2>
-                    <p data-i18n="futureText">We do not claim to have the perfect model yet. We want to build a fair system with the people who use Jobsy and help make it better.</p>
-                    <p class="final-line" data-i18n="finalLine">Jobsy creates value for people. People create value for Jobsy. Waves is where we begin learning how that value can move both ways.</p>
+                    <div class="section-mark" data-i18n="measurableMark">Start with what can be measured</div>
+                    <h2 data-i18n="measurableTitle">One simple signal is helping someone discover Jobsy.</h2>
+                    <p data-i18n="measurableText">A registered user can share useful Jobsy content. If another person comes through their personal attribution, Jobsy can see that a Wave started there.</p>
+                    <p data-i18n="measurableNote">This is one measurable part of the current pilot. It is not the definition of Jobsy Waves.</p>
+                </article>
+            </div>
+            <div class="shell pilot-grid">
+                <article class="rule-card">
+                    <div class="section-mark" data-i18n="ruleMark">Current simple experiment</div>
+                    <h3 data-i18n="ruleTitle">Yes, €1 for an introduction is a simple mechanism.</h3>
+                    <p data-i18n="ruleText1">If our only goal were to pay for new users, we would not need Jobsy Waves.</p>
+                    <p data-i18n="ruleText2">This is one of the first simple monetary experiments inside Jobsy Waves, because it creates a clear measurable outcome.</p>
+                    <div class="money-rule"><strong>€1</strong><span data-i18n="moneyRule">If someone comes through your direct personal attribution link and makes their first successful Jobsy Active payment, you receive €1 once.</span></div>
+                    <p data-i18n="ruleNote">Not every month. The referring user does not need Jobsy Active themselves.</p>
+                </article>
+                <article class="bigger-card">
+                    <div class="section-mark" data-i18n="biggerMark">The bigger question</div>
+                    <h3 data-i18n="biggerTitle">But what if a person did not introduce anyone?</h3>
+                    <ul class="question-list">
+                        <li data-i18n="bigger1">What if one answer helped hundreds of people?</li>
+                        <li data-i18n="bigger2">What if their experience made a Jobsy article much more useful?</li>
+                        <li data-i18n="bigger3">What if they corrected outdated information?</li>
+                        <li data-i18n="bigger4">What if one question revealed a problem thousands of people also had?</li>
+                        <li data-i18n="bigger5">What if their feedback helped improve Jobsy for everyone?</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="shell">
+                <article class="future-card">
+                    <div class="section-mark" data-i18n="futureMark">Why Waves exists</div>
+                    <h2 data-i18n="futureTitle">Is that value too?</h2>
+                    <p data-i18n="futureText">We think it is. Now we need to learn how to see it, measure it and recognize it fairly.</p>
+                    <p class="final-line" data-i18n="finalLine">This is the real reason Jobsy Waves exists.</p>
                 </article>
             </div>
         </section>
@@ -768,13 +857,31 @@
                 truthMark: "The main principle",
                 truthTitle: "Our goal is not to pay for comments.",
                 truthText: "Our goal is to learn how to reward usefulness.",
-                pilotMark: "Current pilot",
-                pilotTitle: "We are testing carefully.",
-                pilotText: "Jobsy Waves has already started as a product experiment. We are watching what creates real value and what only creates activity.",
-                futureMark: "Future direction",
-                futureTitle: "Build the mechanism together.",
-                futureText: "We do not claim to have the perfect model yet. We want to build a fair system with the people who use Jobsy and help make it better.",
-                finalLine: "Jobsy creates value for people. People create value for Jobsy. Waves is where we begin learning how that value can move both ways.",
+                startMark: "Next question",
+                startTitle: "But where do we start?",
+                startText1: "We do not yet know how to honestly measure the monetary value of a useful comment, someone's experience, a good answer or helpful advice.",
+                startText2: "We do not want to pretend that we already know. So we start by learning before trying to build a full monetization model.",
+                measurableMark: "Start with what can be measured",
+                measurableTitle: "One simple signal is helping someone discover Jobsy.",
+                measurableText: "A registered user can share useful Jobsy content. If another person comes through their personal attribution, Jobsy can see that a Wave started there.",
+                measurableNote: "This is one measurable part of the current pilot. It is not the definition of Jobsy Waves.",
+                ruleMark: "Current simple experiment",
+                ruleTitle: "Yes, €1 for an introduction is a simple mechanism.",
+                ruleText1: "If our only goal were to pay for new users, we would not need Jobsy Waves.",
+                ruleText2: "This is one of the first simple monetary experiments inside Jobsy Waves, because it creates a clear measurable outcome.",
+                moneyRule: "If someone comes through your direct personal attribution link and makes their first successful Jobsy Active payment, you receive €1 once.",
+                ruleNote: "Not every month. The referring user does not need Jobsy Active themselves.",
+                biggerMark: "The bigger question",
+                biggerTitle: "But what if a person did not introduce anyone?",
+                bigger1: "What if one answer helped hundreds of people?",
+                bigger2: "What if their experience made a Jobsy article much more useful?",
+                bigger3: "What if they corrected outdated information?",
+                bigger4: "What if one question revealed a problem thousands of people also had?",
+                bigger5: "What if their feedback helped improve Jobsy for everyone?",
+                futureMark: "Why Waves exists",
+                futureTitle: "Is that value too?",
+                futureText: "We think it is. Now we need to learn how to see it, measure it and recognize it fairly.",
+                finalLine: "This is the real reason Jobsy Waves exists.",
                 footerHome: "Back to Jobsy"
             },
             ru: {
@@ -824,13 +931,31 @@
                 truthMark: "Главный принцип",
                 truthTitle: "Наша цель - не платить за комментарии.",
                 truthText: "Наша цель - научиться платить за пользу.",
-                pilotMark: "Текущий пилот",
-                pilotTitle: "Мы тестируем осторожно.",
-                pilotText: "Jobsy Waves уже начался как продуктовый эксперимент. Мы смотрим, что создает реальную ценность, а что только создает активность.",
-                futureMark: "Куда мы хотим прийти",
-                futureTitle: "Построить механизм вместе.",
-                futureText: "Мы не утверждаем, что уже нашли идеальную модель. Мы хотим строить справедливую систему вместе с людьми, которые пользуются Jobsy и помогают делать его лучше.",
-                finalLine: "Jobsy создает ценность для людей. Люди создают ценность для Jobsy. Waves - место, где мы начинаем учиться тому, как эта ценность может двигаться в обе стороны.",
+                startMark: "Следующий вопрос",
+                startTitle: "Но с чего начать?",
+                startText1: "Мы пока не знаем, как честно измерить денежную ценность полезного комментария, чужого опыта, хорошего ответа или совета.",
+                startText2: "Мы не хотим делать вид, что уже знаем ответ. Поэтому сначала нужно учиться, а уже потом строить полноценную модель монетизации.",
+                measurableMark: "Начать с того, что можно измерить",
+                measurableTitle: "Один простой сигнал - помочь другому человеку узнать о Jobsy.",
+                measurableText: "Зарегистрированный пользователь может поделиться полезным материалом Jobsy. Если другой человек приходит через его персональную атрибуцию, Jobsy видит, откуда началась Wave.",
+                measurableNote: "Это одна измеримая часть текущего пилота. Это не определение Jobsy Waves.",
+                ruleMark: "Текущий простой эксперимент",
+                ruleTitle: "Да, €1 за приглашение - простой механизм.",
+                ruleText1: "Если бы наша цель была только в том, чтобы платить за новых пользователей, нам не понадобился бы Jobsy Waves.",
+                ruleText2: "Это один из первых простых денежных экспериментов внутри Jobsy Waves, потому что здесь есть понятный измеримый результат.",
+                moneyRule: "Если человек приходит в Jobsy через вашу прямую персональную ссылку и делает первый успешный платеж за Jobsy Active, вы получаете €1 один раз.",
+                ruleNote: "Не каждый месяц. Пользователю, который пригласил человека, самому не нужен Jobsy Active.",
+                biggerMark: "Больший вопрос",
+                biggerTitle: "Но что, если человек никого не пригласил?",
+                bigger1: "Что, если один ответ помог сотням людей?",
+                bigger2: "Что, если его опыт сделал статью Jobsy намного полезнее?",
+                bigger3: "Что, если он исправил устаревшую информацию?",
+                bigger4: "Что, если один вопрос показал проблему, которая есть у тысяч людей?",
+                bigger5: "Что, если его обратная связь помогла улучшить Jobsy для всех?",
+                futureMark: "Зачем существуют Waves",
+                futureTitle: "Разве это не ценность?",
+                futureText: "Мы думаем, что это ценность. Теперь нужно научиться видеть ее, измерять и признавать справедливо.",
+                finalLine: "Это настоящая причина, по которой существует Jobsy Waves.",
                 footerHome: "Назад к Jobsy"
             }
         };
