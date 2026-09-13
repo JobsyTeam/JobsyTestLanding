@@ -557,6 +557,161 @@
             padding-top: 24px;
         }
 
+        .experiment-end {
+            background: var(--paper);
+        }
+
+        .ending-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .ending-card,
+        .current-card,
+        .together-card {
+            border-radius: 36px;
+            padding: 34px;
+        }
+
+        .ending-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .ending-card p,
+        .current-card p,
+        .together-card p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-top: 18px;
+        }
+
+        .help-list {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+            margin-top: 22px;
+        }
+
+        .help-list li {
+            background: var(--mist);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            color: var(--ink);
+            font-weight: 900;
+            padding: 16px;
+        }
+
+        .journey-card {
+            background: var(--night);
+            color: var(--white);
+        }
+
+        .journey-card .section-mark {
+            color: var(--signal);
+        }
+
+        .journey-card p {
+            color: #d8e9e8;
+        }
+
+        .journey-split {
+            display: grid;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .journey-step {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 24px;
+            padding: 20px;
+        }
+
+        .journey-step span {
+            color: var(--signal);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .journey-step strong {
+            display: block;
+            font-size: clamp(1.45rem, 3vw, 2.4rem);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            line-height: 1.05;
+        }
+
+        .current-card {
+            background: var(--paper-strong);
+            border: 1px solid #eadfc6;
+            margin-top: 20px;
+        }
+
+        .mini-dashboard {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 22px;
+        }
+
+        .mini-metric {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 20px;
+        }
+
+        .mini-metric span {
+            color: var(--route);
+            display: block;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .mini-metric strong {
+            display: block;
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
+            font-weight: 600;
+            letter-spacing: -0.08em;
+            line-height: 0.92;
+        }
+
+        .small-facts {
+            display: grid;
+            gap: 10px;
+            list-style: none;
+            margin-top: 22px;
+        }
+
+        .small-facts li {
+            color: var(--muted);
+            font-weight: 800;
+        }
+
+        .together-card {
+            background: var(--night);
+            color: var(--white);
+            margin-top: 20px;
+        }
+
+        .together-card .section-mark {
+            color: var(--signal);
+        }
+
+        .together-card p {
+            color: #d8e9e8;
+        }
+
+        .together-card .final-line {
+            border-top-color: rgba(255, 255, 255, 0.14);
+            color: var(--white) !important;
+        }
+
         footer {
             border-top: 1px solid var(--line);
             padding: 30px 0;
@@ -593,7 +748,9 @@
             .direction-grid,
             .human-grid,
             .measure-grid,
-            .pilot-grid {
+            .pilot-grid,
+            .ending-grid,
+            .mini-dashboard {
                 grid-template-columns: 1fr;
             }
         }
@@ -633,7 +790,10 @@
             .pilot-card,
             .rule-card,
             .bigger-card,
-            .future-card {
+            .future-card,
+            .ending-card,
+            .current-card,
+            .together-card {
                 border-radius: 26px;
                 padding: 22px;
             }
@@ -799,6 +959,54 @@
                 </article>
             </div>
         </section>
+
+        <section class="experiment-end">
+            <div class="shell ending-grid">
+                <article class="ending-card">
+                    <div class="section-mark" data-i18n="inviteMark">Help us learn</div>
+                    <h2 data-i18n="inviteTitle">Help us understand what is truly worth paying for.</h2>
+                    <p data-i18n="inviteText1">We could invent a table today: comment = X, view = Y, question = Z. But that would only be our guess.</p>
+                    <p data-i18n="inviteText2">People would quickly start optimizing for points and activity instead of usefulness. We want to do the opposite.</p>
+                    <ul class="help-list">
+                        <li data-i18n="help1">Share what you genuinely know.</li>
+                        <li data-i18n="help2">Ask questions that need better answers.</li>
+                        <li data-i18n="help3">Add useful details or correct outdated information.</li>
+                        <li data-i18n="help4">Tell us what actually helped and what did not work.</li>
+                    </ul>
+                </article>
+                <article class="ending-card journey-card">
+                    <div class="section-mark" data-i18n="journeyMark">The journey</div>
+                    <div class="journey-split">
+                        <div class="journey-step"><span data-i18n="todayLabel">Today</span><strong data-i18n="todayText">We can measure an introduction.</strong></div>
+                        <div class="journey-step"><span data-i18n="futureLabel">Future direction</span><strong data-i18n="futureLearningText">We want to learn how to understand usefulness.</strong></div>
+                    </div>
+                    <p data-i18n="journeyNote">Future direction means a question we are exploring, not a promise of future payment.</p>
+                </article>
+            </div>
+
+            <div class="shell current-card">
+                <div class="section-mark" data-i18n="currentMark">Current pilot</div>
+                <h2 data-i18n="currentTitle">Small indicators, separate meanings.</h2>
+                <div class="mini-dashboard">
+                    <div class="mini-metric"><span data-i18n="wavesMetric">Waves</span><strong>1,284 JBW</strong></div>
+                    <div class="mini-metric"><span data-i18n="rewardsMetric">Rewards</span><strong>€8</strong></div>
+                </div>
+                <ul class="small-facts">
+                    <li data-i18n="fact1">JBW / Waves is a pilot indicator. It is not money, cryptocurrency or an investment.</li>
+                    <li data-i18n="fact2">JBW and EUR are separate. JBW is not EUR, has no fixed EUR value and cannot be exchanged for EUR.</li>
+                    <li data-i18n="fact3">Rewards / EUR are monetary rewards already earned under current pilot rules.</li>
+                    <li data-i18n="fact4">Users can accumulate JBW without having Jobsy Active.</li>
+                    <li data-i18n="fact5">Current minimum Rewards payout request: €50.</li>
+                </ul>
+            </div>
+
+            <div class="shell together-card">
+                <div class="section-mark" data-i18n="togetherMark">Build it together</div>
+                <h2 data-i18n="togetherTitle">We want to invent this together.</h2>
+                <p data-i18n="togetherText">We do not want to decide in advance what every human action is worth. We want to learn from what people actually ask, know, improve and find useful.</p>
+                <p class="final-line" data-i18n="togetherFinal">Today, Jobsy Waves is the beginning of an experiment. We do not know the perfect formula yet, and we do not want to pretend that we do. What Waves becomes should depend on what truly helps people.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -882,6 +1090,33 @@
                 futureTitle: "Is that value too?",
                 futureText: "We think it is. Now we need to learn how to see it, measure it and recognize it fairly.",
                 finalLine: "This is the real reason Jobsy Waves exists.",
+                inviteMark: "Help us learn",
+                inviteTitle: "Help us understand what is truly worth paying for.",
+                inviteText1: "We could invent a table today: comment = X, view = Y, question = Z. But that would only be our guess.",
+                inviteText2: "People would quickly start optimizing for points and activity instead of usefulness. We want to do the opposite: understand what genuinely helps first.",
+                help1: "Share what you genuinely know.",
+                help2: "Ask questions that need better answers.",
+                help3: "Add useful details or correct outdated information.",
+                help4: "Tell us what actually helped and what did not work.",
+                journeyMark: "The journey",
+                todayLabel: "Today",
+                todayText: "We can measure an introduction.",
+                futureLabel: "Future direction",
+                futureLearningText: "We want to learn how to understand usefulness.",
+                journeyNote: "Future direction means a question we are exploring, not a promise of future payment.",
+                currentMark: "Current pilot",
+                currentTitle: "Small indicators, separate meanings.",
+                wavesMetric: "Waves",
+                rewardsMetric: "Rewards",
+                fact1: "JBW / Waves is a pilot indicator. It is not money, cryptocurrency or an investment.",
+                fact2: "JBW and EUR are separate. JBW is not EUR, has no fixed EUR value and cannot be exchanged for EUR.",
+                fact3: "Rewards / EUR are monetary rewards already earned under current pilot rules.",
+                fact4: "Users can accumulate JBW without having Jobsy Active.",
+                fact5: "Current minimum Rewards payout request: €50.",
+                togetherMark: "Build it together",
+                togetherTitle: "We want to invent this together.",
+                togetherText: "We do not want to decide in advance what every human action is worth. We want to learn from what people actually ask, know, improve and find useful.",
+                togetherFinal: "Today, Jobsy Waves is the beginning of an experiment. We do not know the perfect formula yet, and we do not want to pretend that we do. What Waves becomes should depend on what truly helps people.",
                 footerHome: "Back to Jobsy"
             },
             ru: {
@@ -956,6 +1191,33 @@
                 futureTitle: "Разве это не ценность?",
                 futureText: "Мы думаем, что это ценность. Теперь нужно научиться видеть ее, измерять и признавать справедливо.",
                 finalLine: "Это настоящая причина, по которой существует Jobsy Waves.",
+                inviteMark: "Помогите нам понять",
+                inviteTitle: "Помогите нам понять, за что действительно стоит платить.",
+                inviteText1: "Мы могли бы уже сегодня придумать таблицу: комментарий = X, просмотр = Y, вопрос = Z. Но это была бы только наша догадка.",
+                inviteText2: "Люди быстро начали бы оптимизировать действия и активность вместо пользы. Мы хотим сделать наоборот: сначала понять, что действительно помогает.",
+                help1: "Делитесь тем, что действительно знаете.",
+                help2: "Задавайте вопросы, на которые нужны лучшие ответы.",
+                help3: "Добавляйте полезные детали или исправляйте устаревшую информацию.",
+                help4: "Рассказывайте, что реально помогло, а что не сработало.",
+                journeyMark: "Путь",
+                todayLabel: "Сегодня",
+                todayText: "Мы умеем измерять приглашение.",
+                futureLabel: "Будущее направление",
+                futureLearningText: "Мы хотим научиться понимать пользу.",
+                journeyNote: "Будущее направление - это вопрос, который мы исследуем, а не обещание будущих выплат.",
+                currentMark: "Текущий пилот",
+                currentTitle: "Небольшие индикаторы, разные значения.",
+                wavesMetric: "Waves",
+                rewardsMetric: "Rewards",
+                fact1: "JBW / Waves - пилотный индикатор. Это не деньги, не криптовалюта и не инвестиция.",
+                fact2: "JBW и EUR существуют отдельно. JBW не равен EUR, не имеет фиксированной стоимости в EUR и не обменивается на EUR.",
+                fact3: "Rewards / EUR - это денежные вознаграждения, уже заработанные по текущим правилам пилота.",
+                fact4: "Пользователи могут накапливать JBW без Jobsy Active.",
+                fact5: "Текущий минимальный запрос на выплату Rewards: €50.",
+                togetherMark: "Строим вместе",
+                togetherTitle: "Мы хотим придумать это вместе.",
+                togetherText: "Мы не хотим заранее решать, сколько стоит каждое действие человека. Мы хотим учиться на том, что люди реально спрашивают, знают, улучшают и считают полезным.",
+                togetherFinal: "Сегодня Jobsy Waves - это начало эксперимента. Мы пока не знаем идеальную формулу и не хотим делать вид, что знаем. То, каким станет Waves дальше, должно зависеть от того, что действительно помогает людям.",
                 footerHome: "Назад к Jobsy"
             }
         };
